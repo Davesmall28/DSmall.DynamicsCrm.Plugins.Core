@@ -2,4 +2,3 @@ language: csharp
 solution: src/DSmall.DynamicsCrm.Plugins.Core.sln
 install:
   - nuget restore src/DSmall.DynamicsCrm.Plugins.Core.sln
-  - nuget install NUnit.Runners -Version 2.6.4 -OutputDirectory testrunner
