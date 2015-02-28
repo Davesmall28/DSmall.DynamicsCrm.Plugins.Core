@@ -2,11 +2,11 @@
 {
     using System;
     using DSmall.UnitTest.Core;
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
     using Microsoft.Xrm.Sdk;
+    using NUnit.Framework;
 
     /// <summary>The when entity image collection is null and returns error.</summary>
-    [TestClass]
+    [TestFixture]
     public class WhenEntityImageCollectionIsNullAndReturnsError : SpecificationBase
     {
         private const EntityImageType EntityImageType = Core.EntityImageType.PostImage;
@@ -14,7 +14,7 @@
         private Exception exceptionThrown;
 
         /// <summary>The should return correct exception message.</summary>
-        [TestMethod]
+        [Test]
         public void ShouldReturnCorrectExceptionMessage()
         {
             var exceptionMessage = string.Format("Parameters collection does not contain {0} entity or it is not equal to type of (Entity)", EntityImageType);

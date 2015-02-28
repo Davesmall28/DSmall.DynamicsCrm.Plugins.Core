@@ -1,18 +1,18 @@
 ﻿namespace DSmall.DynamicsCrm.Plugins.Core.UnitTest
 {
     using DSmall.UnitTest.Core;
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
     using Microsoft.Xrm.Sdk;
+    using NUnit.Framework;
 
     /// <summary>The when entity validator returns post image entity successfully.</summary>
-    [TestClass]
+    [TestFixture]
     public class WhenEntityValidatorReturnsPostImageEntitySuccessfully : SpecificationBase
     {
         private EntityValidatorSpecificationFixture testFixture;
         private Entity result;
 
         /// <summary>The should return post image valid entity.</summary>
-        [TestMethod]
+        [Test]
         public void ShouldReturnValidPostImageEntity()
         {
             Assert.IsNotNull(result);

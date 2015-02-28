@@ -2,11 +2,11 @@
 {
     using System;
     using DSmall.UnitTest.Core;
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
     using Microsoft.Xrm.Sdk;
+    using NUnit.Framework;
 
     /// <summary>The input parameter extension exception specifications.</summary>
-    [TestClass]
+    [TestFixture]
     public class InputParameterExtensionExceptionSpecifications : SpecificationBase
     {
         private const string ParameterName = "Target";
@@ -15,14 +15,14 @@
         private Exception exceptionThrown;
 
         /// <summary>The should not swallow exception.</summary>
-        [TestMethod]
+        [Test]
         public void ShouldNotSwallowException()
         {
             Assert.IsTrue(isExceptionThrown);
         }
 
         /// <summary>The should return correct error message.</summary>
-        [TestMethod]
+        [Test]
         public void ShouldReturnCorrectErrorMessage()
         {
             var exceptionMessage = string.Format("Cannot find parameter name '{0}' in input parameter collection.", ParameterName);
@@ -30,7 +30,7 @@
         }
 
         /// <summary>The should return argument exception.</summary>
-        [TestMethod]
+        [Test]
         [ExpectedException(typeof(ArgumentException))]
         public void ShouldReturnArgumentException()
         {
@@ -61,4 +61,3 @@
         }
     }
 }
-

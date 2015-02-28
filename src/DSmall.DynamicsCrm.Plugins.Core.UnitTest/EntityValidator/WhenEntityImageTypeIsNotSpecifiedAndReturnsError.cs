@@ -2,18 +2,18 @@
 {
     using System;
     using DSmall.UnitTest.Core;
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
     using Microsoft.Xrm.Sdk;
+    using NUnit.Framework;
 
     /// <summary>The when entity image type is not specified and returns error.</summary>
-    [TestClass]
+    [TestFixture]
     public class WhenEntityImageTypeIsNotSpecifiedAndReturnsError : SpecificationBase
     {
         private EntityValidatorSpecificationFixture testFixture;
         private Exception exceptionThrown;
 
         /// <summary>The should return correct exception message.</summary>
-        [TestMethod]
+        [Test]
         public void ShouldReturnCorrectExceptionMessage()
         {
             Assert.AreEqual("Please specify an Entity Image Type.", exceptionThrown.Message);

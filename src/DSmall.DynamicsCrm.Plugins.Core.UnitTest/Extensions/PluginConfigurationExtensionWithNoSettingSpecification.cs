@@ -2,17 +2,17 @@
 {
     using System;
     using DSmall.UnitTest.Core;
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using NUnit.Framework;
 
     /// <summary>The plugin configuration extension with no setting specification.</summary>
-    [TestClass]
+    [TestFixture]
     public class PluginConfigurationExtensionWithNoSettingSpecification : SpecificationBase
     {
         private PluginConfigurationExtensionSpecificationsFixture testFixture;
         private Guid result;
 
         /// <summary>The should return empty guid.</summary>
-        [TestMethod]
+        [Test]
         public void ShouldReturnEmptyGuid()
         {
             Assert.AreEqual(Guid.Empty, result);

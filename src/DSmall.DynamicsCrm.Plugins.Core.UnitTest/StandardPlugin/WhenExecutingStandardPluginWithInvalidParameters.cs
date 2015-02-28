@@ -2,10 +2,10 @@
 {
     using System;
     using DSmall.UnitTest.Core;
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using NUnit.Framework;
 
     /// <summary>The when executing standard plugin with invalid parameters.</summary>
-    [TestClass]
+    [TestFixture]
     public class WhenExecutingStandardPluginWithInvalidParameters : SpecificationBase
     {
         private PluginTestFixture testFixture;
@@ -13,7 +13,7 @@
         private Exception exceptionThrown;
 
         /// <summary>The exception should not be swallowed.</summary>
-        [TestMethod]
+        [Test]
         public void ExceptionShouldNotBeSwallowed()
         {
             Assert.IsTrue(isExceptionThrown);
@@ -21,7 +21,7 @@
 
         /// <summary>The argument null exception should be thrown.</summary>
         /// <exception cref="Exception">Argument Null Exception</exception>
-        [TestMethod]
+        [Test]
         [ExpectedException(typeof(ArgumentNullException))]
         public void ArgumentNullExceptionShouldBeThrown()
         {

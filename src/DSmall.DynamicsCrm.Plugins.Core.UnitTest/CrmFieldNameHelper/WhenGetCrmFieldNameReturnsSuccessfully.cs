@@ -1,17 +1,17 @@
 ﻿namespace DSmall.DynamicsCrm.Plugins.Core.UnitTest
 {
     using DSmall.UnitTest.Core;
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using NUnit.Framework;
 
     /// <summary>The when get crm field name returns successfully.</summary>
-    [TestClass]
+    [TestFixture]
     public class WhenGetCrmFieldNameReturnsSuccessfully : SpecificationBase
     {
         private CrmFieldNameHelperSpecificationFixture testFixture;
         private string result;
 
         /// <summary>The should return correct crm field name.</summary>
-        [TestMethod]
+        [Test]
         public void ShouldReturnCorrectCrmFieldName()
         {
             Assert.AreEqual("customerreference", result);

@@ -1,30 +1,30 @@
 ﻿namespace DSmall.DynamicsCrm.Plugins.Core.UnitTest
 {
     using DSmall.UnitTest.Core;
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using NUnit.Framework;
 
     /// <summary>The when executing with valid parameters.</summary>
-    [TestClass]
+    [TestFixture]
     public class WhenExecutingWithValidParameters : SpecificationBase
     {
         private PluginTestFixture testFixture;
 
         /// <summary>The organization service should not be null.</summary>
-        [TestMethod]
+        [Test]
         public void OrganizationServiceShouldNotBeNull()
         {
             Assert.IsNotNull(testFixture.UnderTest.OrganizationService);
         }
 
         /// <summary>The plugin execution context should not be null.</summary>
-        [TestMethod]
+        [Test]
         public void PluginExecutionContextShouldNotBeNull()
         {
             Assert.IsNotNull(testFixture.UnderTest.PluginExecutionContext);
         }
 
         /// <summary>The tracing service should not be null.</summary>
-        [TestMethod]
+        [Test]
         public void TracingServiceShouldNotBeNull()
         {
             Assert.IsNotNull(testFixture.UnderTest.TracingService);

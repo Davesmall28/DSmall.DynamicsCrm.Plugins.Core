@@ -2,11 +2,11 @@
 {
     using System;
     using DSmall.UnitTest.Core;
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
     using Microsoft.Xrm.Sdk;
+    using NUnit.Framework;
 
     /// <summary>The input parameter extension specifications.</summary>
-    [TestClass]
+    [TestFixture]
     public class InputParameterExtensionSpecifications : SpecificationBase
     {
         private DataCollection<string, object> underTest;
@@ -14,14 +14,14 @@
         private EntityReference result;
 
         /// <summary>The should return valid parameter.</summary>
-        [TestMethod]
+        [Test]
         public void ShouldReturnValidParameter()
         {
             Assert.IsNotNull(result);
         }
 
         /// <summary>The should return valid id.</summary>
-        [TestMethod]
+        [Test]
         public void ShouldReturnValidId()
         {
             Assert.AreEqual(expected.Id, result.Id);
