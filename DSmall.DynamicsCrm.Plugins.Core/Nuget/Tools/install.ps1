@@ -33,21 +33,11 @@ param($installPath, $toolsPath, $package, $project)
 	$import.Condition = "Exists('$relativePath')"
 	
 	$TargetFramework = """v4," + $env:ProgramFiles + "\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0"""
-	#If((Get-WmiObject Win32_OperatingSystem -computername $env:COMPUTERNAME).OSArchitecture = "64-bit")
-	#{
-	#	$TargetFramework = """v4,C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0"""
-	#}
-	
-	$commandText = """$ILMergeFileLocationRelativePath"" /targetplatform:$TargetFramework /keyfile:$AssemblyKeyFileName `$(AdditionalParameters) /out:""`$(OutputFileName)"" ""`$(MainAssembly)"" @(AssembliesToMerge->'""%(FullPath)""', ' ')"
+
 	$target = $msbuild.Xml.AddTarget("DSmallAfterBuild")
 	$target.AfterTargets = "AfterBuild"
-	$task = $target.AddTask("Exec")
-	$task.SetParameter("Command", $commandText)
-	$message = $target.AddTask("Message")
-	$message.SetParameter("Text", $commandText)
-	$message.SetParameter("Importance", "High")
 
-	$project.Save()#
+	$project.Save()
 
 	$xml = [XML] (gc $project.FullName)
 	$nsmgr = New-Object System.Xml.XmlNamespaceManager -ArgumentList $xml.NameTable
@@ -69,3 +59,17 @@ param($installPath, $toolsPath, $package, $project)
 	$assembliesToMerge.Attributes.Append($conditionAttribute)
 
 	$xml.Save($project.FullName)
+
+	#### Start - Add Execute Command to After Build script ####
+	$commandText = """$ILMergeFileLocationRelativePath"" /targetplatform:$TargetFramework /keyfile:$AssemblyKeyFileName `$(AdditionalParameters) /out:""`$(OutputFileName)"" ""`$(MainAssembly)"" @(AssembliesToMerge->'""%(FullPath)""', ' ')"
+	$task = $target.AddTask("Exec")
+	$task.SetParameter("Command", $commandText)
+	#### End - Add Execute Command to After Build script ####
+
+	#### Start - Output Command as High Importance Message ####
+	$message = $target.AddTask("Message")
+	$message.SetParameter("Text", $commandText)
+	$message.SetParameter("Importance", "High")
+	#### End - Output Command as High Importance Message ####
+
+	$project.Save()

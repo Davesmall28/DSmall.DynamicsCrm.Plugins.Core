@@ -13,4 +13,9 @@ param($installPath, $toolsPath, $package, $project)
 			$toEdit.AddMetaData("ILMerge", "true")
 		}
 	}
+
+	$AssemblyKeyFileName = $project.Properties.Item("AssemblyOriginatorKeyFile").Value;
+	$item = $project.ProjectItems.Item($AssemblyKeyFileName)
+	$item.Properties.Item("CopyToOutputDirectory").Value = 1
+
 	$project.Save()
