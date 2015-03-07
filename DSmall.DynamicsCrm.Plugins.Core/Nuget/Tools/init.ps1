@@ -11,6 +11,7 @@ param($installPath, $toolsPath, $package, $project)
 		$metadataItems = $toEdit.Metadata | Where-Object { $_.Name -eq "ILMerge" }
 		if($metadataItems.Count -lt 1) {
 			$toEdit.AddMetaData("ILMerge", "true")
+			$toEdit.AddMetaData("AssemblyName", $_.Name + ".dll")
 		}
 	}
 

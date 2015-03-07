@@ -7,6 +7,7 @@ param($installPath, $toolsPath, $package, $project)
 		$metadataItems = $toEdit.Metadata | Where-Object { $_.Name -eq "ILMerge" }
 		if($metadataItems.Count -lt 1) {
 			$toEdit.AddMetaData("ILMerge", "true")
+			$toEdit.AddMetaData("AssemblyName", $_.Name + ".dll")
 		}
 	}
 	$project.Save()
@@ -39,16 +40,28 @@ param($installPath, $toolsPath, $package, $project)
 
 	$project.Save()
 
+	$commandText = """$ILMergeFileLocationRelativePath"" /targetplatform:$TargetFramework /keyfile:$AssemblyKeyFileName `$(AdditionalParameters) /out:""`$(OutputFileName)"" ""`$(MainAssembly)"" @(AssembliesToMerge->'""`$(TargetDir)%(AssemblyName)""', ' ')"
+	$task = $target.AddTask("Exec")
+	$task.SetParameter("Command", $commandText)
+
+	$message = $target.AddTask("Message")
+	$message.SetParameter("Text", $commandText)
+	$message.SetParameter("Importance", "High")
+
+	$project.Save()
+
 	$xml = [XML] (gc $project.FullName)
 	$nsmgr = New-Object System.Xml.XmlNamespaceManager -ArgumentList $xml.NameTable
 	$nsmgr.AddNamespace('msbld', "http://schemas.microsoft.com/developer/msbuild/2003")
 
 	$node = $xml.Project.SelectSingleNode("//msbld:Target[@Name='DSmallAfterBuild']", $nsmgr)
-	
+	$afterBuildExecuteScript = $node.InnerXml
+
+	$fileRetrieval = $xml.CreateElement("FileRetrieval", $xml.Project.GetAttribute("xmlns"))
 	$itemGroup = $xml.CreateElement("ItemGroup", $xml.Project.GetAttribute("xmlns"))
 	$assembliesToMerge = $xml.CreateElement("AssembliesToMerge", $xml.Project.GetAttribute("xmlns"))
 	$itemGroup.AppendChild($assembliesToMerge)
-	$node.AppendChild($itemGroup)
+	$fileRetrieval.AppendChild($itemGroup)
 
 	$includeAttribute = $xml.CreateAttribute("Include")
 	$includeAttribute.Value = "@(ReferencePath)"
@@ -58,18 +71,6 @@ param($installPath, $toolsPath, $package, $project)
 	$conditionAttribute.Value = "'%(ReferencePath.ILMerge)'=='true'"
 	$assembliesToMerge.Attributes.Append($conditionAttribute)
 
+	$node.InnerXml = $fileRetrieval.InnerXml + $afterBuildExecuteScript
+
 	$xml.Save($project.FullName)
-
-	#### Start - Add Execute Command to After Build script ####
-	$commandText = """$ILMergeFileLocationRelativePath"" /targetplatform:$TargetFramework /keyfile:$AssemblyKeyFileName `$(AdditionalParameters) /out:""`$(OutputFileName)"" ""`$(MainAssembly)"" @(AssembliesToMerge->'""%(FullPath)""', ' ')"
-	$task = $target.AddTask("Exec")
-	$task.SetParameter("Command", $commandText)
-	#### End - Add Execute Command to After Build script ####
-
-	#### Start - Output Command as High Importance Message ####
-	$message = $target.AddTask("Message")
-	$message.SetParameter("Text", $commandText)
-	$message.SetParameter("Importance", "High")
-	#### End - Output Command as High Importance Message ####
-
-	$project.Save()
