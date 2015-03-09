@@ -42,7 +42,7 @@ param($installPath, $toolsPath, $package, $project)
 
 	$project.Save()
 
-	$commandText = """$ILMergeFileLocationRelativePath"" /targetplatform:$targetFramework /keyfile:$assemblyKeyFileName `$(AdditionalParameters) /out:""`$(OutputFileName)"" ""`$(MainAssembly)"" @(AssembliesToMerge->'""`$(TargetDir)%(AssemblyName)""', ' ')"
+	$commandText = """$ILMergeFileLocationRelativePath"" /targetplatform:$targetFramework /keyfile:$assemblyKeyFileName.Value `$(AdditionalParameters) /out:""`$(OutputFileName)"" ""`$(MainAssembly)"" @(AssembliesToMerge->'""`$(TargetDir)%(AssemblyName)""', ' ')"
 	$task = $target.AddTask("Exec")
 	$task.SetParameter("Command", $commandText)
 
