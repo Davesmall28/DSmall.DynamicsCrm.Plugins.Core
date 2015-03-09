@@ -12,35 +12,36 @@ param($installPath, $toolsPath, $package, $project)
 	}
 	$project.Save()
 
-	$AssemblyKeyFileName = $project.Properties.Item("AssemblyOriginatorKeyFile").Value;
-	$item = $project.ProjectItems.Item($AssemblyKeyFileName)
-	$item.Properties.Item("CopyToOutputDirectory").Value = 1
+	$assemblyKeyFileName = $project.Properties.Item("AssemblyOriginatorKeyFile");
+	if	($assemblyKeyFileName -And $assemblyKeyFileName.Value) {
+		$item = $project.ProjectItems.Item($assemblyKeyFileName.Value)
+		$item.Properties.Item("CopyToOutputDirectory").Value = 1
+	}
 
-	$targetsFile = [System.IO.Path]::Combine($toolsPath, $package.Id + '.targets')
-	$ILMergeFileLocation = [System.IO.Path]::Combine($toolsPath, 'ILMerge.exe')
- 
 	Add-Type -AssemblyName 'Microsoft.Build, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'
 
 	$msbuild = [Microsoft.Build.Evaluation.ProjectCollection]::GlobalProjectCollection.GetLoadedProjects($project.FullName) | Select-Object -First 1
  
 	$projectUri = new-object Uri($project.FullName, [System.UriKind]::Absolute)
+	$targetsFile = [System.IO.Path]::Combine($toolsPath, $package.Id + '.targets')
 	$targetUri = new-object Uri($targetsFile, [System.UriKind]::Absolute)
 	$relativePath = [System.Uri]::UnescapeDataString($projectUri.MakeRelativeUri($targetUri).ToString()).Replace([System.IO.Path]::AltDirectorySeparatorChar, [System.IO.Path]::DirectorySeparatorChar)
 
+	$ILMergeFileLocation = [System.IO.Path]::Combine($toolsPath, 'ILMerge.exe')
 	$ILMergeFileLocationUri = new-object Uri($ILMergeFileLocation, [System.UriKind]::Absolute)
 	$ILMergeFileLocationRelativePath = [System.Uri]::UnescapeDataString($projectUri.MakeRelativeUri($ILMergeFileLocationUri).ToString()).Replace([System.IO.Path]::AltDirectorySeparatorChar, [System.IO.Path]::DirectorySeparatorChar)
  
 	$import = $msbuild.Xml.AddImport($relativePath)
 	$import.Condition = "Exists('$relativePath')"
 	
-	$TargetFramework = """v4," + $env:ProgramFiles + "\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0"""
+	$targetFramework = """v4," + $env:ProgramFiles + "\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0"""
 
 	$target = $msbuild.Xml.AddTarget("DSmallAfterBuild")
 	$target.AfterTargets = "AfterBuild"
 
 	$project.Save()
 
-	$commandText = """$ILMergeFileLocationRelativePath"" /targetplatform:$TargetFramework /keyfile:$AssemblyKeyFileName `$(AdditionalParameters) /out:""`$(OutputFileName)"" ""`$(MainAssembly)"" @(AssembliesToMerge->'""`$(TargetDir)%(AssemblyName)""', ' ')"
+	$commandText = """$ILMergeFileLocationRelativePath"" /targetplatform:$targetFramework /keyfile:$assemblyKeyFileName `$(AdditionalParameters) /out:""`$(OutputFileName)"" ""`$(MainAssembly)"" @(AssembliesToMerge->'""`$(TargetDir)%(AssemblyName)""', ' ')"
 	$task = $target.AddTask("Exec")
 	$task.SetParameter("Command", $commandText)
 
