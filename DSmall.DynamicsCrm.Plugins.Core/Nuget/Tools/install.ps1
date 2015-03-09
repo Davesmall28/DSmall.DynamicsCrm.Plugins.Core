@@ -12,9 +12,10 @@ param($installPath, $toolsPath, $package, $project)
 	}
 	$project.Save()
 
-	$assemblyKeyFileName = $project.Properties.Item("AssemblyOriginatorKeyFile");
-	if	($assemblyKeyFileName -And $assemblyKeyFileName.Value) {
-		$item = $project.ProjectItems.Item($assemblyKeyFileName.Value)
+	$assemblyKeyFileNameObject = $project.Properties.Item("AssemblyOriginatorKeyFile");
+	if	($assemblyKeyFileNameObject -And $assemblyKeyFileNameObject.Value) {
+		$assemblyKeyFileName = $assemblyKeyFileNameObject.Value
+		$item = $project.ProjectItems.Item($assemblyKeyFileName)
 		$item.Properties.Item("CopyToOutputDirectory").Value = 1
 	}
 
