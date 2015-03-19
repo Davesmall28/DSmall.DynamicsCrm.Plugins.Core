@@ -41,9 +41,9 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="DSmall.Core, Version=1.0.1.0, Culture=neutral, PublicKeyToken=c0110db01952ea61, processorArchitecture=MSIL">
+    <Reference Include="DSmall.Core, Version=1.0.1.1, Culture=neutral, PublicKeyToken=c0110db01952ea61, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\DSmall.Core.1.0.1.0\lib\net40\DSmall.Core.dll</HintPath>
+      <HintPath>..\packages\DSmall.Core.1.0.1.1\lib\net40\DSmall.Core.dll</HintPath>
     </Reference>
     <Reference Include="DSmall.UnitTest.Core, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
