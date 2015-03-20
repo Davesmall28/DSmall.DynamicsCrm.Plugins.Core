@@ -76,3 +76,5 @@ param($installPath, $toolsPath, $package, $project)
 	$node.InnerXml = $fileRetrieval.InnerXml + $afterBuildExecuteScript
 
 	$xml.Save($project.FullName)
+
+	$project.Save()
