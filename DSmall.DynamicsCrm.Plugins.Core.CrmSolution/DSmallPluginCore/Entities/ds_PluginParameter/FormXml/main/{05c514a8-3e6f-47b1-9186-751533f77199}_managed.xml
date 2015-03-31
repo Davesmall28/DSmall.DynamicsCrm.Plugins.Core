@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<systemform>
+  <formid>{05c514a8-3e6f-47b1-9186-751533f77199}</formid>
+  <IntroducedVersion>1.0.0</IntroducedVersion>
+  <FormPresentation>1</FormPresentation>
+  <FormActivationState>1</FormActivationState>
+  <form>
+    <tabs>
+      <tab verticallayout="true" id="{a67044e1-2e73-454a-9d27-10a8a48dc727}" IsUserDefined="1">
+        <labels>
+          <label description="General" languagecode="1033" />
+        </labels>
+        <columns>
+          <column width="100%">
+            <sections>
+              <section showlabel="false" showbar="false" IsUserDefined="0" id="{f780d7d1-4b69-4467-8fd1-ef68c22c99d1}">
+                <labels>
+                  <label description="General" languagecode="1033" />
+                </labels>
+                <rows>
+                  <row>
+                    <cell id="{19bbc766-f196-4927-b2a4-a1b0178597a7}">
+                      <labels>
+                        <label description="" languagecode="1033" />
+                      </labels>
+                      <control id="ds_name" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="ds_name" />
+                    </cell>
+                  </row>
+                  <row>
+                    <cell id="{416ab72b-ae12-2e8a-2d31-92e2a97d9cc3}" showlabel="true" locklevel="0">
+                      <labels>
+                        <label description="" languagecode="1033" />
+                      </labels>
+                      <control id="ds_messagename" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="ds_messagename" disabled="false" />
+                    </cell>
+                  </row>
+                  <row>
+                    <cell id="{a2a66319-805c-c7e5-3dab-885ad35e1335}" showlabel="true" locklevel="0">
+                      <labels>
+                        <label description="" languagecode="1033" />
+                      </labels>
+                      <control id="ds_primaryentityname" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="ds_primaryentityname" disabled="false" />
+                    </cell>
+                  </row>
+                  <row>
+                    <cell id="{7b0a54e4-7d52-0753-db21-6e239c459e47}" showlabel="true" locklevel="0">
+                      <labels>
+                        <label description="" languagecode="1033" />
+                      </labels>
+                      <control id="ds_pluginparameters" classid="{E0DECE4B-6FC8-4a8f-A065-082708572369}" datafieldname="ds_pluginparameters" disabled="false" />
+                    </cell>
+                  </row>
+                </rows>
+              </section>
+            </sections>
+          </column>
+        </columns>
+      </tab>
+    </tabs>
+    <Navigation>
+      <NavBar></NavBar>
+      <NavBarAreas>
+        <NavBarArea Id="Info">
+          <Titles>
+            <Title LCID="1033" Text="Common" />
+          </Titles>
+        </NavBarArea>
+        <NavBarArea Id="Sales">
+          <Titles>
+            <Title LCID="1033" Text="Sales" />
+          </Titles>
+        </NavBarArea>
+        <NavBarArea Id="Service">
+          <Titles>
+            <Title LCID="1033" Text="Service" />
+          </Titles>
+        </NavBarArea>
+        <NavBarArea Id="Marketing">
+          <Titles>
+            <Title LCID="1033" Text="Marketing" />
+          </Titles>
+        </NavBarArea>
+        <NavBarArea Id="ProcessCenter">
+          <Titles>
+            <Title LCID="1033" Text="Process Sessions" />
+          </Titles>
+        </NavBarArea>
+      </NavBarAreas>
+    </Navigation>
+  </form>
+  <IsCustomizable>1</IsCustomizable>
+  <CanBeDeleted>1</CanBeDeleted>
+  <LocalizedNames>
+    <LocalizedName description="Information" languagecode="1033" />
+  </LocalizedNames>
+  <Descriptions>
+    <Description description="A form for this entity." languagecode="1033" />
+  </Descriptions>
+</systemform>
