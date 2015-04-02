@@ -96,11 +96,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Create\CreateContactSpecificationFixture.cs" />
+    <Compile Include="Extensions\EnumerableExtensions.cs" />
+    <Compile Include="Model\ParameterDetail.cs" />
+    <Compile Include="Model\PluginParameters.cs" />
     <Compile Include="Utilities\CrmCleaner.cs" />
-    <Compile Include="Utilities\CrmHelper.cs" />
+    <Compile Include="Utilities\CrmWriter.cs" />
     <Compile Include="TestFramework\SpecificationFixtureBase.cs" />
     <Compile Include="Create\CreateContactSpecification.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utilities\EntitySerializer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

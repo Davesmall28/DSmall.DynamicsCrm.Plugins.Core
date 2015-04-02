@@ -70,9 +70,10 @@ namespace DSmall.DynamicsCrm.Plugins.Core.Samples
 
             var name = string.Format("On the {0} of {1}", pluginExecutionContext.MessageName, pluginExecutionContext.PrimaryEntityName);
             tracingService.Trace("Name: {0}", name);
+            tracingService.Trace("RequestId: {0}", pluginExecutionContext.RequestId);
 
             var toCreate = new Entity("ds_pluginparameter");
-            toCreate["id"] = pluginExecutionContext.RequestId;
+            toCreate["ds_pluginexecutionrequestid"] = pluginExecutionContext.RequestId.ToString();
             toCreate["ds_name"] = name;
             toCreate["ds_messagename"] = pluginExecutionContext.MessageName;
             toCreate["ds_primaryentityname"] = pluginExecutionContext.PrimaryEntityName;

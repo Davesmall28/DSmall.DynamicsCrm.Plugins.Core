@@ -12,17 +12,21 @@
         public SpecificationFixtureBase()
         {
             OrganizationService = new OrganizationService(ConnectionStringSettingName);
-            CrmHelper = new CrmHelper(OrganizationService);
+            CrmWriter = new CrmWriter(OrganizationService);
             CleanUp = new CrmCleaner(OrganizationService);
+            EntitySerializer = new EntitySerializer(OrganizationService);
         }
 
         /// <summary>Gets the organization service.</summary>
         public IOrganizationService OrganizationService { get; private set; }
 
         /// <summary>Gets the crm helper.</summary>
-        public CrmHelper CrmHelper { get; private set; }
+        public CrmWriter CrmWriter { get; private set; }
 
         /// <summary>Gets the clean up.</summary>
         public CrmCleaner CleanUp { get; private set; }
+
+        /// <summary>Gets the entity serializer.</summary>
+        public EntitySerializer EntitySerializer { get; private set; }
     }
 }
