@@ -1,7 +1,6 @@
 ﻿namespace DSmall.DynamicsCrm.Plugins.Core.IntegrationTest
 {
     using System;
-    using System.Linq;
     using DSmall.DynamicsCrm.Plugins.Core.IntegrationTest.Model;
     using DSmall.UnitTest.Core;
     using Microsoft.Xrm.Sdk;
@@ -51,7 +50,7 @@
 
             entityId = testFixture.CrmWriter.CreateContact(requestId, testFixture.EntityToCreate);
 
-            result = testFixture.EntitySerializer.Deserialize(requestId);
+            result = Retry.Do(() => testFixture.EntitySerializer.Deserialize(requestId));
         }
 
         /// <summary>The context.</summary>

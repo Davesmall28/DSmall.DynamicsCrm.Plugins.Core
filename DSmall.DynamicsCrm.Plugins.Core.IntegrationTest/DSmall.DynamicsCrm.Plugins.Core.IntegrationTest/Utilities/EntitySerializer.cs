@@ -26,8 +26,6 @@
         /// <returns>The <see cref="PluginParameters"/>.</returns>
         public PluginParameters Deserialize(Guid entityId)
         {
-            Thread.Sleep(5000);
-
             using (var crmServiceContext = new OrganizationServiceContext(organizationService))
             {
                 var pluginParameters = from p in crmServiceContext.CreateQuery("ds_pluginparameter")

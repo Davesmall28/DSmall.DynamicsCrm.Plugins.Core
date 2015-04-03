@@ -99,6 +99,7 @@
     <Compile Include="Extensions\EnumerableExtensions.cs" />
     <Compile Include="Model\ParameterDetail.cs" />
     <Compile Include="Model\PluginParameters.cs" />
+    <Compile Include="TestFramework\Retry.cs" />
     <Compile Include="Utilities\CrmCleaner.cs" />
     <Compile Include="Utilities\CrmWriter.cs" />
     <Compile Include="TestFramework\SpecificationFixtureBase.cs" />
