@@ -44,8 +44,6 @@
         /// <summary>The because of.</summary>
         protected override void BecauseOf()
         {
-            base.BecauseOf();
-
             entityId = testFixture.CrmWriter.Create(requestId, testFixture.EntityToCreate);
 
             testFixture.Result = Retry.Do(() => testFixture.EntitySerializer.Deserialize(requestId));
@@ -54,8 +52,6 @@
         /// <summary>The context.</summary>
         protected override void Context()
         {
-            base.Context();
-
             testFixture = new CreateContactSpecificationFixture();
             testFixture.PerformTestSetup();
 

@@ -45,17 +45,9 @@
             Assert.IsTrue(testFixture.Result.PostEntityImages.Count == 0);
         }
 
-        /// <summary>The should return post entity image containing one parameter.</summary>
-        public void ShouldReturnPostEntityImageContainingOneParameter()
-        {
-            Assert.IsTrue(testFixture.Result.InputParameters.Count == 1);
-        }
-
         /// <summary>The because of.</summary>
         protected override void BecauseOf()
         {
-            base.BecauseOf();
-
             testFixture.CrmWriter.Execute(testFixture.RequestId, testFixture.WinOpportunityRequest);
 
             testFixture.Result = Retry.Do(() => testFixture.EntitySerializer.Deserialize(testFixture.RequestId));
@@ -64,8 +56,6 @@
         /// <summary>The context.</summary>
         protected override void Context()
         {
-            base.Context();
-
             testFixture = new WinOpportunitySpecificationFixture();
             testFixture.PerformTestSetup();
         }
