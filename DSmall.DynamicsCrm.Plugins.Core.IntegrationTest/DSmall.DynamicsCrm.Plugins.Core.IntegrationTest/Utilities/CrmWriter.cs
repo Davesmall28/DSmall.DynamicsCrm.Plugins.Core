@@ -16,11 +16,11 @@
             this.organizationService = organizationService;
         }
 
-        /// <summary>The create contact.</summary>
+        /// <summary>The create entity.</summary>
         /// <param name="requestId">The request Id.</param>
         /// <param name="entity">The entity.</param>
         /// <returns>The <see cref="Guid"/>.</returns>
-        public Guid CreateContact(Guid requestId, Entity entity)
+        public Guid Create(Guid requestId, Entity entity)
         {
             var request = new CreateRequest
             {
@@ -33,11 +33,11 @@
             return response.id;
         }
 
-        /// <summary>The create contact.</summary>
+        /// <summary>The update entity.</summary>
         /// <param name="requestId">The request Id.</param>
         /// <param name="entity">The entity.</param>
         /// <returns>The <see cref="Guid"/>.</returns>
-        public Guid UpdateContact(Guid requestId, Entity entity)
+        public Guid Update(Guid requestId, Entity entity)
         {
             var request = new UpdateRequest
             {
@@ -48,6 +48,15 @@
             organizationService.Execute(request);
 
             return entity.Id;
+        }
+
+        /// <summary>The execute.</summary>
+        /// <param name="requestId">The request Id.</param>
+        /// <param name="organizationRequest">The organization request.</param>
+        public void Execute(Guid requestId, OrganizationRequest organizationRequest)
+        {
+            organizationRequest.RequestId = requestId;
+            organizationService.Execute(organizationRequest);
         }
     }
 }

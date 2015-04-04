@@ -3,7 +3,6 @@
     using System;
     using System.IO;
     using System.Linq;
-    using System.Threading;
     using System.Xml.Serialization;
     using DSmall.DynamicsCrm.Plugins.Core.IntegrationTest.Model;
     using Microsoft.Xrm.Sdk;
