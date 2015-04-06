@@ -47,5 +47,4 @@
             UpdateContent = updateContent;
         }
     }
-
 }
