@@ -29,6 +29,28 @@
             return SetupServiceProvider(mockPluginContext, mockOrganizationServiceFactory, mockTracingService);
         }
 
+        /// <summary>The setup for set state plugin.</summary>
+        /// <returns>The <see cref="Mock"/>.</returns>
+        public Mock<IServiceProvider> SetupForSetStatePlugin()
+        {
+            var mockPluginContext = SetupPluginContextForSetStatePlugin();
+            var mockOrganizationServiceFactory = SetupOrganizationServiceFactory();
+            var mockTracingService = new Mock<ITracingService>();
+
+            return SetupServiceProvider(mockPluginContext, mockOrganizationServiceFactory, mockTracingService);
+        }
+
+        /// <summary>The setup for add item plugin.</summary>
+        /// <returns>The <see cref="Mock"/>.</returns>
+        public Mock<IServiceProvider> SetupForAddItemPlugin()
+        {
+            var mockPluginContext = SetupPluginContextFoAddItemPlugin();
+            var mockOrganizationServiceFactory = SetupOrganizationServiceFactory();
+            var mockTracingService = new Mock<ITracingService>();
+
+            return SetupServiceProvider(mockPluginContext, mockOrganizationServiceFactory, mockTracingService);
+        }
+
         /// <summary>The setup organization service factory.</summary>
         /// <returns>The <see cref="Mock"/>.</returns>
         public Mock<IOrganizationServiceFactory> SetupOrganizationServiceFactory()
@@ -102,6 +124,46 @@
             return mockPluginContext;
         }
 
+        private static Mock<IPluginExecutionContext> SetupPluginContextForSetStatePlugin()
+        {
+            var mockPluginContext = new Mock<IPluginExecutionContext>();
+            mockPluginContext
+                .Setup(context => context.UserId)
+                .Returns(Guid.NewGuid);
+
+            mockPluginContext
+                .Setup(context => context.InputParameters)
+                .Returns(GetSetStatePluginEntityCollection);
+
+            return mockPluginContext;
+        }
+
+        private Mock<IPluginExecutionContext> SetupPluginContextFoAddItemPlugin()
+        {
+            var mockPluginContext = new Mock<IPluginExecutionContext>();
+            mockPluginContext
+                .Setup(context => context.UserId)
+                .Returns(Guid.NewGuid);
+
+            mockPluginContext
+                .Setup(context => context.InputParameters)
+                .Returns(GetAddItemPluginEntityCollection);
+
+            return mockPluginContext;
+        }
+
+        private ParameterCollection GetAddItemPluginEntityCollection()
+        {
+            return new ParameterCollection
+            {
+                { "CampaignActivityId", Guid.NewGuid() },
+                { "ItemId", Guid.NewGuid() },
+                { "EntityName", "Contact" },
+                { "CampaignId", Guid.NewGuid() },
+                { "EntityId", Guid.NewGuid() }
+            };
+        }
+
         private static ParameterCollection GetMergePluginEntityCollection()
         {
             return new ParameterCollection
@@ -109,6 +171,16 @@
                 { "Target", new EntityReference("contact", Guid.NewGuid()) },
                 { "SubordinateId", Guid.NewGuid() },
                 { "UpdateContent", new Entity("contact") { Id = Guid.NewGuid() } }
+            };
+        }
+
+        private static ParameterCollection GetSetStatePluginEntityCollection()
+        {
+            return new ParameterCollection
+            {
+                { "EntityMoniker", new EntityReference("contact", Guid.NewGuid()) },
+                { "State", new OptionSetValue(1) },
+                { "Status", new OptionSetValue(1) }
             };
         }
 

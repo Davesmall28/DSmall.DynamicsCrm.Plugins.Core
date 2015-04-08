@@ -8,7 +8,7 @@
     [TestFixture]
     public class WhenExecutingStandardPluginWithInvalidParameters : SpecificationBase
     {
-        private PluginTestFixture testFixture;
+        private SpecificationFixture<DummyPlugin> testFixture;
         private bool isExceptionThrown;
         private Exception exceptionThrown;
 
@@ -49,7 +49,7 @@
         {
             base.Context();
 
-            testFixture = new PluginTestFixture();
+            testFixture = new SpecificationFixture<DummyPlugin>();
             testFixture.PerformTestSetup();
         }
     }

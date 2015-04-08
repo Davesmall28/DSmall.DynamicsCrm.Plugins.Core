@@ -85,6 +85,14 @@
     <Otherwise />
   </Choose>
   <ItemGroup>
+    <Compile Include="AddItemCampaignActivityPlugin\AddItemCampaignActivityPluginSpecificationFixture.cs" />
+    <Compile Include="AddItemCampaignActivityPlugin\WhenExecutingAddItemCampaignActivityPluginSuccessfully.cs" />
+    <Compile Include="AddItemCampaignActivityPlugin\DummyAddItemCampaignActivityPlugin.cs" />
+    <Compile Include="AddItemCampaignPlugin\AddItemCampaignPluginSpecificationFixture.cs" />
+    <Compile Include="AddItemCampaignPlugin\WhenExecutingAddItemCampaignPluginSuccessfully.cs" />
+    <Compile Include="AddItemCampaignPlugin\DummyAddItemCampaignPlugin.cs" />
+    <Compile Include="CreatePlugin\DummyCreatePlugin.cs" />
+    <Compile Include="CreatePlugin\WhenExecutingCreatePluginWithValidParameters.cs" />
     <Compile Include="CrmFieldNameHelper\CrmFieldNameHelperSpecificationFixture.cs" />
     <Compile Include="CrmFieldNameHelper\WhenGetCrmFieldNameReturnsSuccessfully.cs" />
     <Compile Include="CrmFieldNameHelper\DummyEntity.cs" />
@@ -102,14 +110,16 @@
     <Compile Include="Extensions\InputParameterExtensionSpecifications.cs" />
     <Compile Include="Extensions\PluginConfigurationExtensionSpecifications.cs" />
     <Compile Include="Extensions\PluginConfigurationExtensionSpecificationsFixture.cs" />
+    <Compile Include="MergePlugin\MergePluginSpecificationFixture.cs" />
+    <Compile Include="SetStatePlugin\SetStatePluginSpecificationFixture.cs" />
+    <Compile Include="TestFramework\SpecificationFixture.cs" />
     <Compile Include="MergePlugin\WhenExecutingMergePluginWithValidParameters.cs" />
-    <Compile Include="MergePlugin\MergePluginTestFixture.cs" />
     <Compile Include="MergePlugin\DummyMergePlugin.cs" />
+    <Compile Include="SetStatePlugin\DummySetStatePlugin.cs" />
+    <Compile Include="SetStatePlugin\WhenExecutingTheSetStatePluginSuccessfully.cs" />
     <Compile Include="StandardPlugin\WhenExecutingStandardPluginWithInvalidParameters.cs" />
     <Compile Include="StandardPlugin\DummyPlugin.cs" />
-    <Compile Include="EntityPlugin\EntityPluginTestFixture.cs" />
-    <Compile Include="EntityPlugin\EntityPluginTests.cs" />
-    <Compile Include="StandardPlugin\PluginTestFixture.cs" />
+    <Compile Include="EntityPlugin\WhenExecutingEntityPluginWithValidParameters.cs" />
     <Compile Include="StandardPlugin\WhenExecutingWithValidParameters.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utilities\ServiceProviderInitializer.cs" />
@@ -123,6 +133,7 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>
