@@ -3,11 +3,11 @@
     using DSmall.UnitTest.Core;
     using NUnit.Framework;
 
-    /// <summary>The when executing with valid parameters.</summary>
+    /// <summary>The when executing create plugin with valid parameters.</summary>
     [TestFixture]
-    public class WhenExecutingWithValidParameters : SpecificationBase
+    public class WhenExecutingCreatePluginWithValidParameters : SpecificationBase
     {
-        private SpecificationFixture<DummyPlugin> testFixture;
+        private SpecificationFixture<DummyCreatePlugin> testFixture;
 
         /// <summary>The organization service should not be null.</summary>
         [Test]
@@ -30,6 +30,13 @@
             Assert.IsNotNull(testFixture.UnderTest.TracingService);
         }
 
+        /// <summary>The target entity should not be null.</summary>
+        [Test]
+        public void TargetEntityShouldNotBeNull()
+        {
+            Assert.IsNotNull(testFixture.UnderTest.TargetEntity);
+        }
+
         /// <summary>The because of.</summary>
         protected override void BecauseOf()
         {
@@ -43,7 +50,7 @@
         {
             base.Context();
 
-            testFixture = new SpecificationFixture<DummyPlugin>();
+            testFixture = new SpecificationFixture<DummyCreatePlugin>();
             testFixture.PerformTestSetup();
         }
     }

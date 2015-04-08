@@ -3,11 +3,11 @@
     using DSmall.UnitTest.Core;
     using NUnit.Framework;
 
-    /// <summary>The when executing with valid parameters.</summary>
+    /// <summary>The when executing the set state plugin successfully.</summary>
     [TestFixture]
-    public class WhenExecutingWithValidParameters : SpecificationBase
+    public class WhenExecutingTheSetStatePluginSuccessfully : SpecificationBase
     {
-        private SpecificationFixture<DummyPlugin> testFixture;
+        private SetStatePluginSpecificationFixture testFixture;
 
         /// <summary>The organization service should not be null.</summary>
         [Test]
@@ -30,6 +30,27 @@
             Assert.IsNotNull(testFixture.UnderTest.TracingService);
         }
 
+        /// <summary>The entity moniker should not be null.</summary>
+        [Test]
+        public void EntityMonikerShouldNotBeNull()
+        {
+            Assert.IsNotNull(testFixture.UnderTest.EntityMoniker);
+        }
+
+        /// <summary>The state should not be null.</summary>
+        [Test]
+        public void StateShouldNotBeNull()
+        {
+            Assert.IsNotNull(testFixture.UnderTest.State);
+        }
+
+        /// <summary>The status should not be null.</summary>
+        [Test]
+        public void StatusShouldNotBeNull()
+        {
+            Assert.IsNotNull(testFixture.UnderTest.Status);
+        }
+
         /// <summary>The because of.</summary>
         protected override void BecauseOf()
         {
@@ -43,7 +64,7 @@
         {
             base.Context();
 
-            testFixture = new SpecificationFixture<DummyPlugin>();
+            testFixture = new SetStatePluginSpecificationFixture();
             testFixture.PerformTestSetup();
         }
     }

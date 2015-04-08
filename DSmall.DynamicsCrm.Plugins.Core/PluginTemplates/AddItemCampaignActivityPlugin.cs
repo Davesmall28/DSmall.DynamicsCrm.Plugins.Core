@@ -16,10 +16,10 @@
             ITracingService tracingService)
         {
             var campaignActivityId = pluginExecutionContext.InputParameters.GetParameter<Guid>(InputParameterType.CampaignActivityId);
-            var entityName = pluginExecutionContext.InputParameters.GetParameter<string>(InputParameterType.EntityName);
             var itemId = pluginExecutionContext.InputParameters.GetParameter<Guid>(InputParameterType.ItemId);
+            var entityName = pluginExecutionContext.InputParameters.GetParameter<string>(InputParameterType.EntityName);
 
-            Execute(organizationService, pluginExecutionContext, tracingService, campaignActivityId, entityName, itemId);
+            Execute(organizationService, pluginExecutionContext, tracingService, campaignActivityId, itemId, entityName);
         }
 
         /// <summary>The execute.</summary>
@@ -27,14 +27,14 @@
         /// <param name="pluginExecutionContext">The plugin execution context.</param>
         /// <param name="tracingService">The tracing service.</param>
         /// <param name="campaignActivityId">The campaign activity id.</param>
-        /// <param name="entityName">The entity name.</param>
         /// <param name="itemId">The item id.</param>
+        /// <param name="entityName">The entity name.</param>
         public abstract void Execute(
             IOrganizationService organizationService,
             IPluginExecutionContext pluginExecutionContext,
             ITracingService tracingService,
             Guid campaignActivityId,
-            string entityName,
-            Guid itemId);
+            Guid itemId,
+            string entityName);
     }
 }

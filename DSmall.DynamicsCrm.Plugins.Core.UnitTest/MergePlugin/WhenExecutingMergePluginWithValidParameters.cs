@@ -7,7 +7,7 @@
     [TestFixture]
     public class WhenExecutingMergePluginWithValidParameters : SpecificationBase
     {
-        private MergePluginTestFixture testFixture;
+        private MergePluginSpecificationFixture testFixture;
 
         /// <summary>The organization service should not be null.</summary>
         [Test]
@@ -64,7 +64,7 @@
         {
             base.Context();
 
-            testFixture = new MergePluginTestFixture();
+            testFixture = new MergePluginSpecificationFixture();
             testFixture.PerformTestSetup();
         }
     }
