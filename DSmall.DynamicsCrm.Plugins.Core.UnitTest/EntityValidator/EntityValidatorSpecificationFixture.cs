@@ -1,5 +1,6 @@
 ﻿namespace DSmall.DynamicsCrm.Plugins.Core.UnitTest
 {
+    using System;
     using Microsoft.Xrm.Sdk;
     using Moq;
 
@@ -18,7 +19,11 @@
             UnderTest = new EntityValidator();
 
             var serviceProviderInitializer = new ServiceProviderInitializer();
-            PluginContext = serviceProviderInitializer.SetupPluginContext();
+            PluginContext = serviceProviderInitializer
+                .SetupPluginContext()
+                .WithInputParameters(GetTargetEntityCollection())
+                .WithPreEntityImages(GetPreImageEntityCollection())
+                .WithPostEntityImages(GetPostImageEntityCollection());
         }
 
         /// <summary>The perform test setup with null target entity.</summary>
@@ -26,8 +31,33 @@
         {
             UnderTest = new EntityValidator();
 
-            var serviceProviderInitializer = new ServiceProviderInitializer();
-            PluginContext = serviceProviderInitializer.SetupPluginContextWithNullPostImage();
+            PluginContext = new ServiceProviderInitializer()
+                .SetupPluginContext()
+                .WithPostEntityImages(new EntityImageCollection { { "PostImage", null } });
+        }
+
+        private static ParameterCollection GetTargetEntityCollection()
+        {
+            return new ParameterCollection
+            {
+                { "Target", new Entity("contact") { Id = Guid.NewGuid() } }
+            };
+        }
+
+        private static EntityImageCollection GetPreImageEntityCollection()
+        {
+            return new EntityImageCollection
+            {
+                { "PreImage", new Entity("contact") { Id = Guid.NewGuid() } }
+            };
+        }
+
+        private static EntityImageCollection GetPostImageEntityCollection()
+        {
+            return new EntityImageCollection
+            {
+                { "PostImage", new Entity("contact") { Id = Guid.NewGuid() } }
+            };
         }
     }
 }

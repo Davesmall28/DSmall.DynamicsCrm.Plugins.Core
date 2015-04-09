@@ -18,39 +18,6 @@
             return SetupServiceProvider(mockPluginContext, mockOrganizationServiceFactory, mockTracingService);
         }
 
-        /// <summary>The setup for merge plugin.</summary>
-        /// <returns>The <see cref="Mock"/>.</returns>
-        public Mock<IServiceProvider> SetupForMergePlugin()
-        {
-            var mockPluginContext = SetupPluginContextForMergePlugin();
-            var mockOrganizationServiceFactory = SetupOrganizationServiceFactory();
-            var mockTracingService = new Mock<ITracingService>();
-
-            return SetupServiceProvider(mockPluginContext, mockOrganizationServiceFactory, mockTracingService);
-        }
-
-        /// <summary>The setup for set state plugin.</summary>
-        /// <returns>The <see cref="Mock"/>.</returns>
-        public Mock<IServiceProvider> SetupForSetStatePlugin()
-        {
-            var mockPluginContext = SetupPluginContextForSetStatePlugin();
-            var mockOrganizationServiceFactory = SetupOrganizationServiceFactory();
-            var mockTracingService = new Mock<ITracingService>();
-
-            return SetupServiceProvider(mockPluginContext, mockOrganizationServiceFactory, mockTracingService);
-        }
-
-        /// <summary>The setup for add item plugin.</summary>
-        /// <returns>The <see cref="Mock"/>.</returns>
-        public Mock<IServiceProvider> SetupForAddItemPlugin()
-        {
-            var mockPluginContext = SetupPluginContextFoAddItemPlugin();
-            var mockOrganizationServiceFactory = SetupOrganizationServiceFactory();
-            var mockTracingService = new Mock<ITracingService>();
-
-            return SetupServiceProvider(mockPluginContext, mockOrganizationServiceFactory, mockTracingService);
-        }
-
         /// <summary>The setup organization service factory.</summary>
         /// <returns>The <see cref="Mock"/>.</returns>
         public Mock<IOrganizationServiceFactory> SetupOrganizationServiceFactory()
@@ -74,27 +41,6 @@
                 .Setup(context => context.UserId)
                 .Returns(Guid.NewGuid);
 
-            mockPluginContext
-                .Setup(context => context.InputParameters)
-                .Returns(GetTargetEntityCollection);
-            mockPluginContext
-                .Setup(context => context.PreEntityImages)
-                .Returns(GetPreImageEntityCollection);
-            mockPluginContext
-                .Setup(context => context.PostEntityImages)
-                .Returns(GetPostImageEntityCollection);
-
-            return mockPluginContext;
-        }
-
-        /// <summary>The setup plugin context with null target entity.</summary>
-        /// <returns>The <see cref="Mock"/>.</returns>
-        public Mock<IPluginExecutionContext> SetupPluginContextWithNullPostImage()
-        {
-            var mockPluginContext = new Mock<IPluginExecutionContext>();
-            mockPluginContext
-                .Setup(context => context.PostEntityImages)
-                .Returns(new EntityImageCollection { { "PostImage", null } });
             return mockPluginContext;
         }
 
@@ -108,104 +54,6 @@
             serviceProvider.Setup(provider => provider.GetService(typeof(ITracingService))).Returns(mockTracingService.Object);
 
             return serviceProvider;
-        }
-
-        private static Mock<IPluginExecutionContext> SetupPluginContextForMergePlugin()
-        {
-            var mockPluginContext = new Mock<IPluginExecutionContext>();
-            mockPluginContext
-                .Setup(context => context.UserId)
-                .Returns(Guid.NewGuid);
-
-            mockPluginContext
-                .Setup(context => context.InputParameters)
-                .Returns(GetMergePluginEntityCollection);
-
-            return mockPluginContext;
-        }
-
-        private static Mock<IPluginExecutionContext> SetupPluginContextForSetStatePlugin()
-        {
-            var mockPluginContext = new Mock<IPluginExecutionContext>();
-            mockPluginContext
-                .Setup(context => context.UserId)
-                .Returns(Guid.NewGuid);
-
-            mockPluginContext
-                .Setup(context => context.InputParameters)
-                .Returns(GetSetStatePluginEntityCollection);
-
-            return mockPluginContext;
-        }
-
-        private Mock<IPluginExecutionContext> SetupPluginContextFoAddItemPlugin()
-        {
-            var mockPluginContext = new Mock<IPluginExecutionContext>();
-            mockPluginContext
-                .Setup(context => context.UserId)
-                .Returns(Guid.NewGuid);
-
-            mockPluginContext
-                .Setup(context => context.InputParameters)
-                .Returns(GetAddItemPluginEntityCollection);
-
-            return mockPluginContext;
-        }
-
-        private ParameterCollection GetAddItemPluginEntityCollection()
-        {
-            return new ParameterCollection
-            {
-                { "CampaignActivityId", Guid.NewGuid() },
-                { "ItemId", Guid.NewGuid() },
-                { "EntityName", "Contact" },
-                { "CampaignId", Guid.NewGuid() },
-                { "EntityId", Guid.NewGuid() }
-            };
-        }
-
-        private static ParameterCollection GetMergePluginEntityCollection()
-        {
-            return new ParameterCollection
-            {
-                { "Target", new EntityReference("contact", Guid.NewGuid()) },
-                { "SubordinateId", Guid.NewGuid() },
-                { "UpdateContent", new Entity("contact") { Id = Guid.NewGuid() } }
-            };
-        }
-
-        private static ParameterCollection GetSetStatePluginEntityCollection()
-        {
-            return new ParameterCollection
-            {
-                { "EntityMoniker", new EntityReference("contact", Guid.NewGuid()) },
-                { "State", new OptionSetValue(1) },
-                { "Status", new OptionSetValue(1) }
-            };
-        }
-
-        private static ParameterCollection GetTargetEntityCollection()
-        {
-            return new ParameterCollection
-            {
-                { "Target", new Entity("contact") { Id = Guid.NewGuid() } }
-            };
-        }
-
-        private static EntityImageCollection GetPostImageEntityCollection()
-        {
-            return new EntityImageCollection
-            {
-                { "PostImage", new Entity("contact") { Id = Guid.NewGuid() } }
-            };
-        }
-
-        private static EntityImageCollection GetPreImageEntityCollection()
-        {
-            return new EntityImageCollection
-            {
-                { "PreImage", new Entity("contact") { Id = Guid.NewGuid() } }
-            };
         }
     }
 }

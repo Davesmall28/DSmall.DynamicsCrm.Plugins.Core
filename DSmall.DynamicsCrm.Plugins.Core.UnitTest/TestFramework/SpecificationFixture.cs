@@ -12,7 +12,7 @@
         public SpecificationFixture()
         {
             var serviceProviderInitializer = new ServiceProviderInitializer();
-            ServiceProvider = serviceProviderInitializer.Setup();
+            ServiceProvider = serviceProviderInitializer.Setup().WithDefault();
 
             UnderTest = (TUnderTest)Activator.CreateInstance(typeof(TUnderTest));
         }
