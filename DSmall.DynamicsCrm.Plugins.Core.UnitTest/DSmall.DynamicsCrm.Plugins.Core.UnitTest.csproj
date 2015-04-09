@@ -122,6 +122,8 @@
     <Compile Include="EntityPlugin\WhenExecutingEntityPluginWithValidParameters.cs" />
     <Compile Include="StandardPlugin\WhenExecutingWithValidParameters.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utilities\PluginExecutionContextExtensions.cs" />
+    <Compile Include="Utilities\ServiceProviderExtensions.cs" />
     <Compile Include="Utilities\ServiceProviderInitializer.cs" />
   </ItemGroup>
   <ItemGroup>
