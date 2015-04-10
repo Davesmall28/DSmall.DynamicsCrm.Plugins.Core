@@ -91,6 +91,9 @@
     <Compile Include="AddItemCampaignPlugin\AddItemCampaignPluginSpecificationFixture.cs" />
     <Compile Include="AddItemCampaignPlugin\WhenExecutingAddItemCampaignPluginSuccessfully.cs" />
     <Compile Include="AddItemCampaignPlugin\DummyAddItemCampaignPlugin.cs" />
+    <Compile Include="AddToQueuePlugin\AddToQueueSpecificationFixture.cs" />
+    <Compile Include="AddToQueuePlugin\DummyAddToQueuePlugin.cs" />
+    <Compile Include="AddToQueuePlugin\WhenExecutingAddToQueuePluginSuccessfully.cs" />
     <Compile Include="CreatePlugin\DummyCreatePlugin.cs" />
     <Compile Include="CreatePlugin\WhenExecutingCreatePluginWithValidParameters.cs" />
     <Compile Include="CrmFieldNameHelper\CrmFieldNameHelperSpecificationFixture.cs" />
@@ -125,6 +128,9 @@
     <Compile Include="Utilities\PluginExecutionContextExtensions.cs" />
     <Compile Include="Utilities\ServiceProviderExtensions.cs" />
     <Compile Include="Utilities\ServiceProviderInitializer.cs" />
+    <Compile Include="WinQuotePlugin\DummyWinQuotePlugin.cs" />
+    <Compile Include="WinQuotePlugin\WhenExecutingWinQuotePluginSuccessfully.cs" />
+    <Compile Include="WinQuotePlugin\WinQuotePluginSpecificationFixture.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DSmall.DynamicsCrm.Plugins.Core\DSmall.DynamicsCrm.Plugins.Core.csproj">

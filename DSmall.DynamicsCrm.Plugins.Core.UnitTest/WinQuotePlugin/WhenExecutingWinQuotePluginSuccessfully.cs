@@ -3,11 +3,10 @@
     using DSmall.UnitTest.Core;
     using NUnit.Framework;
 
-    /// <summary>The when executing add item campaign activity plugin successfully.</summary>
-    [TestFixture]
-    public class WhenExecutingAddItemCampaignActivityPluginSuccessfully : SpecificationBase
+    /// <summary>The when executing win quote plugin successfully.</summary>
+    public class WhenExecutingWinQuotePluginSuccessfully : SpecificationBase
     {
-        private AddItemCampaignActivityPluginSpecificationFixture testFixture;
+        private WinQuotePluginSpecificationFixture testFixture;
 
         /// <summary>The organization service should not be null.</summary>
         [Test]
@@ -30,25 +29,18 @@
             Assert.IsNotNull(testFixture.UnderTest.TracingService);
         }
 
-        /// <summary>The campaign activity id should not be null.</summary>
+        /// <summary>The quote entity should not be null.</summary>
         [Test]
-        public void CampaignActivityIdShouldNotBeNull()
+        public void QuoteEntityShouldNotBeNull()
         {
-            Assert.IsNotNull(testFixture.UnderTest.CampaignActivityId);
+            Assert.IsNotNull(testFixture.UnderTest.QuoteClose);
         }
 
-        /// <summary>The item id should not be null.</summary>
+        /// <summary>The status should not be null.</summary>
         [Test]
-        public void ItemIdShouldNotBeNull()
+        public void StatusShouldNotBeNull()
         {
-            Assert.IsNotNull(testFixture.UnderTest.ItemId);
-        }
-
-        /// <summary>The entity name should not be null.</summary>
-        [Test]
-        public void EntityNameShouldNotBeNull()
-        {
-            Assert.IsNotNull(testFixture.UnderTest.EntityName);
+            Assert.IsNotNull(testFixture.UnderTest.Status);
         }
 
         /// <summary>The because of.</summary>
@@ -64,7 +56,7 @@
         {
             base.Context();
 
-            testFixture = new AddItemCampaignActivityPluginSpecificationFixture();
+            testFixture = new WinQuotePluginSpecificationFixture();
             testFixture.PerformTestSetup();
         }
     }
