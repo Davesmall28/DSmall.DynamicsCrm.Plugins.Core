@@ -3,11 +3,10 @@
     using DSmall.UnitTest.Core;
     using NUnit.Framework;
 
-    /// <summary>The when executing add item campaign activity plugin successfully.</summary>
-    [TestFixture]
-    public class WhenExecutingAddItemCampaignActivityPluginSuccessfully : SpecificationBase
+    /// <summary>The when executing add to queue plugin successfully.</summary>
+    public class WhenExecutingAddToQueuePluginSuccessfully : SpecificationBase
     {
-        private AddItemCampaignActivityPluginSpecificationFixture testFixture;
+        private AddToQueueSpecificationFixture testFixture;
 
         /// <summary>The organization service should not be null.</summary>
         [Test]
@@ -30,25 +29,25 @@
             Assert.IsNotNull(testFixture.UnderTest.TracingService);
         }
 
-        /// <summary>The campaign activity id should not be null.</summary>
+        /// <summary>The target entity reference should not be null.</summary>
         [Test]
-        public void CampaignActivityIdShouldNotBeNull()
+        public void TargetEntityReferenceShouldNotBeNull()
         {
-            Assert.IsNotNull(testFixture.UnderTest.CampaignActivityId);
+            Assert.IsNotNull(testFixture.UnderTest.Target);
         }
 
-        /// <summary>The item id should not be null.</summary>
+        /// <summary>The destination queue id should not be null.</summary>
         [Test]
-        public void ItemIdShouldNotBeNull()
+        public void DestinationQueueIdShouldNotBeNull()
         {
-            Assert.IsNotNull(testFixture.UnderTest.ItemId);
+            Assert.IsNotNull(testFixture.UnderTest.DestinationQueueId);
         }
 
-        /// <summary>The entity name should not be null.</summary>
+        /// <summary>The source queue id should not be null.</summary>
         [Test]
-        public void EntityNameShouldNotBeNull()
+        public void SourceQueueIdShouldNotBeNull()
         {
-            Assert.IsNotNull(testFixture.UnderTest.EntityName);
+            Assert.IsNotNull(testFixture.UnderTest.SourceQueueId);
         }
 
         /// <summary>The because of.</summary>
@@ -64,7 +63,7 @@
         {
             base.Context();
 
-            testFixture = new AddItemCampaignActivityPluginSpecificationFixture();
+            testFixture = new AddToQueueSpecificationFixture();
             testFixture.PerformTestSetup();
         }
     }
