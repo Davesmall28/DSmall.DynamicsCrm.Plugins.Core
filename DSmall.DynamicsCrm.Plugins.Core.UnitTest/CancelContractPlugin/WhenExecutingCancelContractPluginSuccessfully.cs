@@ -6,7 +6,7 @@
     /// <summary>The when executing cancel contract plugin successfully.</summary>
     public class WhenExecutingCancelContractPluginSuccessfully : SpecificationBase
     {
-        private CancelContractSpecificationFixture testFixture;
+        private CancelContractPluginSpecificationFixture testFixture;
 
         /// <summary>The organization service should not be null.</summary>
         [Test]
@@ -63,7 +63,7 @@
         {
             base.Context();
 
-            testFixture = new CancelContractSpecificationFixture();
+            testFixture = new CancelContractPluginSpecificationFixture();
             testFixture.PerformTestSetup();
         }
     }

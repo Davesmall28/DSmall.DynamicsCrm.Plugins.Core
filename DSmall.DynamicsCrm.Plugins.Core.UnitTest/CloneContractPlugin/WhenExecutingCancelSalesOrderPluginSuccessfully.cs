@@ -6,7 +6,7 @@
     /// <summary>The when executing clone contract plugin successfully.</summary>
     public class WhenExecutingCloneContractPluginSuccessfully : SpecificationBase
     {
-        private CloneContractSpecificationFixture testFixture;
+        private CloneContractPluginSpecificationFixture testFixture;
 
         /// <summary>The organization service should not be null.</summary>
         [Test]
@@ -56,7 +56,7 @@
         {
             base.Context();
 
-            testFixture = new CloneContractSpecificationFixture();
+            testFixture = new CloneContractPluginSpecificationFixture();
             testFixture.PerformTestSetup();
         }
     }

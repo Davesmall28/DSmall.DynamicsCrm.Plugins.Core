@@ -73,6 +73,7 @@
     <Compile Include="Extensions\InputParameterExtensions.cs" />
     <Compile Include="Extensions\PluginConfigurationExtensions.cs" />
     <Compile Include="PluginFramework\EntityPlugin.cs" />
+    <Compile Include="Utilities\IStateRetriever.cs" />
     <Compile Include="PluginTemplates\MergePlugin.cs" />
     <Compile Include="PluginFramework\Plugin.cs" />
     <Compile Include="PluginTemplates\AddItemCampaignActivityPlugin.cs" />
@@ -93,6 +94,7 @@
     <Compile Include="PluginTemplates\LoseOpportunityPlugin.cs" />
     <Compile Include="PluginTemplates\QualifyLeadPlugin.cs" />
     <Compile Include="PluginTemplates\SetStatePlugin.cs" />
+    <Compile Include="Utilities\StateRetriever.cs" />
     <Compile Include="PluginTemplates\UnlockInvoicePricingPlugin.cs" />
     <Compile Include="PluginTemplates\UnlockSalesOrderPricingPlugin.cs" />
     <Compile Include="PluginTemplates\UpdatePlugin.cs" />

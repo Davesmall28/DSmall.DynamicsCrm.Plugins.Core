@@ -6,23 +6,23 @@
     /// <summary>The dummy merge plugin.</summary>
     public class DummyMergePlugin : MergePlugin
     {
-        /// <summary>Gets or sets the organization service.</summary>
-        public IOrganizationService OrganizationService { get; set; }
+        /// <summary>Gets the organization service.</summary>
+        public IOrganizationService OrganizationService { get; private set; }
 
-        /// <summary>Gets or sets the plugin execution context.</summary>
-        public IPluginExecutionContext PluginExecutionContext { get; set; }
+        /// <summary>Gets the plugin execution context.</summary>
+        public IPluginExecutionContext PluginExecutionContext { get; private set; }
 
-        /// <summary>Gets or sets the tracing service.</summary>
-        public ITracingService TracingService { get; set; }
+        /// <summary>Gets the tracing service.</summary>
+        public ITracingService TracingService { get; private set; }
 
-        /// <summary>Gets or sets the target entity.</summary>
-        public EntityReference TargetEntity { get; set; }
+        /// <summary>Gets the target entity.</summary>
+        public EntityReference TargetEntity { get; private set; }
 
-        /// <summary>Gets or sets the subordinate id.</summary>
-        public Guid SubordinateId { get; set; }
+        /// <summary>Gets the subordinate id.</summary>
+        public Guid SubordinateId { get; private set; }
 
-        /// <summary>Gets or sets the update content.</summary>
-        public Entity UpdateContent { get; set; }
+        /// <summary>Gets the update content.</summary>
+        public Entity UpdateContent { get; private set; }
 
         /// <summary>The execute.</summary>
         /// <param name="organizationService">The organization service.</param>

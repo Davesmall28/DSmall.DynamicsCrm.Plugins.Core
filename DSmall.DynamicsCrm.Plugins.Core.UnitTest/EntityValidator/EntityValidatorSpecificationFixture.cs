@@ -7,11 +7,11 @@
     /// <summary>The entity validator specification fixture.</summary>
     public class EntityValidatorSpecificationFixture
     {
-        /// <summary>Gets or sets the under test.</summary>
-        public IEntityValidator UnderTest { get; set; }
+        /// <summary>Gets the under test.</summary>
+        public IEntityValidator UnderTest { get; private set; }
 
-        /// <summary>Gets or sets the plugin context.</summary>
-        public Mock<IPluginExecutionContext> PluginContext { get; set; }
+        /// <summary>Gets the plugin context.</summary>
+        public Mock<IPluginExecutionContext> PluginContext { get; private set; }
 
         /// <summary>The perform test setup.</summary>
         public void PerformTestSetup()

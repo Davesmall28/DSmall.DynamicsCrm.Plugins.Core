@@ -6,7 +6,7 @@
     /// <summary>The when executing close incident plugin successfully.</summary>
     public class WhenExecutingCloseIncidentPluginSuccessfully : SpecificationBase
     {
-        private CloseIncidentSpecificationFixture testFixture;
+        private CloseIncidentPluginSpecificationFixture testFixture;
 
         /// <summary>The organization service should not be null.</summary>
         [Test]
@@ -56,7 +56,7 @@
         {
             base.Context();
 
-            testFixture = new CloseIncidentSpecificationFixture();
+            testFixture = new CloseIncidentPluginSpecificationFixture();
             testFixture.PerformTestSetup();
         }
     }

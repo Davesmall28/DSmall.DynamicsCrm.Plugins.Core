@@ -6,7 +6,7 @@
     /// <summary>The when executing add to queue plugin successfully.</summary>
     public class WhenExecutingAddToQueuePluginSuccessfully : SpecificationBase
     {
-        private AddToQueueSpecificationFixture testFixture;
+        private AddToQueuePluginSpecificationFixture testFixture;
 
         /// <summary>The organization service should not be null.</summary>
         [Test]
@@ -63,7 +63,7 @@
         {
             base.Context();
 
-            testFixture = new AddToQueueSpecificationFixture();
+            testFixture = new AddToQueuePluginSpecificationFixture();
             testFixture.PerformTestSetup();
         }
     }

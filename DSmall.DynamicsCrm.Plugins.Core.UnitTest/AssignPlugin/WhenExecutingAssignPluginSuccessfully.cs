@@ -6,7 +6,7 @@
     /// <summary>The when executing assign plugin successfully.</summary>
     public class WhenExecutingAssignPluginSuccessfully : SpecificationBase
     {
-        private AssignSpecificationFixture testFixture;
+        private AssignPluginSpecificationFixture testFixture;
 
         /// <summary>The organization service should not be null.</summary>
         [Test]
@@ -56,7 +56,7 @@
         {
             base.Context();
 
-            testFixture = new AssignSpecificationFixture();
+            testFixture = new AssignPluginSpecificationFixture();
             testFixture.PerformTestSetup();
         }
     }

@@ -2,8 +2,8 @@
 {
     using Microsoft.Xrm.Sdk;
 
-    /// <summary>The close quote specification fixture.</summary>
-    public class CloseQuoteSpecificationFixture : SpecificationFixture<DummyCloseQuotePlugin>
+    /// <summary>The lose opportunity plugin specification fixture.</summary>
+    public class LoseOpportunityPluginSpecificationFixture : SpecificationFixture<DummyLoseOpportunityPlugin>
     {
         /// <summary>The perform test setup.</summary>
         public override void PerformTestSetup()
@@ -15,7 +15,7 @@
         {
             return new ParameterCollection
             {
-                { "QuoteClose", new Entity("quoteclose") },
+                { "OpportunityClose", new Entity("opportunityclose") },
                 { "Status", new OptionSetValue(1) }
             };
         }

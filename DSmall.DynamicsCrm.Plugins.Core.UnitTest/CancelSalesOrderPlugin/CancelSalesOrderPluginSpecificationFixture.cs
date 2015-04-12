@@ -1,10 +1,9 @@
 ﻿namespace DSmall.DynamicsCrm.Plugins.Core.UnitTest
 {
-    using System;
     using Microsoft.Xrm.Sdk;
 
-    /// <summary>The cancel contract specification fixture.</summary>
-    public class CancelContractSpecificationFixture : SpecificationFixture<DummyCancelContractPlugin>
+    /// <summary>The cancel sales order plugin specification fixture.</summary>
+    public class CancelSalesOrderPluginSpecificationFixture : SpecificationFixture<DummyCancelSalesOrderPlugin>
     {
         /// <summary>The perform test setup.</summary>
         public override void PerformTestSetup()
@@ -16,8 +15,7 @@
         {
             return new ParameterCollection
             {
-                { "ContractId", Guid.NewGuid() },
-                { "CancelDate", DateTime.Now },
+                { "OrderClose", new Entity("order") },
                 { "Status", new OptionSetValue(1) }
             };
         }

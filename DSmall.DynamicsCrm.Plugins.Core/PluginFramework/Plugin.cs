@@ -12,8 +12,8 @@
             EntityValidator = new EntityValidator();
         }
 
-        /// <summary>Gets or sets the entity validator.</summary>
-        public IEntityValidator EntityValidator { get; set; }
+        /// <summary>Gets the entity validator.</summary>
+        public IEntityValidator EntityValidator { get; private set; }
 
         /// <summary>The execute.</summary>
         /// <param name="organizationService">The organization service.</param>

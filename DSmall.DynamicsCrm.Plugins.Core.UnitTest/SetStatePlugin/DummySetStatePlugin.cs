@@ -5,23 +5,23 @@
     /// <summary>The dummy set state plugin.</summary>
     public class DummySetStatePlugin : SetStatePlugin
     {
-        /// <summary>Gets or sets the organization service.</summary>
-        public IOrganizationService OrganizationService { get; set; }
+        /// <summary>Gets the organization service.</summary>
+        public IOrganizationService OrganizationService { get; private set; }
 
-        /// <summary>Gets or sets the plugin execution context.</summary>
-        public IPluginExecutionContext PluginExecutionContext { get; set; }
+        /// <summary>Gets the plugin execution context.</summary>
+        public IPluginExecutionContext PluginExecutionContext { get; private set; }
 
-        /// <summary>Gets or sets the tracing service.</summary>
-        public ITracingService TracingService { get; set; }
+        /// <summary>Gets the tracing service.</summary>
+        public ITracingService TracingService { get; private set; }
 
-        /// <summary>Gets or sets the entity moniker.</summary>
-        public EntityReference EntityMoniker { get; set; }
+        /// <summary>Gets the entity moniker.</summary>
+        public EntityReference EntityMoniker { get; private set; }
 
-        /// <summary>Gets or sets the state.</summary>
-        public OptionSetValue State { get; set; }
+        /// <summary>Gets the state.</summary>
+        public OptionSetValue State { get; private set; }
 
-        /// <summary>Gets or sets the status.</summary>
-        public OptionSetValue Status { get; set; }
+        /// <summary>Gets the status.</summary>
+        public OptionSetValue Status { get; private set; }
 
         /// <summary>The execute.</summary>
         /// <param name="organizationService">The organization service.</param>

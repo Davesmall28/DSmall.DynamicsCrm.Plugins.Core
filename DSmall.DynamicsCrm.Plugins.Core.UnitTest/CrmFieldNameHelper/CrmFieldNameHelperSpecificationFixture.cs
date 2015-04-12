@@ -7,11 +7,11 @@
     /// <summary>The crm field name helper specification fixture.</summary>
     public class CrmFieldNameHelperSpecificationFixture
     {
-        /// <summary>Gets or sets the under test.</summary>
-        public CrmFieldNameHelper UnderTest { get; set; }
+        /// <summary>Gets the under test.</summary>
+        public CrmFieldNameHelper UnderTest { get; private set; }
 
-        /// <summary>Gets or sets the attribute utilities.</summary>
-        public Mock<IAttributeUtilities> AttributeUtilities { get; set; }
+        /// <summary>Gets the attribute utilities.</summary>
+        public Mock<IAttributeUtilities> AttributeUtilities { get; private set; }
 
         /// <summary>The perform test setup.</summary>
         public void PerformTestSetup()

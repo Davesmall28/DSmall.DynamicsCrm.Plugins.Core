@@ -3,8 +3,8 @@
     using System;
     using Microsoft.Xrm.Sdk;
 
-    /// <summary>The clone contract specification fixture.</summary>
-    public class CloneContractSpecificationFixture : SpecificationFixture<DummyCloneContractPlugin>
+    /// <summary>The add to queue plugin specification fixture.</summary>
+    public class AddToQueuePluginSpecificationFixture : SpecificationFixture<DummyAddToQueuePlugin>
     {
         /// <summary>The perform test setup.</summary>
         public override void PerformTestSetup()
@@ -16,8 +16,9 @@
         {
             return new ParameterCollection
             {
-                { "ContractId", Guid.NewGuid() },
-                { "IncludeCanceledLines", true }
+                { "Target", new EntityReference("letter", Guid.NewGuid()) },
+                { "DestinationQueueId", Guid.NewGuid() },
+                { "SourceQueueId", Guid.NewGuid() }
             };
         }
     }
