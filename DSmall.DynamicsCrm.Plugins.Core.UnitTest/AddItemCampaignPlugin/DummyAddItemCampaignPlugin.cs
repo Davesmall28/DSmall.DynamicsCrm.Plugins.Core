@@ -6,23 +6,23 @@
     /// <summary>The dummy add item campaign plugin.</summary>
     public class DummyAddItemCampaignPlugin : AddItemCampaignPlugin
     {
-        /// <summary>Gets or sets the organization service.</summary>
-        public IOrganizationService OrganizationService { get; set; }
+        /// <summary>Gets the organization service.</summary>
+        public IOrganizationService OrganizationService { get; private set; }
 
-        /// <summary>Gets or sets the plugin execution context.</summary>
-        public IPluginExecutionContext PluginExecutionContext { get; set; }
+        /// <summary>Gets the plugin execution context.</summary>
+        public IPluginExecutionContext PluginExecutionContext { get; private set; }
 
-        /// <summary>Gets or sets the tracing service.</summary>
-        public ITracingService TracingService { get; set; }
+        /// <summary>Gets the tracing service.</summary>
+        public ITracingService TracingService { get; private set; }
 
-        /// <summary>Gets or sets the campaign id.</summary>
-        public Guid CampaignId { get; set; }
+        /// <summary>Gets the campaign id.</summary>
+        public Guid CampaignId { get; private set; }
 
-        /// <summary>Gets or sets the entity id.</summary>
-        public Guid EntityId { get; set; }
+        /// <summary>Gets the entity id.</summary>
+        public Guid EntityId { get; private set; }
 
-        /// <summary>Gets or sets the entity name.</summary>
-        public string EntityName { get; set; }
+        /// <summary>Gets the entity name.</summary>
+        public string EntityName { get; private set; }
 
         /// <summary>The execute.</summary>
         /// <param name="organizationService">The organization service.</param>

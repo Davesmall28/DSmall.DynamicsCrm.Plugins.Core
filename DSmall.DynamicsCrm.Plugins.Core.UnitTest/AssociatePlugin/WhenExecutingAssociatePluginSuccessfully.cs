@@ -6,7 +6,7 @@
     /// <summary>The when executing associate plugin successfully.</summary>
     public class WhenExecutingAssociatePluginSuccessfully : SpecificationBase
     {
-        private AssociateSpecificationFixture testFixture;
+        private AssociatePluginSpecificationFixture testFixture;
 
         /// <summary>The organization service should not be null.</summary>
         [Test]
@@ -63,7 +63,7 @@
         {
             base.Context();
 
-            testFixture = new AssociateSpecificationFixture();
+            testFixture = new AssociatePluginSpecificationFixture();
             testFixture.PerformTestSetup();
         }
     }

@@ -1,10 +1,9 @@
 ﻿namespace DSmall.DynamicsCrm.Plugins.Core.UnitTest
 {
-    using System;
     using Microsoft.Xrm.Sdk;
 
-    /// <summary>The add to queue specification fixture.</summary>
-    public class AssignSpecificationFixture : SpecificationFixture<DummyAssignPlugin>
+    /// <summary>The win opportunity plugin specification fixture.</summary>
+    public class WinOpportunityPluginSpecificationFixture : SpecificationFixture<DummyWinOpportunityPlugin>
     {
         /// <summary>The perform test setup.</summary>
         public override void PerformTestSetup()
@@ -16,8 +15,8 @@
         {
             return new ParameterCollection
             {
-                { "Target", new EntityReference("letter", Guid.NewGuid()) },
-                { "Assignee", new EntityReference("systemuser", Guid.NewGuid()) }
+                { "OpportunityClose", new Entity("opportunityclose") },
+                { "Status", new OptionSetValue(1) }
             };
         }
     }

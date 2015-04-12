@@ -6,7 +6,7 @@
     /// <summary>The when executing cancel sales order plugin successfully.</summary>
     public class WhenExecutingCancelSalesOrderPluginSuccessfully : SpecificationBase
 {
-    private CancelSalesOrderSpecificationFixture testFixture;
+    private CancelSalesOrderPluginSpecificationFixture testFixture;
 
     /// <summary>The organization service should not be null.</summary>
     [Test]
@@ -56,7 +56,7 @@
     {
         base.Context();
 
-        testFixture = new CancelSalesOrderSpecificationFixture();
+        testFixture = new CancelSalesOrderPluginSpecificationFixture();
         testFixture.PerformTestSetup();
     }
 }

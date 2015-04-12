@@ -3,8 +3,8 @@
     using System;
     using Microsoft.Xrm.Sdk;
 
-    /// <summary>The associate specification fixture.</summary>
-    public class AssociateSpecificationFixture : SpecificationFixture<DummyAssociatePlugin>
+    /// <summary>The disassociate plugin specification fixture.</summary>
+    public class DisassociatePluginSpecificationFixture : SpecificationFixture<DummyDisassociatePlugin>
     {
         /// <summary>The perform test setup.</summary>
         public override void PerformTestSetup()

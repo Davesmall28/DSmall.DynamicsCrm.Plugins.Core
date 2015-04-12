@@ -6,7 +6,7 @@
     /// <summary>The when executing close quote plugin successfully.</summary>
     public class WhenExecutingCloseQuotePluginSuccessfully : SpecificationBase
     {
-        private CloseQuoteSpecificationFixture testFixture;
+        private CloseQuotePluginSpecificationFixture testFixture;
 
         /// <summary>The organization service should not be null.</summary>
         [Test]
@@ -56,7 +56,7 @@
         {
             base.Context();
 
-            testFixture = new CloseQuoteSpecificationFixture();
+            testFixture = new CloseQuotePluginSpecificationFixture();
             testFixture.PerformTestSetup();
         }
     }

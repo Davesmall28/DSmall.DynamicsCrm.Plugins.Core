@@ -1,10 +1,9 @@
 ﻿namespace DSmall.DynamicsCrm.Plugins.Core.UnitTest
 {
-    using System;
     using Microsoft.Xrm.Sdk;
 
-    /// <summary>The add to queue specification fixture.</summary>
-    public class AddToQueueSpecificationFixture : SpecificationFixture<DummyAddToQueuePlugin>
+    /// <summary>The close incident plugin specification fixture.</summary>
+    public class CloseIncidentPluginSpecificationFixture : SpecificationFixture<DummyCloseIncidentPlugin>
     {
         /// <summary>The perform test setup.</summary>
         public override void PerformTestSetup()
@@ -16,9 +15,8 @@
         {
             return new ParameterCollection
             {
-                { "Target", new EntityReference("letter", Guid.NewGuid()) },
-                { "DestinationQueueId", Guid.NewGuid() },
-                { "SourceQueueId", Guid.NewGuid() }
+                { "IncidentResolution", new Entity("incidentresolution") },
+                { "Status", new OptionSetValue(1) }
             };
         }
     }

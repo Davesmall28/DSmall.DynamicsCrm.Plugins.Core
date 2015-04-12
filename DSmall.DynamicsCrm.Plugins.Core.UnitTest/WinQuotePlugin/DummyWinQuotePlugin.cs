@@ -5,20 +5,20 @@
     /// <summary>The dummy win quote plugin.</summary>
     public class DummyWinQuotePlugin : WinQuotePlugin
     {
-        /// <summary>Gets or sets the organization service.</summary>
-        public IOrganizationService OrganizationService { get; set; }
+        /// <summary>Gets the organization service.</summary>
+        public IOrganizationService OrganizationService { get; private set; }
 
-        /// <summary>Gets or sets the plugin execution context.</summary>
-        public IPluginExecutionContext PluginExecutionContext { get; set; }
+        /// <summary>Gets the plugin execution context.</summary>
+        public IPluginExecutionContext PluginExecutionContext { get; private set; }
 
-        /// <summary>Gets or sets the tracing service.</summary>
-        public ITracingService TracingService { get; set; }
+        /// <summary>Gets the tracing service.</summary>
+        public ITracingService TracingService { get; private set; }
 
-        /// <summary>Gets or sets the quote close entity.</summary>
-        public Entity QuoteClose { get; set; }
+        /// <summary>Gets the quote close entity.</summary>
+        public Entity QuoteClose { get; private set; }
 
-        /// <summary>Gets or sets the status.</summary>
-        public OptionSetValue Status { get; set; }
+        /// <summary>Gets the status.</summary>
+        public OptionSetValue Status { get; private set; }
 
         /// <summary>The execute.</summary>
         /// <param name="organizationService">The organization service.</param>
