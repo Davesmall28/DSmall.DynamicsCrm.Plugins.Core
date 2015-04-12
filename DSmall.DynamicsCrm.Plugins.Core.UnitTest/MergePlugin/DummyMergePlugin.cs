@@ -28,21 +28,21 @@
         /// <param name="organizationService">The organization service.</param>
         /// <param name="pluginExecutionContext">The plugin execution context.</param>
         /// <param name="tracingService">The tracing service.</param>
-        /// <param name="targetEntity">The target entity.</param>
+        /// <param name="target">The target entity.</param>
         /// <param name="subordinateId">The subordinate id.</param>
         /// <param name="updateContent">The update content.</param>
         public override void Execute(
             IOrganizationService organizationService,
             IPluginExecutionContext pluginExecutionContext,
             ITracingService tracingService,
-            EntityReference targetEntity,
+            EntityReference target,
             Guid subordinateId,
             Entity updateContent)
         {
             OrganizationService = organizationService;
             PluginExecutionContext = pluginExecutionContext;
             TracingService = tracingService;
-            TargetEntity = targetEntity;
+            TargetEntity = target;
             SubordinateId = subordinateId;
             UpdateContent = updateContent;
         }

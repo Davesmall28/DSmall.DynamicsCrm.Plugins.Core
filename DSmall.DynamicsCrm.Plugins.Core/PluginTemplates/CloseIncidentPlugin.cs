@@ -14,23 +14,23 @@
             IPluginExecutionContext pluginExecutionContext,
             ITracingService tracingService)
         {
-            var caseEntity = pluginExecutionContext.InputParameters.GetParameter<Entity>(InputParameterType.IncidentResolution);
+            var incidentResolution = pluginExecutionContext.InputParameters.GetParameter<Entity>(InputParameterType.IncidentResolution);
             var status = pluginExecutionContext.InputParameters.GetParameter<OptionSetValue>(InputParameterType.Status);
 
-            Execute(organizationService, pluginExecutionContext, tracingService, caseEntity, status);
+            Execute(organizationService, pluginExecutionContext, tracingService, incidentResolution, status);
         }
 
         /// <summary>The execute.</summary>
         /// <param name="organizationService">The organization service.</param>
         /// <param name="pluginExecutionContext">The plugin execution context.</param>
         /// <param name="tracingService">The tracing service.</param>
-        /// <param name="caseEntity">The case entity.</param>
+        /// <param name="incidentResolution">The incident resolution.</param>
         /// <param name="status">The status.</param>
         public abstract void Execute(
             IOrganizationService organizationService,
             IPluginExecutionContext pluginExecutionContext,
             ITracingService tracingService,
-            Entity caseEntity,
+            Entity incidentResolution,
             OptionSetValue status);
     }
 }
