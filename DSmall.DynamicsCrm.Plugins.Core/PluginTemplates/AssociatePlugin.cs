@@ -14,11 +14,11 @@
             IPluginExecutionContext pluginExecutionContext,
             ITracingService tracingService)
         {
-            var targetEntity = pluginExecutionContext.InputParameters.GetParameter<EntityReference>(InputParameterType.Target);
+            var target = pluginExecutionContext.InputParameters.GetParameter<EntityReference>(InputParameterType.Target);
             var relationship = pluginExecutionContext.InputParameters.GetParameter<Relationship>(InputParameterType.Relationship);
             var relatedEntities = pluginExecutionContext.InputParameters.GetParameter<EntityReferenceCollection>(InputParameterType.RelatedEntities);
 
-            Execute(organizationService, pluginExecutionContext, tracingService, targetEntity, relationship, relatedEntities);
+            Execute(organizationService, pluginExecutionContext, tracingService, target, relationship, relatedEntities);
         }
 
         /// <summary>The execute.</summary>

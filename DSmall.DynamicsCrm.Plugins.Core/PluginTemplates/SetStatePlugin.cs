@@ -14,11 +14,11 @@
             IPluginExecutionContext pluginExecutionContext,
             ITracingService tracingService)
         {
-            var entityReference = pluginExecutionContext.InputParameters.GetParameter<EntityReference>(InputParameterType.EntityMoniker);
-            var stateCode = pluginExecutionContext.InputParameters.GetParameter<OptionSetValue>(InputParameterType.State);
-            var statusCode = pluginExecutionContext.InputParameters.GetParameter<OptionSetValue>(InputParameterType.Status);
+            var entityMoniker = pluginExecutionContext.InputParameters.GetParameter<EntityReference>(InputParameterType.EntityMoniker);
+            var state = pluginExecutionContext.InputParameters.GetParameter<OptionSetValue>(InputParameterType.State);
+            var status = pluginExecutionContext.InputParameters.GetParameter<OptionSetValue>(InputParameterType.Status);
 
-            Execute(organizationService, pluginExecutionContext, tracingService, entityReference, stateCode, statusCode);
+            Execute(organizationService, pluginExecutionContext, tracingService, entityMoniker, state, status);
         }
 
         /// <summary>The execute.</summary>

@@ -14,17 +14,17 @@
             IPluginExecutionContext pluginExecutionContext,
             ITracingService tracingService)
         {
-            var targetEntity = pluginExecutionContext.InputParameters.GetParameter<EntityReference>(InputParameterType.Target);
+            var target = pluginExecutionContext.InputParameters.GetParameter<EntityReference>(InputParameterType.Target);
             var assignee = pluginExecutionContext.InputParameters.GetParameter<EntityReference>(InputParameterType.Assignee);
 
-            Execute(organizationService, pluginExecutionContext, tracingService, targetEntity, assignee);
+            Execute(organizationService, pluginExecutionContext, tracingService, target, assignee);
         }
 
         /// <summary>The execute.</summary>
         /// <param name="organizationService">The organization service.</param>
         /// <param name="pluginExecutionContext">The plugin execution context.</param>
         /// <param name="tracingService">The tracing service.</param>
-        /// <param name="target">The target.</param>
+        /// <param name="target">The target entity.</param>
         /// <param name="assignee">The assignee.</param>
         public abstract void Execute(
             IOrganizationService organizationService,

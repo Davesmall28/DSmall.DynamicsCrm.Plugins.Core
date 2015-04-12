@@ -24,7 +24,7 @@
         /// <param name="organizationService">The organization service.</param>
         /// <param name="pluginExecutionContext">The plugin execution context.</param>
         /// <param name="tracingService">The tracing service.</param>
-        /// <param name="quoteClose">The quote.</param>
+        /// <param name="quoteClose">The quote close entity.</param>
         /// <param name="status">The status.</param>
         public abstract void Execute(
             IOrganizationService organizationService,

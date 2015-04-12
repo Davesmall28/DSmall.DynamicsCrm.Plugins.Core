@@ -14,25 +14,24 @@
             IPluginExecutionContext pluginExecutionContext,
             ITracingService tracingService)
         {
-            var quote = pluginExecutionContext.InputParameters.GetParameter<Entity>(InputParameterType.QuoteClose);
+            var quoteClose = pluginExecutionContext.InputParameters.GetParameter<Entity>(InputParameterType.QuoteClose);
             var status = pluginExecutionContext.InputParameters.GetParameter<OptionSetValue>(InputParameterType.Status);
-            var state = new OptionSetValue();
 
-            Execute(organizationService, pluginExecutionContext, tracingService, quote, state, status);
+            Execute(organizationService, pluginExecutionContext, tracingService, quoteClose, null, status);
         }
 
         /// <summary>The execute.</summary>
         /// <param name="organizationService">The organization service.</param>
         /// <param name="pluginExecutionContext">The plugin execution context.</param>
         /// <param name="tracingService">The tracing service.</param>
-        /// <param name="quote">The quote.</param>
+        /// <param name="quoteClose">The quote close entity.</param>
         /// <param name="state">The state.</param>
         /// <param name="status">The status.</param>
         public abstract void Execute(
             IOrganizationService organizationService,
             IPluginExecutionContext pluginExecutionContext,
             ITracingService tracingService,
-            Entity quote,
+            Entity quoteClose,
             OptionSetValue state,
             OptionSetValue status);
     }
