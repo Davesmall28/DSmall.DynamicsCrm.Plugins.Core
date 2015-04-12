@@ -94,6 +94,9 @@
     <Compile Include="AddToQueuePlugin\AddToQueueSpecificationFixture.cs" />
     <Compile Include="AddToQueuePlugin\DummyAddToQueuePlugin.cs" />
     <Compile Include="AddToQueuePlugin\WhenExecutingAddToQueuePluginSuccessfully.cs" />
+    <Compile Include="AssignPlugin\AssignSpecificationFixture.cs" />
+    <Compile Include="AssignPlugin\DummyAssignPlugin.cs" />
+    <Compile Include="AssignPlugin\WhenExecutingAssignPluginSuccessfully.cs" />
     <Compile Include="CreatePlugin\DummyCreatePlugin.cs" />
     <Compile Include="CreatePlugin\WhenExecutingCreatePluginWithValidParameters.cs" />
     <Compile Include="CrmFieldNameHelper\CrmFieldNameHelperSpecificationFixture.cs" />
