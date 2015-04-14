@@ -1,5 +1,6 @@
 ﻿namespace DSmall.DynamicsCrm.Plugins.Core
 {
+    using DSmall.DynamicsCrm.Core;
     using Microsoft.Xrm.Sdk;
 
     /// <summary> The entity plugin </summary>
