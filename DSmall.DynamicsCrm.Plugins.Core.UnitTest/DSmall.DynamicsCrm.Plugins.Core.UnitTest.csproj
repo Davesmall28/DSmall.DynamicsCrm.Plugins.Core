@@ -117,10 +117,6 @@
     <Compile Include="CloseQuotePlugin\WhenExecutingCloseQuotePluginSuccessfully.cs" />
     <Compile Include="CreatePlugin\DummyCreatePlugin.cs" />
     <Compile Include="CreatePlugin\WhenExecutingCreatePluginWithValidParameters.cs" />
-    <Compile Include="CrmFieldNameHelper\CrmFieldNameHelperSpecificationFixture.cs" />
-    <Compile Include="CrmFieldNameHelper\WhenGetCrmFieldNameReturnsSuccessfully.cs" />
-    <Compile Include="CrmFieldNameHelper\DummyEntity.cs" />
-    <Compile Include="CrmFieldNameHelper\WhenGetCrmFieldNameReturnsNull.cs" />
     <Compile Include="DeletePlugin\DeletePluginSpecificationFixture.cs" />
     <Compile Include="DeletePlugin\DummyDeletePlugin.cs" />
     <Compile Include="DeletePlugin\WhenExecutingDeletePluginSuccessfully.cs" />
@@ -128,12 +124,6 @@
     <Compile Include="DisassociatePlugin\DummyDisassociatePlugin.cs" />
     <Compile Include="DisassociatePlugin\WhenExecutingCloseQuotePluginSuccessfully.cs" />
     <Compile Include="EntityPlugin\DummyEntityPlugin.cs" />
-    <Compile Include="EntityValidator\WhenEntityImageTypeIsNotSpecifiedAndReturnsError.cs" />
-    <Compile Include="EntityValidator\WhenEntityImageCollectionIsNullAndReturnsError.cs" />
-    <Compile Include="EntityValidator\WhenEntityValidatorReturnsPreImageEntitySuccessfully.cs" />
-    <Compile Include="EntityValidator\WhenEntityValidatorReturnsPostImageEntitySuccessfully.cs" />
-    <Compile Include="EntityValidator\WhenEntityValidatorReturnsTargetEntitySuccessfully.cs" />
-    <Compile Include="EntityValidator\EntityValidatorSpecificationFixture.cs" />
     <Compile Include="Extensions\PluginConfigurationExtensionWithNoSettingSpecification.cs" />
     <Compile Include="Extensions\PluginConfigurationExtensionXmlDocumentSpecifications.cs" />
     <Compile Include="Extensions\InputParameterExtensionExceptionSpecifications.cs" />
