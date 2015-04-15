@@ -1,6 +1,7 @@
 ﻿namespace DSmall.DynamicsCrm.Plugins.Core.UnitTest
 {
     using System;
+    using DSmall.DynamicsCrm.UnitTest.Core;
     using DSmall.UnitTest.Core;
     using NUnit.Framework;
 

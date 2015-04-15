@@ -45,6 +45,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\DSmall.Core.1.0.1.1\lib\net40\DSmall.Core.dll</HintPath>
     </Reference>
+    <Reference Include="DSmall.DynamicsCrm.UnitTest.Core, Version=1.0.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\DSmall.DynamicsCrm.UnitTest.Core.1.0.0.1\lib\net40\DSmall.DynamicsCrm.UnitTest.Core.dll</HintPath>
+    </Reference>
     <Reference Include="DSmall.UnitTest.Core, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\DSmall.UnitTest.Core.1.1.0.0\lib\net40\DSmall.UnitTest.Core.dll</HintPath>
@@ -144,7 +148,6 @@
     <Compile Include="QualifyLeadPlugin\WhenExecutingQualifyLeadPluginSuccessfully.cs" />
     <Compile Include="QualifyLeadPlugin\QualifyLeadPluginSpecificationFixture.cs" />
     <Compile Include="SetStatePlugin\SetStatePluginSpecificationFixture.cs" />
-    <Compile Include="TestFramework\SpecificationFixture.cs" />
     <Compile Include="MergePlugin\WhenExecutingMergePluginWithValidParameters.cs" />
     <Compile Include="MergePlugin\DummyMergePlugin.cs" />
     <Compile Include="SetStatePlugin\DummySetStatePlugin.cs" />
@@ -162,9 +165,6 @@
     <Compile Include="UnlockSalesOrderPricingPlugin\WhenExecutingUnlockSalesOrderPricingPluginSuccessfully.cs" />
     <Compile Include="UpdatePlugin\DummyUpdatePlugin.cs" />
     <Compile Include="UpdatePlugin\WhenExecutingCreatePluginWithValidParameters.cs" />
-    <Compile Include="Utilities\PluginExecutionContextExtensions.cs" />
-    <Compile Include="Utilities\ServiceProviderExtensions.cs" />
-    <Compile Include="Utilities\ServiceProviderInitializer.cs" />
     <Compile Include="WinOpportunityPlugin\DummyWinOpportunityPlugin.cs" />
     <Compile Include="WinOpportunityPlugin\WinOpportunityPluginSpecificationFixture.cs" />
     <Compile Include="WinOpportunityPlugin\WhenExecutingWinOpportunityPluginSuccessfully.cs" />
@@ -187,7 +187,6 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>
