@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SdkMessageProcessingStep Name="DSmall.DynamicsCrm.Plugins.Core.Samples.ParameterPlugin: UnlockSalesOrderPricing of  any Entity" SdkMessageProcessingStepId="{4214c9dc-cee4-e411-8106-c4346baccdf0}">
+  <PluginTypeName>DSmall.DynamicsCrm.Plugins.Core.Samples.ParameterPlugin, DSmall.DynamicsCrm.Plugins.Core.Samples.Deploy, Version=1.0.0.0, Culture=neutral, PublicKeyToken=c0110db01952ea61</PluginTypeName>
+  <AsyncAutoDelete>0</AsyncAutoDelete>
+  <InvocationSource>0</InvocationSource>
+  <Mode>1</Mode>
+  <Rank>1</Rank>
+  <SdkMessageId>{23bebb1b-ea3e-db11-86a7-000a3a5473e8}</SdkMessageId>
+  <EventHandlerTypeCode>4602</EventHandlerTypeCode>
+  <Stage>40</Stage>
+  <IsCustomizable>1</IsCustomizable>
+  <IsHidden>0</IsHidden>
+  <SupportedDeployment>0</SupportedDeployment>
+  <IntroducedVersion>1.0</IntroducedVersion>
+  <SdkMessageProcessingStepImages />
+</SdkMessageProcessingStep>

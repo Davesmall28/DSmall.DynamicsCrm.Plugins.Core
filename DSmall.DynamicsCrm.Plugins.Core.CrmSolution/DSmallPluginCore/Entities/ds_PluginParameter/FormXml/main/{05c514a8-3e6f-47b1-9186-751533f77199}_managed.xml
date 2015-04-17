@@ -27,6 +27,14 @@
                     </cell>
                   </row>
                   <row>
+                    <cell id="{43c2a86a-8308-c3bb-1abc-49d59e7d5b92}" showlabel="true" locklevel="0">
+                      <labels>
+                        <label description="" languagecode="1033" />
+                      </labels>
+                      <control id="ds_pluginexecutionrequestid" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="ds_pluginexecutionrequestid" disabled="false" />
+                    </cell>
+                  </row>
+                  <row>
                     <cell id="{416ab72b-ae12-2e8a-2d31-92e2a97d9cc3}" showlabel="true" locklevel="0">
                       <labels>
                         <label description="" languagecode="1033" />
