@@ -1,6 +1,7 @@
 ﻿namespace DSmall.DynamicsCrm.Plugins.Core
 {
     using System;
+    using DSmall.DynamicsCrm.Core;
     using Microsoft.Xrm.Sdk;
 
     /// <summary>The plugin.</summary>

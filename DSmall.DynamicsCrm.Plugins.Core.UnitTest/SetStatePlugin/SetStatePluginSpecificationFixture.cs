@@ -1,6 +1,7 @@
 ﻿namespace DSmall.DynamicsCrm.Plugins.Core.UnitTest
 {
     using System;
+    using DSmall.DynamicsCrm.UnitTest.Core;
     using Microsoft.Xrm.Sdk;
 
     /// <summary>The set state plugin specification fixture.</summary>
@@ -9,8 +10,7 @@
         /// <summary>The perform test setup.</summary>
         public override void PerformTestSetup()
         {
-            var serviceProviderIntializer = new ServiceProviderInitializer();
-            ServiceProvider = serviceProviderIntializer.Setup().WithInputParameters(GetDummyEntityCollection());           
+            ServiceProvider = ServiceProviderInitializer.Setup().WithInputParameters(GetDummyEntityCollection());           
         }
 
         private static ParameterCollection GetDummyEntityCollection()

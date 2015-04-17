@@ -15,11 +15,6 @@
             IPluginExecutionContext pluginExecutionContext,
             ITracingService tracingService)
         {
-            foreach (var parameter in pluginExecutionContext.InputParameters)
-            {
-                tracingService.Trace("Key: {0}, Value Type: {1}", parameter.Key, parameter.Value.GetType());
-            }
-
             var target = pluginExecutionContext.InputParameters.GetParameter<EntityReference>(InputParameterType.Target);
             var destinationQueueId = pluginExecutionContext.InputParameters.GetParameter<Guid>(InputParameterType.DestinationQueueId);
             var sourceQueueId = pluginExecutionContext.InputParameters.GetParameter<Guid>(InputParameterType.SourceQueueId);

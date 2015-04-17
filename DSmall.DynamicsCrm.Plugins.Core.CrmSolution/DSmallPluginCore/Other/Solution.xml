@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ImportExportXml version="7.0.0000.5026" SolutionPackageVersion="7.0" languagecode="1033" generatedBy="CrmLive" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<ImportExportXml version="7.0.0001.0128" SolutionPackageVersion="7.0" languagecode="1033" generatedBy="CrmLive" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <SolutionManifest>
     <UniqueName>DSmallDynamicsCrmPluginsCoreSamples</UniqueName>
     <LocalizedNames>
@@ -79,6 +79,32 @@
     </Publisher>
     <RootComponents>
       <RootComponent type="1" schemaName="ds_pluginparameter" />
+      <RootComponent type="91" schemaName="DSmall.DynamicsCrm.Plugins.Core.Samples.Deploy, Version=1.0.0.0, Culture=neutral, PublicKeyToken=c0110db01952ea61" />
+      <RootComponent type="92" id="{02e2de4e-4fe4-e411-8104-c4346bad506c}" />
+      <RootComponent type="92" id="{0621bab6-89d9-e411-8100-fc15b4263b68}" />
+      <RootComponent type="92" id="{0d43520d-4fe4-e411-8104-c4346bad506c}" />
+      <RootComponent type="92" id="{10341659-4fe4-e411-8104-c4346bad506c}" />
+      <RootComponent type="92" id="{159d4f1d-4fe4-e411-8104-c4346bad506c}" />
+      <RootComponent type="92" id="{16982474-4fe4-e411-8104-c4346bad506c}" />
+      <RootComponent type="92" id="{4214c9dc-cee4-e411-8106-c4346baccdf0}" />
+      <RootComponent type="92" id="{4dc263dc-4ee4-e411-8104-c4346bad506c}" />
+      <RootComponent type="92" id="{58673c82-4ee4-e411-8104-c4346bad506c}" />
+      <RootComponent type="92" id="{79a02e2c-4fe4-e411-8104-c4346bad506c}" />
+      <RootComponent type="92" id="{806e2c9f-4ee4-e411-8104-c4346bad506c}" />
+      <RootComponent type="92" id="{8e6b3693-4ee4-e411-8104-c4346bad506c}" />
+      <RootComponent type="92" id="{9975396c-4fe4-e411-8104-c4346bad506c}" />
+      <RootComponent type="92" id="{9dd09e8d-4fe4-e411-8104-c4346bad506c}" />
+      <RootComponent type="92" id="{a0e23b16-4fe4-e411-8104-c4346bad506c}" />
+      <RootComponent type="92" id="{a84114ed-4ee4-e411-8104-c4346bad506c}" />
+      <RootComponent type="92" id="{ba9467ff-4ee4-e411-8104-c4346bad506c}" />
+      <RootComponent type="92" id="{c04b585f-4fe4-e411-8104-c4346bad506c}" />
+      <RootComponent type="92" id="{c7676c5b-cfe4-e411-8101-fc15b4263b68}" />
+      <RootComponent type="92" id="{c90636c9-4ee4-e411-8104-c4346bad506c}" />
+      <RootComponent type="92" id="{ce7d1cb1-4ee4-e411-8104-c4346bad506c}" />
+      <RootComponent type="92" id="{cee52b07-cfe4-e411-8101-fc15b4263b68}" />
+      <RootComponent type="92" id="{cf4012f0-cee4-e411-8101-fc15b4263b68}" />
+      <RootComponent type="92" id="{e9d1bc44-4fe4-e411-8104-c4346bad506c}" />
+      <RootComponent type="92" id="{fc7f817d-4fe4-e411-8104-c4346bad506c}" />
     </RootComponents>
     <MissingDependencies />
   </SolutionManifest>

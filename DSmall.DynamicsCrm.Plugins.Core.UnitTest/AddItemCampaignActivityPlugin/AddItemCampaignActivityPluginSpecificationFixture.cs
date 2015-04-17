@@ -1,6 +1,7 @@
 ﻿namespace DSmall.DynamicsCrm.Plugins.Core.UnitTest
 {
     using System;
+    using DSmall.DynamicsCrm.UnitTest.Core;
     using Microsoft.Xrm.Sdk;
 
     /// <summary>The add item campaign activity plugin specification fixture.</summary>
@@ -9,7 +10,7 @@
         /// <summary>The perform test setup.</summary>
         public override void PerformTestSetup()
         {
-            ServiceProvider = new ServiceProviderInitializer().Setup().WithInputParameters(GetDummyEntityCollection());
+            ServiceProvider = ServiceProviderInitializer.Setup().WithInputParameters(GetDummyEntityCollection());
         }
 
         private static ParameterCollection GetDummyEntityCollection()
