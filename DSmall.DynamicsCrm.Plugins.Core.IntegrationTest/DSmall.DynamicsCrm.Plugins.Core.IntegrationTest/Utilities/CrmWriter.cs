@@ -24,11 +24,10 @@
         {
             var request = new CreateRequest
             {
-                RequestId = requestId,
                 Target = entity,
             };
 
-            var response = (CreateResponse)organizationService.Execute(request);
+            var response = (CreateResponse)Execute(requestId, request);
 
             return response.id;
         }
@@ -36,27 +35,37 @@
         /// <summary>The update entity.</summary>
         /// <param name="requestId">The request Id.</param>
         /// <param name="entity">The entity.</param>
-        /// <returns>The <see cref="Guid"/>.</returns>
-        public Guid Update(Guid requestId, Entity entity)
+        public void Update(Guid requestId, Entity entity)
         {
             var request = new UpdateRequest
             {
-                RequestId = requestId,
                 Target = entity,
             };
 
-            organizationService.Execute(request);
+            Execute(requestId, request);
+        }
 
-            return entity.Id;
+        /// <summary>The delete.</summary>
+        /// <param name="requestId">The request id.</param>
+        /// <param name="entityReference">The entity reference.</param>
+        public void Delete(Guid requestId, EntityReference entityReference)
+        {
+            var request = new DeleteRequest
+            {
+                Target = entityReference
+            };
+
+            Execute(requestId, request);
         }
 
         /// <summary>The execute.</summary>
         /// <param name="requestId">The request Id.</param>
         /// <param name="organizationRequest">The organization request.</param>
-        public void Execute(Guid requestId, OrganizationRequest organizationRequest)
+        /// <returns>The <see cref="OrganizationResponse"/>.</returns>
+        public OrganizationResponse Execute(Guid requestId, OrganizationRequest organizationRequest)
         {
             organizationRequest.RequestId = requestId;
-            organizationService.Execute(organizationRequest);
+            return organizationService.Execute(organizationRequest);
         }
     }
 }
