@@ -8,7 +8,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>DSmall.DynamicsCrm.Plugins.Core.IntegrationTest</RootNamespace>
     <AssemblyName>DSmall.DynamicsCrm.Plugins.Core.IntegrationTest</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -25,6 +25,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -33,6 +34,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="DSmall.UnitTest.Core">
@@ -100,8 +102,12 @@
     <Compile Include="Extensions\EnumerableExtensions.cs" />
     <Compile Include="Model\ParameterDetail.cs" />
     <Compile Include="Model\PluginParameters.cs" />
+    <Compile Include="PluginTest\Delete\DeleteContactSpecification.cs" />
+    <Compile Include="PluginTest\Delete\DeleteContactSpecificationFixture.cs" />
     <Compile Include="PluginTest\Merge\MergeEntitySpecificationFixture.cs" />
-    <Compile Include="PluginTest\Merge\MergeEntitySpecifications.cs" />
+    <Compile Include="PluginTest\Merge\MergeEntitySpecification.cs" />
+    <Compile Include="PluginTest\Update\UpdateContactSpecification.cs" />
+    <Compile Include="PluginTest\Update\UpdateContactSpecificationFixture.cs" />
     <Compile Include="PluginTest\WinOpportunity\WinOpportunitySpecificationFixture.cs" />
     <Compile Include="PluginTest\WinOpportunity\WinOpportunitySpecifications.cs" />
     <Compile Include="TestFramework\Retry.cs" />

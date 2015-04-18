@@ -1,15 +1,16 @@
-﻿namespace DSmall.DynamicsCrm.Plugins.Core.IntegrationTest.Merge
+﻿namespace DSmall.DynamicsCrm.Plugins.Core.IntegrationTest
 {
     using System;
     using DSmall.UnitTest.Core;
     using Microsoft.Xrm.Sdk;
     using NUnit.Framework;
 
-    /// <summary>The merge entity specifications.</summary>
+    /// <summary>The merge entity specification.</summary>
     [TestFixture]
-    public class MergeEntitySpecifications : SpecificationBase
+    public class MergeEntitySpecification : SpecificationBase
     {
         private MergeEntitySpecificationFixture testFixture;
+        private Guid requestId;
 
         /// <summary>The should return input parameter containing four parameters.</summary>
         [Test]
@@ -70,9 +71,9 @@
         /// <summary>The because of.</summary>
         protected override void BecauseOf()
         {
-            testFixture.CrmWriter.Execute(testFixture.RequestId, testFixture.MergeRequest);
+            testFixture.CrmWriter.Execute(requestId, testFixture.MergeRequest);
 
-            testFixture.Result = Retry.Do(() => testFixture.EntitySerializer.Deserialize(testFixture.RequestId));
+            testFixture.Result = Retry.Do(() => testFixture.EntitySerializer.Deserialize(requestId));
         }
 
         /// <summary>The context.</summary>
@@ -80,6 +81,8 @@
         {
             testFixture = new MergeEntitySpecificationFixture();
             testFixture.PerformTestSetup();
+
+            requestId = Guid.NewGuid();
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿namespace DSmall.DynamicsCrm.Plugins.Core.IntegrationTest.Merge
+﻿namespace DSmall.DynamicsCrm.Plugins.Core.IntegrationTest
 {
     using System;
     using Microsoft.Crm.Sdk.Messages;
