@@ -106,12 +106,13 @@
     <Compile Include="PluginTest\Delete\DeleteContactSpecificationFixture.cs" />
     <Compile Include="PluginTest\Merge\MergeEntitySpecificationFixture.cs" />
     <Compile Include="PluginTest\Merge\MergeEntitySpecification.cs" />
+    <Compile Include="PluginTest\SetState\SetStateEntitySpecification.cs" />
+    <Compile Include="PluginTest\SetState\SetStateEntitySpecificationFixture.cs" />
     <Compile Include="PluginTest\Update\UpdateContactSpecification.cs" />
     <Compile Include="PluginTest\Update\UpdateContactSpecificationFixture.cs" />
     <Compile Include="PluginTest\WinOpportunity\WinOpportunitySpecificationFixture.cs" />
-    <Compile Include="PluginTest\WinOpportunity\WinOpportunitySpecifications.cs" />
+    <Compile Include="PluginTest\WinOpportunity\WinOpportunitySpecification.cs" />
     <Compile Include="TestFramework\Retry.cs" />
-    <Compile Include="Utilities\CrmCleaner.cs" />
     <Compile Include="Utilities\CrmWriter.cs" />
     <Compile Include="TestFramework\SpecificationFixtureBase.cs" />
     <Compile Include="PluginTest\Create\CreateContactSpecification.cs" />

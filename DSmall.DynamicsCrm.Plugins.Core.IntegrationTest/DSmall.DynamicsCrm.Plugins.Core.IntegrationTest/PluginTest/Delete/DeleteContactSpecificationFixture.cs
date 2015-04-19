@@ -8,9 +8,14 @@
         /// <summary>Gets the entity reference to delete.</summary>
         public EntityReference EntityReferenceToDelete { get; private set; }
 
+        /// <summary>Gets the message name.</summary>
+        public string MessageName { get; private set; }
+
         /// <summary>The perform test setup.</summary>
         public void PerformTestSetup()
         {
+            MessageName = "Delete";
+
             var entityToCreate = new Entity("contact");
             entityToCreate.Attributes.Add("firstname", "DummyFirstName");
             entityToCreate.Attributes.Add("lastname", "DeleteRequest");

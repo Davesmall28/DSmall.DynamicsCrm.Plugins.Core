@@ -1,6 +1,7 @@
 ﻿namespace DSmall.DynamicsCrm.Plugins.Core.IntegrationTest
 {
     using System;
+    using System.ServiceModel.Channels;
     using Microsoft.Crm.Sdk.Messages;
     using Microsoft.Xrm.Sdk;
 
@@ -13,9 +14,13 @@
         /// <summary>Gets or sets the opportunity id.</summary>
         public Guid OpportunityId { get; set; }
 
+        /// <summary>Gets the message name.</summary>
+        public string MessageName { get; private set; }
+
         /// <summary>The perform test setup.</summary>
         public void PerformTestSetup()
         {
+            MessageName = "Win";
             OpportunityId = Guid.NewGuid();
 
             var entityToCreate = new Entity("opportunity")

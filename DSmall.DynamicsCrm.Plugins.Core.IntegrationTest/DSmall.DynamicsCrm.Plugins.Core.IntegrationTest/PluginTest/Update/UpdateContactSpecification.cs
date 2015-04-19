@@ -38,7 +38,7 @@
         {
             testFixture.CrmWriter.Update(requestId, testFixture.EntityToUpdate);
 
-            testFixture.Result = Retry.Do(() => testFixture.EntitySerializer.Deserialize(requestId));
+            testFixture.Result = Retry.Do(() => testFixture.EntitySerializer.Deserialize(requestId, testFixture.MessageName));
         }
 
         /// <summary>The context.</summary>

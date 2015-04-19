@@ -8,9 +8,14 @@
         /// <summary>Gets the entity to update.</summary>
         public Entity EntityToUpdate { get; private set; }
 
+        /// <summary>Gets the message name.</summary>
+        public string MessageName { get; private set; }
+
         /// <summary>The perform test setup.</summary>
         public void PerformTestSetup()
         {
+            MessageName = "Update";
+
             EntityToUpdate = new Entity("contact");
             EntityToUpdate.Attributes.Add("firstname", "DummyFirstName");
 

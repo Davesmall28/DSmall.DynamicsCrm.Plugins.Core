@@ -10,9 +10,14 @@
         /// <summary>Gets or sets the merge request.</summary>
         public MergeRequest MergeRequest { get; set; }
 
+        /// <summary>Gets the message name.</summary>
+        public string MessageName { get; private set; }
+
         /// <summary>The perform test setup.</summary>
         public void PerformTestSetup()
         {
+            MessageName = "Merge";
+
             var targetEntity = new Entity("contact")
             {
                 Id = Guid.NewGuid()

@@ -4,9 +4,9 @@
     using Microsoft.Xrm.Sdk;
     using NUnit.Framework;
 
-    /// <summary>The win opportunity specifications.</summary>
+    /// <summary>The win opportunity specification.</summary>
     [TestFixture]
-    public class WinOpportunitySpecifications : SpecificationBase
+    public class WinOpportunitySpecification : SpecificationBase
     {
         private WinOpportunitySpecificationFixture testFixture;
 
@@ -50,7 +50,7 @@
         {
             testFixture.CrmWriter.Execute(testFixture.RequestId, testFixture.WinOpportunityRequest);
 
-            testFixture.Result = Retry.Do(() => testFixture.EntitySerializer.Deserialize(testFixture.RequestId));
+            testFixture.Result = Retry.Do(() => testFixture.EntitySerializer.Deserialize(testFixture.RequestId, testFixture.MessageName));
         }
 
         /// <summary>The context.</summary>

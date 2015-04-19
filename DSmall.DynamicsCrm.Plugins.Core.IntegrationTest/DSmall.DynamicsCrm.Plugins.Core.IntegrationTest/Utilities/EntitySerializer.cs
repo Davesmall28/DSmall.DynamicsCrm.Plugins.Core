@@ -21,14 +21,16 @@
         }
 
         /// <summary>The deserialize.</summary>
-        /// <param name="entityId">The entity id.</param>
+        /// <param name="requestId">The request id.</param>
+        /// <param name="messageName">The message name.</param>
         /// <returns>The <see cref="PluginParameters"/>.</returns>
-        public PluginParameters Deserialize(Guid entityId)
+        public PluginParameters Deserialize(Guid requestId, string messageName)
         {
             using (var crmServiceContext = new OrganizationServiceContext(organizationService))
             {
                 var pluginParameters = from p in crmServiceContext.CreateQuery("ds_pluginparameter")
-                                       where ((string)p["ds_pluginexecutionrequestid"]).Contains(entityId.ToString())
+                                       where ((string)p["ds_pluginexecutionrequestid"]).Contains(requestId.ToString())
+                                          && ((string)p["ds_messagename"]).Equals(messageName)
                                        select p["ds_pluginparameters"].ToString();
 
                 return GetObject(pluginParameters.Single());

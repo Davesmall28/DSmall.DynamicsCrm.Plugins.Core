@@ -7,44 +7,37 @@
 
     /// <summary>The merge entity specification.</summary>
     [TestFixture]
-    public class MergeEntitySpecification : SpecificationBase
+    public class SetStateEntitySpecification : SpecificationBase
     {
-        private MergeEntitySpecificationFixture testFixture;
+        private SetStateEntitySpecificationFixture testFixture;
         private Guid requestId;
 
-        /// <summary>The should return input parameter containing four parameters.</summary>
+        /// <summary>The should return input parameter containing three parameters.</summary>
         [Test]
-        public void ShouldReturnInputParameterContainingFourParameters()
+        public void ShouldReturnInputParameterContainingThreeParameters()
         {
-            Assert.IsTrue(testFixture.Result.InputParameters.Count == 4);
+            Assert.IsTrue(testFixture.Result.InputParameters.Count == 3);
         }
 
-        /// <summary>The should return input parameter containing update content.</summary>
+        /// <summary>The should return input parameter containing entity moniker.</summary>
         [Test]
-        public void ShouldReturnInputParameterContainingUpdateContent()
+        public void ShouldReturnInputParameterContainingEntityMoniker()
         {
-            Assert.IsTrue(testFixture.Result.InputParameters.Count("UpdateContent", typeof(Entity)) == 1);
+            Assert.IsTrue(testFixture.Result.InputParameters.Count("EntityMoniker", typeof(EntityReference)) == 1);
         }
 
-        /// <summary>The should return input parameter containing target entity.</summary>
+        /// <summary>The should return input parameter containing state code.</summary>
         [Test]
-        public void ShouldReturnInputParameterContainingTargetEntity()
+        public void ShouldReturnInputParameterContainingStateCode()
         {
-            Assert.IsTrue(testFixture.Result.InputParameters.Count("Target", typeof(EntityReference)) == 1);
+            Assert.IsTrue(testFixture.Result.InputParameters.Count("State", typeof(OptionSetValue)) == 1);
         }
 
-        /// <summary>The should return input parameter containing subordinate id.</summary>
+        /// <summary>The should return input parameter containing status code.</summary>
         [Test]
-        public void ShouldReturnInputParameterContainingSubordinateId()
+        public void ShouldReturnInputParameterContainingStatusCode()
         {
-            Assert.IsTrue(testFixture.Result.InputParameters.Count("SubordinateId", typeof(Guid)) == 1);
-        }
-
-        /// <summary>The should return input parameter containing perform parenting checks.</summary>
-        [Test]
-        public void ShouldReturnInputParameterContainingPerformParentingChecks()
-        {
-            Assert.IsTrue(testFixture.Result.InputParameters.Count("PerformParentingChecks", typeof(bool)) == 1);
+            Assert.IsTrue(testFixture.Result.InputParameters.Count("Status", typeof(OptionSetValue)) == 1);
         }
 
         /// <summary>The should return no pre entity images.</summary>
@@ -71,7 +64,7 @@
         /// <summary>The because of.</summary>
         protected override void BecauseOf()
         {
-            testFixture.CrmWriter.Execute(requestId, testFixture.MergeRequest);
+            testFixture.CrmWriter.Execute(requestId, testFixture.SetStateRequest);
 
             testFixture.Result = Retry.Do(() => testFixture.EntitySerializer.Deserialize(requestId, testFixture.MessageName));
         }
@@ -79,7 +72,7 @@
         /// <summary>The context.</summary>
         protected override void Context()
         {
-            testFixture = new MergeEntitySpecificationFixture();
+            testFixture = new SetStateEntitySpecificationFixture();
             testFixture.PerformTestSetup();
 
             requestId = Guid.NewGuid();

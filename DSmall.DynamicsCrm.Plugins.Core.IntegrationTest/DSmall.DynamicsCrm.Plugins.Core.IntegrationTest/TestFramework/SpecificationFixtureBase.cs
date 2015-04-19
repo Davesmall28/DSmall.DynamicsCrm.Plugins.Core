@@ -15,7 +15,6 @@
         {
             OrganizationService = new OrganizationService(ConnectionStringSettingName);
             CrmWriter = new CrmWriter(OrganizationService);
-            CleanUp = new CrmCleaner(OrganizationService);
             EntitySerializer = new EntitySerializer(OrganizationService);
             RequestId = Guid.NewGuid();
         }
@@ -25,9 +24,6 @@
 
         /// <summary>Gets the crm helper.</summary>
         public CrmWriter CrmWriter { get; private set; }
-
-        /// <summary>Gets the clean up.</summary>
-        public CrmCleaner CleanUp { get; private set; }
 
         /// <summary>Gets the entity serializer.</summary>
         public EntitySerializer EntitySerializer { get; private set; }
