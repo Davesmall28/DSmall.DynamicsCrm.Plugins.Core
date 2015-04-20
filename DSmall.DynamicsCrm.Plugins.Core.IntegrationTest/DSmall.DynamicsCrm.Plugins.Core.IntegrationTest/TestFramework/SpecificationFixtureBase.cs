@@ -14,7 +14,9 @@
         public SpecificationFixtureBase()
         {
             OrganizationService = new OrganizationService(ConnectionStringSettingName);
+            CrmReader = new CrmReader(OrganizationService);
             CrmWriter = new CrmWriter(OrganizationService);
+            EntityFactory = new EntityFactory(OrganizationService);
             EntitySerializer = new EntitySerializer(OrganizationService);
             RequestId = Guid.NewGuid();
         }
@@ -22,8 +24,14 @@
         /// <summary>Gets the organization service.</summary>
         public IOrganizationService OrganizationService { get; private set; }
 
-        /// <summary>Gets the crm helper.</summary>
+        /// <summary>Gets the crm reader.</summary>
+        public CrmReader CrmReader { get; private set; }
+
+        /// <summary>Gets the crm writer.</summary>
         public CrmWriter CrmWriter { get; private set; }
+
+        /// <summary>Gets the entity factory.</summary>
+        public EntityFactory EntityFactory { get; private set; }
 
         /// <summary>Gets the entity serializer.</summary>
         public EntitySerializer EntitySerializer { get; private set; }
