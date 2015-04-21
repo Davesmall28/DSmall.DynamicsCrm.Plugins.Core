@@ -1,6 +1,5 @@
 ﻿namespace DSmall.DynamicsCrm.Plugins.Core.IntegrationTest
 {
-    using System;
     using Microsoft.Crm.Sdk.Messages;
     using Microsoft.Xrm.Sdk;
 

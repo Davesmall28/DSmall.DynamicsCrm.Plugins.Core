@@ -19,30 +19,78 @@
         /// <returns>The <see cref="Guid"/>.</returns>
         public Entity CreateContact()
         {
-            var targetEntity = new Entity("contact")
+            var entity = new Entity("contact")
             {
                 Id = Guid.NewGuid()
             };
-            targetEntity["firstname"] = "DummyFirstName";
+            entity["firstname"] = "DummyFirstName";
 
-            organizationService.Create(targetEntity);
+            organizationService.Create(entity);
 
-            return targetEntity;
+            return entity;
         }
 
         /// <summary>The create letter.</summary>
         /// <returns>The <see cref="Entity"/>.</returns>
         public Entity CreateLetter()
         {
-            var targetEntity = new Entity("letter")
+            var entity = new Entity("letter")
             {
                 Id = Guid.NewGuid()
             };
-            targetEntity["subject"] = "DummySubject";
+            entity["subject"] = "DummySubject";
 
-            organizationService.Create(targetEntity);
+            organizationService.Create(entity);
 
-            return targetEntity;
+            return entity;
+        }
+
+        /// <summary>The create campaign.</summary>
+        /// <returns>The <see cref="Entity"/>.</returns>
+        public Entity CreateCampaign()
+        {
+            var entity = new Entity("campaign")
+            {
+                Id = Guid.NewGuid()
+            };
+            entity["name"] = "DummyCampaign";
+
+            organizationService.Create(entity);
+
+            return entity;
+        }
+
+        /// <summary>The create campaign activity.</summary>
+        /// <param name="campaignReference">The campaign Reference.</param>
+        /// <returns>The <see cref="Entity"/>.</returns>
+        public Entity CreateCampaignActivity(EntityReference campaignReference)
+        {
+            var entity = new Entity("campaignactivity")
+            {
+                Id = Guid.NewGuid()
+            };
+            entity["subject"] = "DummyCampaignActivity";
+            entity["regardingobjectid"] = campaignReference;
+
+            organizationService.Create(entity);
+
+            return entity;
+        }
+
+        /// <summary>The create marketing list.</summary>
+        /// <returns>The <see cref="Entity"/>.</returns>
+        public Entity CreateMarketingList()
+        {
+            var entity = new Entity("list")
+            {
+                Id = Guid.NewGuid()
+            };
+            entity["listname"] = "DummyMarketingList";
+            entity["createdfromcode"] = new OptionSetValue(2);
+
+            organizationService.Create(entity);
+
+            return entity;
         }
     }
 }

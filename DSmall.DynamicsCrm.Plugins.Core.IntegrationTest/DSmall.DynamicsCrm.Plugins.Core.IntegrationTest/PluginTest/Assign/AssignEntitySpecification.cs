@@ -2,7 +2,6 @@
 {
     using System;
     using DSmall.UnitTest.Core;
-    using Microsoft.Crm.Sdk.Messages;
     using Microsoft.Xrm.Sdk;
     using NUnit.Framework;
 
