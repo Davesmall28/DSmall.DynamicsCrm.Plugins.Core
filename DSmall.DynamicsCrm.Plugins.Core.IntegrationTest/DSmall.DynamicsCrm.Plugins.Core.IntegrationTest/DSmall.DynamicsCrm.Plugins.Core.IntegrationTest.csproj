@@ -106,6 +106,12 @@
     <Compile Include="PluginTest\AddToQueue\AddToQueueSpecificationFixture.cs" />
     <Compile Include="PluginTest\Assign\AssignEntitySpecification.cs" />
     <Compile Include="PluginTest\Assign\AssignEntitySpecificationFixture.cs" />
+    <Compile Include="PluginTest\Associate\AssociateEntitySpecification.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PluginTest\Associate\AssociateEntitySpecificationFixture.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="PluginTest\Create\CreateContactSpecificationFixture.cs" />
     <Compile Include="Extensions\EnumerableExtensions.cs" />
     <Compile Include="Model\ParameterDetail.cs" />
