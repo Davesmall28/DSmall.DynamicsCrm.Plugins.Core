@@ -106,5 +106,20 @@
 
             return entity;
         }
+
+        /// <summary>The create opportunity.</summary>
+        /// <returns>The <see cref="Entity"/>.</returns>
+        public Entity CreateOpportunity()
+        {
+            var entity = new Entity("opportunity")
+            {
+                Id = Guid.NewGuid()
+            };
+            entity["name"] = "DummyOpportunity";
+
+            organizationService.Create(entity);
+
+            return entity;
+        }
     }
 }

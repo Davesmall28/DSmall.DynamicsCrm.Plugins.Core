@@ -118,6 +118,12 @@
     <Compile Include="Model\PluginParameters.cs" />
     <Compile Include="PluginTest\Delete\DeleteContactSpecification.cs" />
     <Compile Include="PluginTest\Delete\DeleteContactSpecificationFixture.cs" />
+    <Compile Include="PluginTest\LoseOpportunity\LoseOpportunitySpecification.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PluginTest\LoseOpportunity\LoseOpportunitySpecificationFixture.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="PluginTest\Merge\MergeEntitySpecificationFixture.cs" />
     <Compile Include="PluginTest\Merge\MergeEntitySpecification.cs" />
     <Compile Include="PluginTest\SetState\SetStateEntitySpecification.cs" />

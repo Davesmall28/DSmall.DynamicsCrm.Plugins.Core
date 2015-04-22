@@ -7,8 +7,8 @@
     /// <summary>The merge entity specification fixture.</summary>
     public class MergeEntitySpecificationFixture : SpecificationFixtureBase
     {
-        /// <summary>Gets or sets the merge request.</summary>
-        public MergeRequest MergeRequest { get; set; }
+        /// <summary>Gets the merge request.</summary>
+        public MergeRequest MergeRequest { get; private set; }
 
         /// <summary>Gets the message name.</summary>
         public string MessageName { get; private set; }

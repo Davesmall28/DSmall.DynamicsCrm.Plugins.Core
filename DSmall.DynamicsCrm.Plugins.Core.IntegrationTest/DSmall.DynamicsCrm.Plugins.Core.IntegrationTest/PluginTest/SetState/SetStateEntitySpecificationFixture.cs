@@ -7,8 +7,8 @@
     /// <summary>The set state entity specification fixture.</summary>
     public class SetStateEntitySpecificationFixture : SpecificationFixtureBase
     {
-        /// <summary>Gets or sets the set state request.</summary>
-        public SetStateRequest SetStateRequest { get; set; }
+        /// <summary>Gets the set state request.</summary>
+        public SetStateRequest SetStateRequest { get; private set; }
 
         /// <summary>Gets the message name.</summary>
         public string MessageName { get; private set; }
