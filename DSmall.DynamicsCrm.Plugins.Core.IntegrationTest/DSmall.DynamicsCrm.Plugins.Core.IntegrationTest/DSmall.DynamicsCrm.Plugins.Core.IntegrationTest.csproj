@@ -126,6 +126,12 @@
     <Compile Include="PluginTest\Update\UpdateContactSpecificationFixture.cs" />
     <Compile Include="PluginTest\WinOpportunity\WinOpportunitySpecificationFixture.cs" />
     <Compile Include="PluginTest\WinOpportunity\WinOpportunitySpecification.cs" />
+    <Compile Include="PluginTest\WinQuote\WinQuoteSpecification.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PluginTest\WinQuote\WinQuoteSpecificationFixture.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="TestFramework\Retry.cs" />
     <Compile Include="Utilities\CrmReader.cs" />
     <Compile Include="Utilities\CrmWriter.cs" />

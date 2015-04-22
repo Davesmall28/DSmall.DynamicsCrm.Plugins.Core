@@ -6,8 +6,8 @@ namespace DSmall.DynamicsCrm.Plugins.Core.IntegrationTest
     /// <summary>The associate entity specification fixture.</summary>
     public class AssociateEntitySpecificationFixture : SpecificationFixtureBase
     {
-        /// <summary>Gets or sets the associate request.</summary>
-        public AssociateRequest AssociateRequest { get; set; }
+        /// <summary>Gets the associate request.</summary>
+        public AssociateRequest AssociateRequest { get; private set; }
 
         /// <summary>Gets the message name.</summary>
         public string MessageName { get; private set; }

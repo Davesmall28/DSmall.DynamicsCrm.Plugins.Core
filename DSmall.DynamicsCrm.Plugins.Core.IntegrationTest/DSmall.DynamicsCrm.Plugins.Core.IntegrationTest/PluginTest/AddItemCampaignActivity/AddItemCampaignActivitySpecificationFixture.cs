@@ -5,8 +5,8 @@ namespace DSmall.DynamicsCrm.Plugins.Core.IntegrationTest
     /// <summary>The add item campaign activity specification fixture.</summary>
     public class AddItemCampaignActivitySpecificationFixture : SpecificationFixtureBase
     {
-        /// <summary>Gets or sets the add item campaign activity request.</summary>
-        public AddItemCampaignActivityRequest AddItemCampaignActivityRequest { get; set; }
+        /// <summary>Gets the add item campaign activity request.</summary>
+        public AddItemCampaignActivityRequest AddItemCampaignActivityRequest { get; private set; }
 
         /// <summary>Gets the message name.</summary>
         public string MessageName { get; private set; }

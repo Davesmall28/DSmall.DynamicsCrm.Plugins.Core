@@ -7,8 +7,8 @@
     /// <summary>The assign entity specification fixture.</summary>
     public class AssignEntitySpecificationFixture : SpecificationFixtureBase
     {
-        /// <summary>Gets or sets the assign request.</summary>
-        public AssignRequest AssignRequest { get; set; }
+        /// <summary>Gets the assign request.</summary>
+        public AssignRequest AssignRequest { get; private set; }
 
         /// <summary>Gets the message name.</summary>
         public string MessageName { get; private set; }

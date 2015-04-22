@@ -6,8 +6,8 @@
     /// <summary>The add to queue specification fixture.</summary>
     public class AddToQueueSpecificationFixture : SpecificationFixtureBase
     {
-        /// <summary>Gets or sets the add to queue request.</summary>
-        public AddToQueueRequest AddToQueueRequest { get; set; }
+        /// <summary>Gets the add to queue request.</summary>
+        public AddToQueueRequest AddToQueueRequest { get; private set; }
 
         /// <summary>Gets the message name.</summary>
         public string MessageName { get; private set; }

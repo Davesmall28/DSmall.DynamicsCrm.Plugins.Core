@@ -92,5 +92,19 @@
 
             return entity;
         }
+
+        /// <summary>The create quote.</summary>
+        /// <returns>The <see cref="Entity"/>.</returns>
+        public Entity CreateQuote()
+        {
+            var entity = new Entity("quote")
+            {
+                Id = Guid.NewGuid()
+            };
+
+            organizationService.Create(entity);
+
+            return entity;
+        }
     }
 }
