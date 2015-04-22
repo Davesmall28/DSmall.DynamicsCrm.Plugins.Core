@@ -6,6 +6,7 @@ namespace DSmall.DynamicsCrm.Plugins.Core.IntegrationTest
     using NUnit.Framework;
 
     /// <summary>The add item campaign activity specification.</summary>
+    [TestFixture]
     public class AddItemCampaignActivitySpecification : SpecificationBase
     {
         private AddItemCampaignActivitySpecificationFixture testFixture;
