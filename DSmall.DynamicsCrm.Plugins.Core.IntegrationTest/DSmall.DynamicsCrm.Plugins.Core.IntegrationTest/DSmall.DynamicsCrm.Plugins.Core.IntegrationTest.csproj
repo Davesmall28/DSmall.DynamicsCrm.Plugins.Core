@@ -112,6 +112,12 @@
     <Compile Include="PluginTest\Associate\AssociateEntitySpecificationFixture.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="PluginTest\CloseQuote\CloseQuoteSpecification.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PluginTest\CloseQuote\CloseQuoteSpecificationFixture.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="PluginTest\Create\CreateContactSpecificationFixture.cs" />
     <Compile Include="Extensions\EnumerableExtensions.cs" />
     <Compile Include="Model\ParameterDetail.cs" />
