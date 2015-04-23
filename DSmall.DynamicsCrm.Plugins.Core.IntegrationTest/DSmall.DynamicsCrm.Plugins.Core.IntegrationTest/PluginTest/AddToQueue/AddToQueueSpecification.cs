@@ -10,7 +10,6 @@
     public class AddToQueueSpecification : SpecificationBase
     {
         private AddToQueueSpecificationFixture testFixture;
-        private Guid requestId;
 
         /// <summary>The should return input parameter containing four parameters.</summary>
         [Test]
@@ -64,9 +63,9 @@
         /// <summary>The because of.</summary>
         protected override void BecauseOf()
         {
-            testFixture.CrmWriter.Execute(requestId, testFixture.AddToQueueRequest);
+            testFixture.CrmWriter.Execute(testFixture.RequestId, testFixture.AddToQueueRequest);
 
-            testFixture.Result = Retry.Do(() => testFixture.EntitySerializer.Deserialize(requestId, testFixture.MessageName));
+            testFixture.Result = Retry.Do(() => testFixture.EntitySerializer.Deserialize(testFixture.RequestId, testFixture.MessageName));
         }
 
         /// <summary>The context.</summary>
@@ -74,8 +73,6 @@
         {
             testFixture = new AddToQueueSpecificationFixture();
             testFixture.PerformTestSetup();
-
-            requestId = Guid.NewGuid();
         }
     }
 }

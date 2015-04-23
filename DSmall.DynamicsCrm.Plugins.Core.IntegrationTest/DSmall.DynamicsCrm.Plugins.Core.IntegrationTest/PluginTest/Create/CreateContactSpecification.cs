@@ -11,7 +11,6 @@
     {
         private CreateContactSpecificationFixture testFixture;
         private Guid entityId;
-        private Guid requestId;
 
         /// <summary>The should return a non empty id.</summary>
         [Test]
@@ -44,9 +43,9 @@
         /// <summary>The because of.</summary>
         protected override void BecauseOf()
         {
-            entityId = testFixture.CrmWriter.Create(requestId, testFixture.EntityToCreate);
+            entityId = testFixture.CrmWriter.Create(testFixture.RequestId, testFixture.EntityToCreate);
 
-            testFixture.Result = Retry.Do(() => testFixture.EntitySerializer.Deserialize(requestId, testFixture.MessageName));
+            testFixture.Result = Retry.Do(() => testFixture.EntitySerializer.Deserialize(testFixture.RequestId, testFixture.MessageName));
         }
 
         /// <summary>The context.</summary>
@@ -54,8 +53,6 @@
         {
             testFixture = new CreateContactSpecificationFixture();
             testFixture.PerformTestSetup();
-
-            requestId = Guid.NewGuid();
         }
     }
 }

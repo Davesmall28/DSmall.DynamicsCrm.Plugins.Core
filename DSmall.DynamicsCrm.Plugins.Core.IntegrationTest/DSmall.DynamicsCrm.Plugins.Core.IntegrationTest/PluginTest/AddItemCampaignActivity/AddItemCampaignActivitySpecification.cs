@@ -10,7 +10,6 @@ namespace DSmall.DynamicsCrm.Plugins.Core.IntegrationTest
     public class AddItemCampaignActivitySpecification : SpecificationBase
     {
         private AddItemCampaignActivitySpecificationFixture testFixture;
-        private Guid requestId;
 
         /// <summary>The should return input parameter containing three parameters.</summary>
         [Test]
@@ -64,9 +63,9 @@ namespace DSmall.DynamicsCrm.Plugins.Core.IntegrationTest
         /// <summary>The because of.</summary>
         protected override void BecauseOf()
         {
-            testFixture.CrmWriter.Execute(requestId, testFixture.AddItemCampaignActivityRequest);
+            testFixture.CrmWriter.Execute(testFixture.RequestId, testFixture.AddItemCampaignActivityRequest);
 
-            testFixture.Result = Retry.Do(() => testFixture.EntitySerializer.Deserialize(requestId, testFixture.MessageName));
+            testFixture.Result = Retry.Do(() => testFixture.EntitySerializer.Deserialize(testFixture.RequestId, testFixture.MessageName));
         }
 
         /// <summary>The context.</summary>
@@ -74,8 +73,6 @@ namespace DSmall.DynamicsCrm.Plugins.Core.IntegrationTest
         {
             testFixture = new AddItemCampaignActivitySpecificationFixture();
             testFixture.PerformTestSetup();
-
-            requestId = Guid.NewGuid();
         }
     }
 }

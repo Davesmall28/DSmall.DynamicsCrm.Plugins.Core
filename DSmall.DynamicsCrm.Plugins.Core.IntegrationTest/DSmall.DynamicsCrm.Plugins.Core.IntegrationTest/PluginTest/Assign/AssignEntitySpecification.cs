@@ -1,6 +1,5 @@
 ﻿namespace DSmall.DynamicsCrm.Plugins.Core.IntegrationTest
 {
-    using System;
     using DSmall.UnitTest.Core;
     using Microsoft.Xrm.Sdk;
     using NUnit.Framework;
@@ -10,7 +9,6 @@
     public class AssignEntitySpecification : SpecificationBase
     {
         private AssignEntitySpecificationFixture testFixture;
-        private Guid requestId;
 
         /// <summary>The should return input parameter containing two parameters.</summary>
         [Test]
@@ -57,9 +55,9 @@
         /// <summary>The because of.</summary>
         protected override void BecauseOf()
         {
-            testFixture.CrmWriter.Execute(requestId, testFixture.AssignRequest);
+            testFixture.CrmWriter.Execute(testFixture.RequestId, testFixture.AssignRequest);
 
-            testFixture.Result = Retry.Do(() => testFixture.EntitySerializer.Deserialize(requestId, testFixture.MessageName));
+            testFixture.Result = Retry.Do(() => testFixture.EntitySerializer.Deserialize(testFixture.RequestId, testFixture.MessageName));
         }
 
         /// <summary>The context.</summary>
@@ -67,8 +65,6 @@
         {
             testFixture = new AssignEntitySpecificationFixture();
             testFixture.PerformTestSetup();
-
-            requestId = Guid.NewGuid();
         }
     }
 }

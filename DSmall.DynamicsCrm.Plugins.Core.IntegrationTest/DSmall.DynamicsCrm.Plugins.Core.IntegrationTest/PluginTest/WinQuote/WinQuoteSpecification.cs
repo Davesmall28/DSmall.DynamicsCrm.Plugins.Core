@@ -1,6 +1,5 @@
 namespace DSmall.DynamicsCrm.Plugins.Core.IntegrationTest
 {
-    using System;
     using DSmall.UnitTest.Core;
     using Microsoft.Xrm.Sdk;
     using NUnit.Framework;
@@ -10,7 +9,6 @@ namespace DSmall.DynamicsCrm.Plugins.Core.IntegrationTest
     public class WinQuoteSpecification : SpecificationBase
     {
         private WinQuoteSpecificationFixture testFixture;
-        private Guid requestId;
 
         /// <summary>The should return input parameters containing two parameters.</summary>
         [Test]
@@ -50,9 +48,9 @@ namespace DSmall.DynamicsCrm.Plugins.Core.IntegrationTest
         /// <summary>The because of.</summary>
         protected override void BecauseOf()
         {
-            testFixture.CrmWriter.Execute(requestId, testFixture.WinQuoteRequest);
+            testFixture.CrmWriter.Execute(testFixture.RequestId, testFixture.WinQuoteRequest);
 
-            testFixture.Result = Retry.Do(() => testFixture.EntitySerializer.Deserialize(requestId, testFixture.MessageName));
+            testFixture.Result = Retry.Do(() => testFixture.EntitySerializer.Deserialize(testFixture.RequestId, testFixture.MessageName));
         }
 
         /// <summary>The context.</summary>
@@ -60,8 +58,6 @@ namespace DSmall.DynamicsCrm.Plugins.Core.IntegrationTest
         {
             testFixture = new WinQuoteSpecificationFixture();
             testFixture.PerformTestSetup();
-
-            requestId = Guid.NewGuid();
         }
     }
 }
