@@ -118,6 +118,12 @@
     <Compile Include="Model\PluginParameters.cs" />
     <Compile Include="PluginTest\Delete\DeleteContactSpecification.cs" />
     <Compile Include="PluginTest\Delete\DeleteContactSpecificationFixture.cs" />
+    <Compile Include="PluginTest\Disassociate\DisassociateSpecification.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PluginTest\Disassociate\DisassociateSpecificationFixture.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="PluginTest\LoseOpportunity\LoseOpportunitySpecification.cs">
       <SubType>Code</SubType>
     </Compile>
