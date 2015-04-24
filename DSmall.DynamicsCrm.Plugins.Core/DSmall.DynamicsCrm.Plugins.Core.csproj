@@ -45,10 +45,12 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\DSmall.Core.1.0.1.1\lib\net40\DSmall.Core.dll</HintPath>
     </Reference>
-    <Reference Include="DSmall.DynamicsCrm.Core">
+    <Reference Include="DSmall.DynamicsCrm.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=c0110db01952ea61, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\DSmall.DynamicsCrm.Core.1.0.0.0\lib\net40\DSmall.DynamicsCrm.Core.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Crm.Sdk.Proxy, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Microsoft.CrmSdk.CoreAssemblies.5.0.17\lib\net40\Microsoft.Crm.Sdk.Proxy.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.IdentityModel, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -56,10 +58,13 @@
       <HintPath>..\packages\Microsoft.IdentityModel.6.1.7600.16394\lib\net35\Microsoft.IdentityModel.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Xrm.Sdk, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Microsoft.CrmSdk.CoreAssemblies.5.0.17\lib\net40\Microsoft.Xrm.Sdk.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.DirectoryServices.AccountManagement" />
     <Reference Include="System.IdentityModel" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
@@ -115,13 +120,13 @@
   <ItemGroup>
     <None Include="DSmall.DynamicsCrm.Plugins.Core.nuspec" />
     <None Include="DSmallKey.snk" />
-    <None Include="packages.config" />
     <None Include="Nuget\NuGetPush.bat" />
     <None Include="Nuget\Tools\ILMerge.exe" />
     <None Include="Nuget\Tools\DSmall.DynamicsCrm.Plugins.Core.targets" />
     <None Include="Nuget\Tools\init.ps1" />
     <None Include="Nuget\Tools\install.ps1" />
     <None Include="Nuget\Tools\uninstall.ps1" />
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
