@@ -121,5 +121,23 @@
 
             return entity;
         }
+
+        /// <summary>The create case.</summary>
+        /// <returns>The <see cref="Entity"/>.</returns>
+        public Entity CreateCase()
+        {
+            var contactEntity = CreateContact();
+
+            var entity = new Entity("incident")
+            {
+                Id = Guid.NewGuid()
+            };
+            entity["title"] = "DummyCase";
+            entity["customerid"] = contactEntity.ToEntityReference();
+
+            organizationService.Create(entity);
+
+            return entity;
+        }
     }
 }
