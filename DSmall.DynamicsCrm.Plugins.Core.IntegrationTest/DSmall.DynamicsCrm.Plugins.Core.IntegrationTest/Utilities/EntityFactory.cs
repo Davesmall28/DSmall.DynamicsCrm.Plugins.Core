@@ -1,6 +1,7 @@
 ﻿namespace DSmall.DynamicsCrm.Plugins.Core.IntegrationTest
 {
     using System;
+    using System.Globalization;
     using Microsoft.Xrm.Sdk;
 
     /// <summary>The entity factory.</summary>
@@ -24,6 +25,7 @@
                 Id = Guid.NewGuid()
             };
             entity["firstname"] = "DummyFirstName";
+            entity["lastname"] = DateTime.Now.Ticks.ToString(CultureInfo.InvariantCulture);
 
             organizationService.Create(entity);
 
@@ -134,6 +136,40 @@
             };
             entity["title"] = "DummyCase";
             entity["customerid"] = contactEntity.ToEntityReference();
+
+            organizationService.Create(entity);
+
+            return entity;
+        }
+
+        /// <summary>The create lead.</summary>
+        /// <returns>The <see cref="Entity"/>.</returns>
+        public Entity CreateLead()
+        {
+            var campaignEntity = CreateCampaign();
+
+            var entity = new Entity("lead")
+            {
+                Id = Guid.NewGuid()
+            };
+            entity["firstname"] = "DummyFirstName - " + DateTime.Now.Ticks;
+            entity["campaignid"] = campaignEntity.ToEntityReference();
+            entity["companyname"] = "DummyLeadAccountName - " + DateTime.Now.Ticks;
+
+            organizationService.Create(entity);
+
+            return entity;
+        }
+
+        /// <summary>The create account.</summary>
+        /// <returns>The <see cref="Entity"/>.</returns>
+        public Entity CreateAccount()
+        {
+            var entity = new Entity("account")
+            {
+                Id = Guid.NewGuid()
+            };
+            entity["name"] = "DummyAccountName - " + DateTime.Now.Ticks;
 
             organizationService.Create(entity);
 

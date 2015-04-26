@@ -1,6 +1,7 @@
 ﻿namespace DSmall.DynamicsCrm.Plugins.Core.IntegrationTest
 {
     using System;
+    using System.IO;
     using System.Linq;
     using Microsoft.Xrm.Sdk;
     using Microsoft.Xrm.Sdk.Query;
@@ -55,6 +56,26 @@
             var queueEntity = new Entity("queue");
             queueEntity["name"] = queueName;
             return organizationService.Create(queueEntity);
+        }
+
+        /// <summary>The get currency id.</summary>
+        /// <returns>The <see cref="EntityReference"/>.</returns>
+        public EntityReference GetCurrencyId()
+        {
+            var query = new QueryExpression
+            {
+                EntityName = "transactioncurrency",
+                ColumnSet = new ColumnSet("transactioncurrencyid")
+            };
+
+            var entityCollection = organizationService.RetrieveMultiple(query);
+
+            if (entityCollection.Entities.Count == 0)
+            {
+                throw new InvalidDataException("No currency records exist.");
+            }
+
+            return entityCollection.Entities.First().ToEntityReference();
         }
     }
 }

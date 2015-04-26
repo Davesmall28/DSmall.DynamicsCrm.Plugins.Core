@@ -140,6 +140,8 @@
     </Compile>
     <Compile Include="PluginTest\Merge\MergeEntitySpecificationFixture.cs" />
     <Compile Include="PluginTest\Merge\MergeEntitySpecification.cs" />
+    <Compile Include="PluginTest\QualifyLead\QualifyLeadSpecification.cs" />
+    <Compile Include="PluginTest\QualifyLead\QualifyLeadSpecificationFixture.cs" />
     <Compile Include="PluginTest\SetState\SetStateEntitySpecification.cs" />
     <Compile Include="PluginTest\SetState\SetStateEntitySpecificationFixture.cs" />
     <Compile Include="PluginTest\Update\UpdateContactSpecification.cs" />
