@@ -175,5 +175,35 @@
 
             return entity;
         }
+
+        /// <summary>The create sales order.</summary>
+        /// <returns>The <see cref="Entity"/>.</returns>
+        public Entity CreateSalesOrder()
+        {
+            var entity = new Entity("salesorder")
+            {
+                Id = Guid.NewGuid()
+            };
+            entity["name"] = "DummyOrderName - " + DateTime.Now.Ticks;
+
+            organizationService.Create(entity);
+
+            return entity;
+        }
+
+        /// <summary>The create contract.</summary>
+        /// <returns>The <see cref="Entity"/>.</returns>
+        public Entity CreateContract()
+        {
+            var entity = new Entity("contract")
+            {
+                Id = Guid.NewGuid()
+            };
+            entity["title"] = "DummyContract";
+
+            organizationService.Create(entity);
+
+            return entity;
+        }
     }
 }

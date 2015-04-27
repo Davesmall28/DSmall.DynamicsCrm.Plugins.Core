@@ -112,6 +112,14 @@
     <Compile Include="PluginTest\Associate\AssociateEntitySpecificationFixture.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="PluginTest\CancelContract\CancelContractSpecification.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PluginTest\CancelContract\CancelContractSpecificationFixture.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PluginTest\CancelSalesOrder\CancelSalesOrderSpecification.cs" />
+    <Compile Include="PluginTest\CancelSalesOrder\CancelSalesOrderSpecificationFixture.cs" />
     <Compile Include="PluginTest\CloseIncident\CloseIncidentSpecification.cs" />
     <Compile Include="PluginTest\CloseIncident\CloseIncidentSpecificationFixture.cs" />
     <Compile Include="PluginTest\CloseQuote\CloseQuoteSpecification.cs">
