@@ -142,6 +142,8 @@
     <Compile Include="PluginTest\Disassociate\DisassociateSpecificationFixture.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="PluginTest\LockSalesOrderPricing\LockSalesOrderPricingSpecification.cs" />
+    <Compile Include="PluginTest\LockSalesOrderPricing\LockSalesOrderPricingSpecificationFixture.cs" />
     <Compile Include="PluginTest\LoseOpportunity\LoseOpportunitySpecification.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -154,6 +156,8 @@
     <Compile Include="PluginTest\QualifyLead\QualifyLeadSpecificationFixture.cs" />
     <Compile Include="PluginTest\SetState\SetStateEntitySpecification.cs" />
     <Compile Include="PluginTest\SetState\SetStateEntitySpecificationFixture.cs" />
+    <Compile Include="PluginTest\UnlockSalesOrderPricing\UnlockSalesOrderPricingSpecification.cs" />
+    <Compile Include="PluginTest\UnlockSalesOrderPricing\UnlockSalesOrderPricingSpecificationFixture.cs" />
     <Compile Include="PluginTest\Update\UpdateContactSpecification.cs" />
     <Compile Include="PluginTest\Update\UpdateContactSpecificationFixture.cs" />
     <Compile Include="PluginTest\WinOpportunity\WinOpportunitySpecificationFixture.cs" />
