@@ -245,5 +245,20 @@
 
             return contractLine;
         }
+
+        /// <summary>The create invoice.</summary>
+        /// <returns>The <see cref="Entity"/>.</returns>
+        public Entity CreateInvoice()
+        {
+            var entity = new Entity("invoice")
+            {
+                Id = Guid.NewGuid()
+            };
+            entity["name"] = "DummyInvoice";
+
+            organizationService.Create(entity);
+
+            return entity;
+        }
     }
 }
