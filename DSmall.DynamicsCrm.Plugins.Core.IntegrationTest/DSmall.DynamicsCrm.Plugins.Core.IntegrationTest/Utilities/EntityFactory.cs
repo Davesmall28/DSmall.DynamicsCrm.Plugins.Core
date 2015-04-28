@@ -2,18 +2,22 @@
 {
     using System;
     using System.Globalization;
+    using Microsoft.Crm.Sdk.Messages;
     using Microsoft.Xrm.Sdk;
 
     /// <summary>The entity factory.</summary>
     public class EntityFactory
     {
         private readonly IOrganizationService organizationService;
+        private readonly ICrmReader crmReader;
 
         /// <summary>Initialises a new instance of the <see cref="EntityFactory"/> class.</summary>
         /// <param name="organizationService">The organization service.</param>
-        public EntityFactory(IOrganizationService organizationService)
+        /// <param name="crmReader">The crm reader.</param>
+        public EntityFactory(IOrganizationService organizationService, ICrmReader crmReader)
         {
             this.organizationService = organizationService;
+            this.crmReader = crmReader;
         }
 
         /// <summary>The create contact.</summary>
@@ -195,15 +199,51 @@
         /// <returns>The <see cref="Entity"/>.</returns>
         public Entity CreateContract()
         {
+            var contactEntity = CreateContact();
+
             var entity = new Entity("contract")
             {
                 Id = Guid.NewGuid()
             };
             entity["title"] = "DummyContract";
+            entity["contracttemplateid"] = crmReader.GetContractTemplateId();
+            entity["billingcustomerid"] = contactEntity.ToEntityReference();
+            entity["customerid"] = contactEntity.ToEntityReference();
+            entity["billingstarton"] = DateTime.Now;
+            entity["billingendon"] = DateTime.Now.AddYears(1);
+            entity["activeon"] = DateTime.Now;
+            entity["expireson"] = DateTime.Now.AddYears(1);
 
             organizationService.Create(entity);
 
+            CreateContractLine(entity.ToEntityReference());
+
+            var setStateRequest = new SetStateRequest
+            {
+                EntityMoniker = entity.ToEntityReference(),
+                State = new OptionSetValue(1),
+                Status = new OptionSetValue(2)
+            };
+
+            organizationService.Execute(setStateRequest);
+
             return entity;
+        }
+
+        /// <summary>The create contract line.</summary>
+        /// <param name="entityReference">The entity reference.</param>
+        /// <returns>The <see cref="Entity"/>.</returns>
+        public Entity CreateContractLine(EntityReference entityReference)
+        {
+            var contractLine = new Entity("contractdetail");
+            contractLine["title"] = "DummyContractLine";
+            contractLine["contractid"] = entityReference;
+            contractLine["activeon"] = DateTime.Now;
+            contractLine["expireson"] = DateTime.Now.AddYears(1);
+            contractLine["price"] = new Money(111m);
+            contractLine.Id = organizationService.Create(contractLine);
+
+            return contractLine;
         }
     }
 }

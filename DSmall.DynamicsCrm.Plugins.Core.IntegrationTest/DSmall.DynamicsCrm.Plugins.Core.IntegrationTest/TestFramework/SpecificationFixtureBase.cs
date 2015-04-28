@@ -16,7 +16,7 @@
             OrganizationService = new OrganizationService(ConnectionStringSettingName);
             CrmReader = new CrmReader(OrganizationService);
             CrmWriter = new CrmWriter(OrganizationService);
-            EntityFactory = new EntityFactory(OrganizationService);
+            EntityFactory = new EntityFactory(OrganizationService, new CrmReader(OrganizationService));
             EntitySerializer = new EntitySerializer(OrganizationService);
             RequestId = Guid.NewGuid();
         }

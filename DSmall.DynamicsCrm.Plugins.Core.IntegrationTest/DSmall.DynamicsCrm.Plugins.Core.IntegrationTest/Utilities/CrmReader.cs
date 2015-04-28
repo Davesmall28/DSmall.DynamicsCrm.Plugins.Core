@@ -7,7 +7,7 @@
     using Microsoft.Xrm.Sdk.Query;
 
     /// <summary>The crm reader.</summary>
-    public class CrmReader
+    public class CrmReader : ICrmReader
     {
         private readonly IOrganizationService organizationService;
 
@@ -73,6 +73,26 @@
             if (entityCollection.Entities.Count == 0)
             {
                 throw new InvalidDataException("No currency records exist.");
+            }
+
+            return entityCollection.Entities.First().ToEntityReference();
+        }
+
+        /// <summary>The get contract template id.</summary>
+        /// <returns>The <see cref="EntityReference"/>.</returns>
+        public EntityReference GetContractTemplateId()
+        {
+            var query = new QueryExpression
+            {
+                EntityName = "contracttemplate",
+                ColumnSet = new ColumnSet("contracttemplateid")
+            };
+
+            var entityCollection = organizationService.RetrieveMultiple(query);
+
+            if (entityCollection.Entities.Count == 0)
+            {
+                throw new InvalidDataException("No contract template records exist.");
             }
 
             return entityCollection.Entities.First().ToEntityReference();

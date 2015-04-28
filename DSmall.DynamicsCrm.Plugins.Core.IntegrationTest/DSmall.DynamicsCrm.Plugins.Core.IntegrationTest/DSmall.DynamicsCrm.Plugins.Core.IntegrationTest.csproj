@@ -120,6 +120,8 @@
     </Compile>
     <Compile Include="PluginTest\CancelSalesOrder\CancelSalesOrderSpecification.cs" />
     <Compile Include="PluginTest\CancelSalesOrder\CancelSalesOrderSpecificationFixture.cs" />
+    <Compile Include="PluginTest\CloneContract\CloneContractSpecification.cs" />
+    <Compile Include="PluginTest\CloneContract\CloneContractSpecificationFixture.cs" />
     <Compile Include="PluginTest\CloseIncident\CloseIncidentSpecification.cs" />
     <Compile Include="PluginTest\CloseIncident\CloseIncidentSpecificationFixture.cs" />
     <Compile Include="PluginTest\CloseQuote\CloseQuoteSpecification.cs">
@@ -170,6 +172,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utilities\EntityFactory.cs" />
     <Compile Include="Utilities\EntitySerializer.cs" />
+    <Compile Include="Utilities\ICrmReader.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
