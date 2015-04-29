@@ -21,70 +21,70 @@ namespace DSmall.DynamicsCrm.Plugins.Core.IntegrationTest
         [Test]
         public void ShouldReturnInputParameterContainingLeadId()
         {
-            Assert.IsTrue(testFixture.Result.InputParameters.Count("LeadId", typeof(EntityReference)) == 1);
+            Assert.IsTrue(testFixture.Result.InputParameters.OneOf<EntityReference>("LeadId"));
         }
 
         /// <summary>The should return input parameter containing create account.</summary>
         [Test]
         public void ShouldReturnInputParameterContainingCreateAccount()
         {
-            Assert.IsTrue(testFixture.Result.InputParameters.Count("CreateAccount", typeof(bool)) == 1);
+            Assert.IsTrue(testFixture.Result.InputParameters.OneOf<bool>("CreateAccount"));
         }
 
         /// <summary>The should return input parameter containing create contact.</summary>
         [Test]
         public void ShouldReturnInputParameterContainingCreateContact()
         {
-            Assert.IsTrue(testFixture.Result.InputParameters.Count("CreateContact", typeof(bool)) == 1);
+            Assert.IsTrue(testFixture.Result.InputParameters.OneOf<bool>("CreateContact"));
         }
 
         /// <summary>The should return input parameter containing create opportunity.</summary>
         [Test]
         public void ShouldReturnInputParameterContainingCreateOpportunity()
         {
-            Assert.IsTrue(testFixture.Result.InputParameters.Count("CreateOpportunity", typeof(bool)) == 1);
+            Assert.IsTrue(testFixture.Result.InputParameters.OneOf<bool>("CreateOpportunity"));
         }
 
         /// <summary>The should return input parameter containing opportunity currency id.</summary>
         [Test]
         public void ShouldReturnInputParameterContainingOpportunityCurrencyId()
         {
-            Assert.IsTrue(testFixture.Result.InputParameters.Count("OpportunityCurrencyId", typeof(EntityReference)) == 1);
+            Assert.IsTrue(testFixture.Result.InputParameters.OneOf<EntityReference>("OpportunityCurrencyId"));
         }
 
         /// <summary>The should return input parameter containing opportunity customer id.</summary>
         [Test]
         public void ShouldReturnInputParameterContainingOpportunityCustomerId()
         {
-            Assert.IsTrue(testFixture.Result.InputParameters.Count("OpportunityCustomerId", typeof(EntityReference)) == 1);
+            Assert.IsTrue(testFixture.Result.InputParameters.OneOf<EntityReference>("OpportunityCustomerId"));
         }
 
         /// <summary>The should return input parameter containing source campaign id.</summary>
         [Test]
         public void ShouldReturnInputParameterContainingSourceCampaignId()
         {
-            Assert.IsTrue(testFixture.Result.InputParameters.Count("SourceCampaignId", typeof(EntityReference)) == 1);
+            Assert.IsTrue(testFixture.Result.InputParameters.OneOf<EntityReference>("SourceCampaignId"));
         }
 
         /// <summary>The should return input parameter containing status.</summary>
         [Test]
         public void ShouldReturnInputParameterContainingStatus()
         {
-            Assert.IsTrue(testFixture.Result.InputParameters.Count("Status", typeof(OptionSetValue)) == 1);
+            Assert.IsTrue(testFixture.Result.InputParameters.OneOf<OptionSetValue>("Status"));
         }
 
         /// <summary>The should return no pre entity images.</summary>
         [Test]
         public void ShouldReturnNoPreEntityImages()
         {
-            Assert.IsTrue(testFixture.Result.PreEntityImages.Count == 0);
+            Assert.IsTrue(testFixture.Result.PreEntityImages.NoParameters());
         }
 
         /// <summary>The should return no post entity images.</summary>
         [Test]
         public void ShouldReturnNoPostEntityImages()
         {
-            Assert.IsTrue(testFixture.Result.PostEntityImages.Count == 0);
+            Assert.IsTrue(testFixture.Result.PostEntityImages.NoParameters());
         }
 
         /// <summary>The because of.</summary>

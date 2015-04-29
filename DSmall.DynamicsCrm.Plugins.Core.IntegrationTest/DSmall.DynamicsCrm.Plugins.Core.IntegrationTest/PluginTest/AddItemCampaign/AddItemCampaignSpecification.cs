@@ -22,42 +22,42 @@ namespace DSmall.DynamicsCrm.Plugins.Core.IntegrationTest
         [Test]
         public void ShouldReturnInputParameterContainingCampaignId()
         {
-            Assert.IsTrue(testFixture.Result.InputParameters.Count("CampaignId", typeof(Guid)) == 1);
+            Assert.IsTrue(testFixture.Result.InputParameters.OneOf<Guid>("CampaignId"));
         }
 
         /// <summary>The should return input parameter containing entity id.</summary>
         [Test]
         public void ShouldReturnInputParameterContainingEntityId()
         {
-            Assert.IsTrue(testFixture.Result.InputParameters.Count("EntityId", typeof(Guid)) == 1);
+            Assert.IsTrue(testFixture.Result.InputParameters.OneOf<Guid>("EntityId"));
         }
 
         /// <summary>The should return input parameter containing entity name.</summary>
         [Test]
         public void ShouldReturnInputParameterContainingEntityName()
         {
-            Assert.IsTrue(testFixture.Result.InputParameters.Count("EntityName", typeof(string)) == 1);
+            Assert.IsTrue(testFixture.Result.InputParameters.OneOf<string>("EntityName"));
         }
 
         /// <summary>The should return no pre entity images.</summary>
         [Test]
         public void ShouldReturnNoPreEntityImages()
         {
-            Assert.IsTrue(testFixture.Result.PreEntityImages.Count == 0);
+            Assert.IsTrue(testFixture.Result.PreEntityImages.NoParameters());
         }
 
         /// <summary>The should return post entity images containing one parameter.</summary>
         [Test]
         public void ShouldReturnPostEntityImagesContainingOneParameter()
         {
-            Assert.IsTrue(testFixture.Result.PostEntityImages.Count == 1);
+            Assert.IsTrue(testFixture.Result.PostEntityImages.One());
         }
 
         /// <summary>The should return post entity image containing asynchronous step primary name.</summary>
         [Test]
         public void ShouldReturnPostEntityImageContainingAsynchronousStepPrimaryName()
         {
-            Assert.IsTrue(testFixture.Result.PostEntityImages.Count("AsynchronousStepPrimaryName", typeof(Entity)) == 1);
+            Assert.IsTrue(testFixture.Result.PostEntityImages.OneOf<Entity>("AsynchronousStepPrimaryName"));
         }
 
         /// <summary>The because of.</summary>

@@ -22,35 +22,35 @@ namespace DSmall.DynamicsCrm.Plugins.Core.IntegrationTest
         [Test]
         public void ShouldReturnInputParametersContainingContractId()
         {
-            Assert.IsTrue(testFixture.Result.InputParameters.Count("ContractId", typeof(Guid)) == 1);
+            Assert.IsTrue(testFixture.Result.InputParameters.OneOf<Guid>("ContractId"));
         }
 
         /// <summary>The should return input parameters containing include canceled lines.</summary>
         [Test]
         public void ShouldReturnInputParametersContainingIncludeCanceledLines()
         {
-            Assert.IsTrue(testFixture.Result.InputParameters.Count("IncludeCanceledLines", typeof(bool)) == 1);
+            Assert.IsTrue(testFixture.Result.InputParameters.OneOf<bool>("IncludeCanceledLines"));
         }
 
         /// <summary>The should return no pre entity images.</summary>
         [Test]
         public void ShouldReturnNoPreEntityImages()
         {
-            Assert.IsTrue(testFixture.Result.PreEntityImages.Count == 0);
+            Assert.IsTrue(testFixture.Result.PreEntityImages.NoParameters());
         }
 
         /// <summary>The should return post entity images containing one parameter.</summary>
         [Test]
         public void ShouldReturnPostEntityImagesContainingOneParameter()
         {
-            Assert.IsTrue(testFixture.Result.PostEntityImages.Count == 1);
+            Assert.IsTrue(testFixture.Result.PostEntityImages.One());
         }
 
         /// <summary>The should return post entity images containing asynchronous step primary name.</summary>
         [Test]
         public void ShouldReturnPostEntityImagesContainingAsynchronousStepPrimaryName()
         {
-            Assert.IsTrue(testFixture.Result.PostEntityImages.Count("AsynchronousStepPrimaryName", typeof(Entity)) == 1);
+            Assert.IsTrue(testFixture.Result.PostEntityImages.OneOf<Entity>("AsynchronousStepPrimaryName"));
         }
 
         /// <summary>The because of.</summary>

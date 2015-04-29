@@ -23,21 +23,21 @@
         [Test]
         public void ShouldReturnInputParameterContainingTargetEntity()
         {
-            Assert.IsTrue(testFixture.Result.InputParameters.Count("Target", typeof(Entity)) == 1);
+            Assert.IsTrue(testFixture.Result.InputParameters.OneOf<Entity>("Target"));
         }
 
         /// <summary>The should return no pre entity images.</summary>
         [Test]
         public void ShouldReturnNoPreEntityImages()
         {
-            Assert.IsTrue(testFixture.Result.PreEntityImages.Count == 0);
+            Assert.IsTrue(testFixture.Result.PreEntityImages.NoParameters());
         }
 
         /// <summary>The should return post entity image containing asynchronous step primary name.</summary>
         [Test]
         public void ShouldReturnPostEntityImageContainingAsynchronousStepPrimaryName()
         {
-            Assert.IsTrue(testFixture.Result.PostEntityImages.Count("AsynchronousStepPrimaryName", typeof(Entity)) == 1);
+            Assert.IsTrue(testFixture.Result.PostEntityImages.OneOf<Entity>("AsynchronousStepPrimaryName"));
         }
 
         /// <summary>The because of.</summary>

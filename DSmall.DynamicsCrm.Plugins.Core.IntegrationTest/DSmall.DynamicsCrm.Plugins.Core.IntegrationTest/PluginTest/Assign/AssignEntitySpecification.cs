@@ -21,35 +21,35 @@
         [Test]
         public void ShouldReturnInputParameterContainingTargetEntity()
         {
-            Assert.IsTrue(testFixture.Result.InputParameters.Count("Target", typeof(EntityReference)) == 1);
+            Assert.IsTrue(testFixture.Result.InputParameters.OneOf<EntityReference>("Target"));
         }
 
         /// <summary>The should return input parameter containing assignee.</summary>
         [Test]
         public void ShouldReturnInputParameterContainingAssignee()
         {
-            Assert.IsTrue(testFixture.Result.InputParameters.Count("Assignee", typeof(EntityReference)) == 1);
+            Assert.IsTrue(testFixture.Result.InputParameters.OneOf<EntityReference>("Assignee"));
         }
 
         /// <summary>The should return pre entity image containing one parameter.</summary>
         [Test]
         public void ShouldReturnPreEntityImageContainingOneParameter()
         {
-            Assert.IsTrue(testFixture.Result.PreEntityImages.Count == 1);
+            Assert.IsTrue(testFixture.Result.PreEntityImages.One());
         }
 
         /// <summary>The should return pre entity image containing asynchronous step primary name.</summary>
         [Test]
         public void ShouldReturnPreEntityImageContainingAsynchronousStepPrimaryName()
         {
-            Assert.IsTrue(testFixture.Result.PreEntityImages.Count("AsynchronousStepPrimaryName", typeof(Entity)) == 1);
+            Assert.IsTrue(testFixture.Result.PreEntityImages.OneOf<Entity>("AsynchronousStepPrimaryName"));
         }
 
         /// <summary>The should return no post entity images.</summary>
         [Test]
         public void ShouldReturnNoPostEntityImages()
         {
-            Assert.IsTrue(testFixture.Result.PostEntityImages.Count == 0);
+            Assert.IsTrue(testFixture.Result.PostEntityImages.NoParameters());
         }
 
         /// <summary>The because of.</summary>

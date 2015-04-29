@@ -14,28 +14,28 @@ namespace DSmall.DynamicsCrm.Plugins.Core.IntegrationTest
         [Test]
         public void ShouldReturnInputParametersContainingOneParameter()
         {
-            Assert.IsTrue(testFixture.Result.InputParameters.Count == 1);
+            Assert.IsTrue(testFixture.Result.InputParameters.One());
         }
 
         /// <summary>The should return input parameters containing invoice id.</summary>
         [Test]
         public void ShouldReturnInputParametersContainingInvoiceId()
         {
-            Assert.IsTrue(testFixture.Result.InputParameters.Count("InvoiceId", typeof(Guid)) == 1);
+            Assert.IsTrue(testFixture.Result.InputParameters.OneOf<Guid>("InvoiceId"));
         }
 
         /// <summary>The should return no pre entity images.</summary>
         [Test]
         public void ShouldReturnNoPreEntityImages()
         {
-            Assert.IsTrue(testFixture.Result.PreEntityImages.Count == 0);
+            Assert.IsTrue(testFixture.Result.PreEntityImages.NoParameters());
         }
 
         /// <summary>The should return no post entity images.</summary>
         [Test]
         public void ShouldReturnNoPostEntityImages()
         {
-            Assert.IsTrue(testFixture.Result.PostEntityImages.Count == 0);
+            Assert.IsTrue(testFixture.Result.PostEntityImages.NoParameters());
         }
 
         /// <summary>The because of.</summary>

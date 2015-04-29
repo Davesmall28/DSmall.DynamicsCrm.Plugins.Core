@@ -22,35 +22,35 @@ namespace DSmall.DynamicsCrm.Plugins.Core.IntegrationTest
         [Test]
         public void ShouldReturnInputParameterContainingContractId()
         {
-            Assert.IsTrue(testFixture.Result.InputParameters.Count("ContractId", typeof(Guid)) == 1);
+            Assert.IsTrue(testFixture.Result.InputParameters.OneOf<Guid>("ContractId"));
         }
 
         /// <summary>The should return input parameter containing cancel date.</summary>
         [Test]
         public void ShouldReturnInputParameterContainingCancelDate()
         {
-            Assert.IsTrue(testFixture.Result.InputParameters.Count("CancelDate", typeof(DateTime)) == 1);
+            Assert.IsTrue(testFixture.Result.InputParameters.OneOf<DateTime>("CancelDate"));
         }
 
         /// <summary>The should return input parameter containing status.</summary>
         [Test]
         public void ShouldReturnInputParameterContainingStatus()
         {
-            Assert.IsTrue(testFixture.Result.InputParameters.Count("Status", typeof(OptionSetValue)) == 1);
+            Assert.IsTrue(testFixture.Result.InputParameters.OneOf<OptionSetValue>("Status"));
         }
 
         /// <summary>The should return no pre entity images.</summary>
         [Test]
         public void ShouldReturnNoPreEntityImages()
         {
-            Assert.IsTrue(testFixture.Result.PreEntityImages.Count == 0);
+            Assert.IsTrue(testFixture.Result.PreEntityImages.NoParameters());
         }
 
         /// <summary>The should return no post entity images.</summary>
         [Test]
         public void ShouldReturnNoPostEntityImages()
         {
-            Assert.IsTrue(testFixture.Result.PostEntityImages.Count == 0);
+            Assert.IsTrue(testFixture.Result.PostEntityImages.NoParameters());
         }
 
         /// <summary>The because of.</summary>

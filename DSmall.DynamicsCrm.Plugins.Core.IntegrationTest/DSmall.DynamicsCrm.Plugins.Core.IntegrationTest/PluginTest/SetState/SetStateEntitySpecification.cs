@@ -21,42 +21,42 @@
         [Test]
         public void ShouldReturnInputParameterContainingEntityMoniker()
         {
-            Assert.IsTrue(testFixture.Result.InputParameters.Count("EntityMoniker", typeof(EntityReference)) == 1);
+            Assert.IsTrue(testFixture.Result.InputParameters.OneOf<EntityReference>("EntityMoniker"));
         }
 
         /// <summary>The should return input parameter containing state code.</summary>
         [Test]
         public void ShouldReturnInputParameterContainingStateCode()
         {
-            Assert.IsTrue(testFixture.Result.InputParameters.Count("State", typeof(OptionSetValue)) == 1);
+            Assert.IsTrue(testFixture.Result.InputParameters.OneOf<OptionSetValue>("State"));
         }
 
         /// <summary>The should return input parameter containing status code.</summary>
         [Test]
         public void ShouldReturnInputParameterContainingStatusCode()
         {
-            Assert.IsTrue(testFixture.Result.InputParameters.Count("Status", typeof(OptionSetValue)) == 1);
+            Assert.IsTrue(testFixture.Result.InputParameters.OneOf<OptionSetValue>("Status"));
         }
 
         /// <summary>The should return no pre entity images.</summary>
         [Test]
         public void ShouldReturnNoPreEntityImages()
         {
-            Assert.IsTrue(testFixture.Result.PreEntityImages.Count == 0);
+            Assert.IsTrue(testFixture.Result.PreEntityImages.NoParameters());
         }
 
-        /// <summary>The should return no post entity images.</summary>
+        /// <summary>The should return one post entity image.</summary>
         [Test]
         public void ShouldReturnOnePostEntityImage()
         {
-            Assert.IsTrue(testFixture.Result.PostEntityImages.Count == 1);
+            Assert.IsTrue(testFixture.Result.PostEntityImages.One());
         }
 
         /// <summary>The should return post entity image containing asynchronous step primary name.</summary>
         [Test]
         public void ShouldReturnPostEntityImageContainingAsynchronousStepPrimaryName()
         {
-            Assert.IsTrue(testFixture.Result.PostEntityImages.Count("AsynchronousStepPrimaryName", typeof(Entity)) == 1);
+            Assert.IsTrue(testFixture.Result.PostEntityImages.OneOf<Entity>("AsynchronousStepPrimaryName"));
         }
 
         /// <summary>The because of.</summary>

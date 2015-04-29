@@ -21,35 +21,35 @@ namespace DSmall.DynamicsCrm.Plugins.Core.IntegrationTest
         [Test]
         public void ShouldReturnInputParameterContainingTargetEntity()
         {
-            Assert.IsTrue(testFixture.Result.InputParameters.Count("Target", typeof(EntityReference)) == 1);
+            Assert.IsTrue(testFixture.Result.InputParameters.OneOf<EntityReference>("Target"));
         }
 
         /// <summary>The should return input parameter containing relationship.</summary>
         [Test]
         public void ShouldReturnInputParameterContainingRelationship()
         {
-            Assert.IsTrue(testFixture.Result.InputParameters.Count("Relationship", typeof(Relationship)) == 1);
+            Assert.IsTrue(testFixture.Result.InputParameters.OneOf<Relationship>("Relationship"));
         }
 
         /// <summary>The should return input parameter containing related entities.</summary>
         [Test]
         public void ShouldReturnInputParameterContainingRelatedEntities()
         {
-            Assert.IsTrue(testFixture.Result.InputParameters.Count("RelatedEntities", typeof(EntityReferenceCollection)) == 1);
+            Assert.IsTrue(testFixture.Result.InputParameters.OneOf<EntityReferenceCollection>("RelatedEntities"));
         }
 
         /// <summary>The should return no pre entity images.</summary>
         [Test]
         public void ShouldReturnNoPreEntityImages()
         {
-            Assert.IsTrue(testFixture.Result.PreEntityImages.Count == 0);
+            Assert.IsTrue(testFixture.Result.PreEntityImages.NoParameters());
         }
 
         /// <summary>The should return no post entity images.</summary>
         [Test]
         public void ShouldReturnNoPostEntityImages()
         {
-            Assert.IsTrue(testFixture.Result.PostEntityImages.Count == 0);
+            Assert.IsTrue(testFixture.Result.PostEntityImages.NoParameters());
         }
 
         /// <summary>The because of.</summary>

@@ -21,28 +21,28 @@ namespace DSmall.DynamicsCrm.Plugins.Core.IntegrationTest
         [Test]
         public void ShouldReturnInputParameterContainingOpportunityCloseEntity()
         {
-            Assert.IsTrue(testFixture.Result.InputParameters.Count("OpportunityClose", typeof(Entity)) == 1);
+            Assert.IsTrue(testFixture.Result.InputParameters.OneOf<Entity>("OpportunityClose"));
         }
 
         /// <summary>The should return input parameter containing status code.</summary>
         [Test]
         public void ShouldReturnInputParameterContainingStatusCode()
         {
-            Assert.IsTrue(testFixture.Result.InputParameters.Count("Status", typeof(OptionSetValue)) == 1);
+            Assert.IsTrue(testFixture.Result.InputParameters.OneOf<OptionSetValue>("Status"));
         }
 
         /// <summary>The should return no pre entity images.</summary>
         [Test]
         public void ShouldReturnNoPreEntityImages()
         {
-            Assert.IsTrue(testFixture.Result.PreEntityImages.Count == 0);
+            Assert.IsTrue(testFixture.Result.PreEntityImages.NoParameters());
         }
 
         /// <summary>The should return no post entity images.</summary>
         [Test]
         public void ShouldReturnNoPostEntityImages()
         {
-            Assert.IsTrue(testFixture.Result.PostEntityImages.Count == 0);
+            Assert.IsTrue(testFixture.Result.PostEntityImages.NoParameters());
         }
 
         /// <summary>The because of.</summary>
