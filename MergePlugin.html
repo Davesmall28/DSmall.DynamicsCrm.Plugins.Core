@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="DSmall.DynamicsCrm.Plugins.Core : The core framework from DSmall Solutions Ltd.">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>DSmall.DynamicsCrm.Plugins.Core - Merge Plugin</title>
+  </head>
+
+  <body>
+
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+		  <!-- Currently a private repo -->
+          <!--a id="forkme_banner" href="https://github.com/Davesmall28/DSmall.DynamicsCrm.Plugins.Core">View on GitHub</a-->
+
+          <h1 id="project_title">DSmall.DynamicsCrm.Plugins.Core</h1>
+          <h2 id="project_tagline">The core framework from DSmall Solutions Ltd.</h2>
+		  
+		  <section id="buildstatus">
+			<p>
+			<a href="https://magnum.travis-ci.com/Davesmall28/DSmall.DynamicsCrm.Plugins.Core">
+				<img src="https://magnum.travis-ci.com/Davesmall28/DSmall.DynamicsCrm.Plugins.Core.svg?token=syrh3amDgq9dtpK7qH4B&amp;branch=master" alt="Mono Build Status">
+			</a>
+			<a href="https://www.myget.org/">
+				<img src="https://www.myget.org/BuildSource/Badge/dsmallltd?identifier=8f3169ea-c2fa-4f43-971d-8e899ec1af67" alt="MyGet Build Status">
+			</a>
+			</p>
+		  </section>
+		  
+        </header>
+    </div>
+
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+
+		<h2>
+		Plugin Example
+		</h2>
+	
+		<h3>
+		Merge Plugin
+		</h3>
+
+<pre><code>public class PostContactMerge : MergePlugin
+{
+    public override void Execute(
+        IOrganizationService organizationService,
+        IPluginExecutionContext pluginExecutionContext,
+        ITracingService tracingService,
+        EntityReference targetEntity,
+        Guid subordinateId,
+        Entity updateContent)
+    {
+    }
+}
+</code></pre>
+
+		<hr>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">DSmall.DynamicsCrm.Plugins.Core maintained by <a href="https://github.com/Davesmall28">Davesmall28</a></p>
+        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>   
+
+  </body>
+</html>
