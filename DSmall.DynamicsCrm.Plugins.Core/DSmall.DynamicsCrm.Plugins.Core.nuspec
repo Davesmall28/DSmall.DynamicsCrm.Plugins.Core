@@ -17,5 +17,6 @@
     <file src="Nuget\Tools\init.ps1" target="tools\init.ps1" /> 
     <file src="Nuget\Tools\Install.ps1" target="tools\Install.ps1" />
     <file src="Nuget\Tools\Uninstall.ps1" target="tools\Uninstall.ps1" />
+    <file src="Nuget\Tools\DSmallExtensions.psm1" target="tools\DSmallExtensions.psm1" />
   </files>
 </package>

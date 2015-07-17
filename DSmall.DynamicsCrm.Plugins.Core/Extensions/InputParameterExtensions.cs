@@ -1,6 +1,5 @@
 ﻿namespace DSmall.DynamicsCrm.Plugins.Core
 {
-    using System;
     using Microsoft.Xrm.Sdk;
 
     /// <summary>The input parameter extensions.</summary>
@@ -18,8 +17,7 @@
                 return (TParameterType)inputParameter[parameterName];
             }
 
-            var message = string.Format("Cannot find parameter name '{0}' in input parameter collection.", parameterName);
-            throw new ArgumentException(message);
+            return default(TParameterType);
         }
     }
 }

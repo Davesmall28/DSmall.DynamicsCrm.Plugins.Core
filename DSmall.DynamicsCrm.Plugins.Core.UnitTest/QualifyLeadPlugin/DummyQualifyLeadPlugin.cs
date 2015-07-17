@@ -17,13 +17,13 @@
         /// <summary>Gets the lead id.</summary>
         public EntityReference LeadId { get; private set; }
 
-        /// <summary>Gets or sets a value indicating whether create account.</summary>
+        /// <summary>Gets a value indicating whether create account.</summary>
         public bool CreateAccount { get; private set; }
 
-        /// <summary>Gets or sets a value indicating whether create contact.</summary>
+        /// <summary>Gets a value indicating whether create contact.</summary>
         public bool CreateContact { get; private set; }
 
-        /// <summary>Gets or sets a value indicating whether create opportunity.</summary>
+        /// <summary>Gets a value indicating whether create opportunity.</summary>
         public bool CreateOpportunity { get; private set; }
 
         /// <summary>Gets the opportunity customer id.</summary>

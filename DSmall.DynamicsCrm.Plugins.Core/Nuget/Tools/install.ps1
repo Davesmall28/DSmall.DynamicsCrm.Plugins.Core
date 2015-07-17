@@ -1,35 +1,22 @@
 param($installPath, $toolsPath, $package, $project)
-	$references = $project.Object.References | Where-Object { $_.Name -notlike "System*" -and $_.Name -notlike "Microsoft*" -and $_.Name -ne "mscorlib" }
-	$references | ForEach-Object { 
-		$referenceName = "*" + $_.Name + "*"
-		$buildProject = @([Microsoft.Build.Evaluation.ProjectCollection]::GlobalProjectCollection.GetLoadedProjects($project.FullName))[0]
-		$toEdit = $buildProject.Xml.Items | Where-Object { $_.Include -like $referenceName }
-		$metadataItems = $toEdit.Metadata | Where-Object { $_.Name -eq "ILMerge" }
-		if($metadataItems.Count -lt 1) {
-			$toEdit.AddMetaData("AssemblyName", $_.Name + ".dll")
-			$toEdit.AddMetaData("ILMerge", "true")
-		}
+    if($project -eq $null) {
+		$project = Get-Project
 	}
+
+	$assemblyKeyFileName = DSmallPrivate-CopyAssemblyKeyToOutputDirectory($project)
+	DSmallPrivate-AddILMergePropertyToReferences($project)	
 	$project.Save()
 
-	$assemblyKeyFileNameObject = $project.Properties.Item("AssemblyOriginatorKeyFile");
-	if	($assemblyKeyFileNameObject -And $assemblyKeyFileNameObject.Value) {
-		$assemblyKeyFileName = $assemblyKeyFileNameObject.Value
-		$item = $project.ProjectItems.Item($assemblyKeyFileName)
-		$item.Properties.Item("CopyToOutputDirectory").Value = 1
-	}
-
 	Add-Type -AssemblyName 'Microsoft.Build, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'
-
 	$msbuild = [Microsoft.Build.Evaluation.ProjectCollection]::GlobalProjectCollection.GetLoadedProjects($project.FullName) | Select-Object -First 1
  
-	$projectUri = new-object Uri($project.FullName, [System.UriKind]::Absolute)
+	$projectUri = New-Object Uri($project.FullName, [System.UriKind]::Absolute)
 	$targetsFile = [System.IO.Path]::Combine($toolsPath, $package.Id + '.targets')
-	$targetUri = new-object Uri($targetsFile, [System.UriKind]::Absolute)
+	$targetUri = New-Object Uri($targetsFile, [System.UriKind]::Absolute)
 	$relativePath = [System.Uri]::UnescapeDataString($projectUri.MakeRelativeUri($targetUri).ToString()).Replace([System.IO.Path]::AltDirectorySeparatorChar, [System.IO.Path]::DirectorySeparatorChar)
 
 	$ILMergeFileLocation = [System.IO.Path]::Combine($toolsPath, 'ILMerge.exe')
-	$ILMergeFileLocationUri = new-object Uri($ILMergeFileLocation, [System.UriKind]::Absolute)
+	$ILMergeFileLocationUri = New-Object Uri($ILMergeFileLocation, [System.UriKind]::Absolute)
 	$ILMergeFileLocationRelativePath = [System.Uri]::UnescapeDataString($projectUri.MakeRelativeUri($ILMergeFileLocationUri).ToString()).Replace([System.IO.Path]::AltDirectorySeparatorChar, [System.IO.Path]::DirectorySeparatorChar)
  
 	$import = $msbuild.Xml.AddImport($relativePath)
@@ -74,7 +61,9 @@ param($installPath, $toolsPath, $package, $project)
 	$assembliesToMerge.Attributes.Append($conditionAttribute)
 
 	$node.InnerXml = $fileRetrieval.InnerXml + $afterBuildExecuteScript
-
+	
 	$xml.Save($project.FullName)
 
 	$project.Save()
+	
+	#$dte.ItemOperations.Navigate("https://www.bbc.co.uk", $dte.vsNavigateOptions.vsNavigateOptionsNewWindow)

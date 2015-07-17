@@ -1,6 +1,7 @@
 ﻿namespace DSmall.DynamicsCrm.Plugins.Core
 {
     using System;
+    using DSmall.Core;
     using DSmall.DynamicsCrm.Core;
     using Microsoft.Xrm.Sdk;
 
@@ -11,6 +12,13 @@
         protected Plugin()
         {
             EntityValidator = new EntityValidator();
+        }
+
+        /// <summary>Initialises a new instance of the <see cref="Plugin"/> class.</summary>
+        /// <param name="entityValidator">The entity validator.</param>
+        protected Plugin(IEntityValidator entityValidator)
+        {
+            EntityValidator = entityValidator;
         }
 
         /// <summary>Gets the entity validator.</summary>
@@ -26,10 +34,7 @@
         /// <param name="serviceProvider">The service provider.</param>
         public void Execute(IServiceProvider serviceProvider)
         {
-            if (serviceProvider == null)
-            {
-                throw new ArgumentNullException("serviceProvider");
-            }
+            Guard.NotNull(() => serviceProvider, serviceProvider);
 
             var tracingService = (ITracingService)serviceProvider.GetService(typeof(ITracingService));
             var pluginExecutionContext = (IPluginExecutionContext)serviceProvider.GetService(typeof(IPluginExecutionContext));

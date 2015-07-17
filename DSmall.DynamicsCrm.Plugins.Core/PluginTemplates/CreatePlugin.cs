@@ -21,11 +21,11 @@
         /// <param name="organizationService">The organization service.</param>
         /// <param name="pluginExecutionContext">The plugin execution context.</param>
         /// <param name="tracingService">The tracing service.</param>
-        /// <param name="target">The target entity.</param>
+        /// <param name="targetEntity">The target entity.</param>
         public abstract void Execute(
             IOrganizationService organizationService, 
             IPluginExecutionContext pluginExecutionContext, 
-            ITracingService tracingService, 
-            Entity target);
+            ITracingService tracingService,
+            Entity targetEntity);
     }
 }

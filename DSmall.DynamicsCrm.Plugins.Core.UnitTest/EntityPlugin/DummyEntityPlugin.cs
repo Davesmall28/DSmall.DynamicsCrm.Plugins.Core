@@ -3,7 +3,7 @@
     using Microsoft.Xrm.Sdk;
 
     /// <summary>The dummy entity plugin.</summary>
-    public class DummyEntityPlugin : EntityPlugin
+    public class DummyEntityPlugin : EntityPlugin<Entity>
     {
         /// <summary>Gets the organization service.</summary>
         public IOrganizationService OrganizationService { get; private set; }
