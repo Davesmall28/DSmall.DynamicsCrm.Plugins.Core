@@ -21,7 +21,14 @@
 
             if (targetEntity.LogicalName != instance.LogicalName)
             {
-                throw new ArgumentException("aaa");
+                var errorMessage = instance.LogicalName == null 
+                    ? "Entity Plugin has to be used with a strongly typed entity class which inherits Entity class." 
+                    : string.Format(
+                        "Plugin was expecting a entity of type '{0}' but instead was passed a entity of type '{1}'",
+                        instance.LogicalName,
+                        targetEntity.LogicalName);
+
+                throw new ArgumentException(errorMessage);
             }
 
             Execute(organizationService, pluginExecutionContext, tracingService, targetEntity.ToEntity<TEntityType>());
