@@ -132,6 +132,7 @@
     <Compile Include="DisassociatePlugin\DisassociatePluginSpecificationFixture.cs" />
     <Compile Include="DisassociatePlugin\DummyDisassociatePlugin.cs" />
     <Compile Include="DisassociatePlugin\WhenExecutingCloseQuotePluginSuccessfully.cs" />
+    <Compile Include="EntityPlugin\Contact.cs" />
     <Compile Include="EntityPlugin\DummyEntityPlugin.cs" />
     <Compile Include="Extensions\PluginConfigurationExtensionWithNoSettingSpecification.cs" />
     <Compile Include="Extensions\PluginConfigurationExtensionXmlDocumentSpecifications.cs" />
