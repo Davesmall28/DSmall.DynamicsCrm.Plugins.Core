@@ -13,5 +13,5 @@ using System.Runtime.InteropServices;
 [assembly: Guid("60e07536-12f1-4be1-b44b-f5cc33991c8d")]
 [assembly: AssemblyVersion("1.0.0.0")]
 [assembly: AssemblyFileVersion("1.0.0.0")]
-[assembly: AssemblyInformationalVersion("1.0.1.20")]
+[assembly: AssemblyInformationalVersion("1.0.1")]
 [assembly: Microsoft.Xrm.Sdk.Client.ProxyTypesAssemblyAttribute]

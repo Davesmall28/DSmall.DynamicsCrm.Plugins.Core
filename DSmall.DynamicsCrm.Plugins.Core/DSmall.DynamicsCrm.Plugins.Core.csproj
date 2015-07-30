@@ -121,6 +121,7 @@
     <None Include="DSmall.DynamicsCrm.Plugins.Core.nuspec" />
     <None Include="DSmallKey.snk" />
     <None Include="Nuget\NuGetPush.bat" />
+    <None Include="Nuget\Tools\DSmallExtensions.psm1" />
     <None Include="Nuget\Tools\ILMerge.exe" />
     <None Include="Nuget\Tools\DSmall.DynamicsCrm.Plugins.Core.targets" />
     <None Include="Nuget\Tools\init.ps1" />
