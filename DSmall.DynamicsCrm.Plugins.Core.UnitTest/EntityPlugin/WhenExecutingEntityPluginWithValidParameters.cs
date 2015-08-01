@@ -35,7 +35,7 @@
         [Test]
         public void TargetEntityShouldNotBeNull()
         {
-            Assert.IsNotNull(testFixture.UnderTest.ContactEntity);
+            Assert.IsNotNull(testFixture.UnderTest.TargetEntity);
         }
 
         /// <summary>The because of.</summary>
