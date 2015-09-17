@@ -188,3 +188,4 @@ DeployFiles/*.zip
 
 # Solution Packager zip files
 SolutionPackager/*.zip
+DSmall.DynamicsCrm.Plugins.Core.IntegrationTest/DSmall.DynamicsCrm.Plugins.Core.IntegrationTest/App.config
