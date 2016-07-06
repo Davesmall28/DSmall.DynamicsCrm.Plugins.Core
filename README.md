@@ -1,6 +1,6 @@
 # DSmall.DynamicsCrm.Plugins.Core
 
-[![Build Status](https://magnum.travis-ci.com/Davesmall28/DSmall.DynamicsCrm.Plugins.Core.svg?token=syrh3amDgq9dtpK7qH4B&branch=master)](https://magnum.travis-ci.com/Davesmall28/DSmall.DynamicsCrm.Plugins.Core)&nbsp;&nbsp;&nbsp;[![dsmallltd MyGet Build Status](https://www.myget.org/BuildSource/Badge/dsmallltd?identifier=8f3169ea-c2fa-4f43-971d-8e899ec1af67)](https://www.myget.org/)
+[![Build Status](https://travis-ci.org/Davesmall28/DSmall.DynamicsCrm.Plugins.Core.svg?branch=master)](https://travis-ci.org/Davesmall28/DSmall.DynamicsCrm.Plugins.Core)&nbsp;&nbsp;&nbsp;[![NuGet](https://img.shields.io/nuget/v/DSmall.DynamicsCrm.Plugins.Core.svg)](https://www.nuget.org/packages/DSmall.DynamicsCrm.Plugins.Core)&nbsp;&nbsp;&nbsp;[![dsmallltd MyGet Build Status](https://www.myget.org/BuildSource/Badge/dsmallltd?identifier=8f3169ea-c2fa-4f43-971d-8e899ec1af67)](https://www.myget.org/)
 
 ##What is it?
 When creating Plugins for Microsoft Dynamics Crm there is alot of boiler plate code needed to extract the IOrganizationService, the ITracingService and the IPluginExecutionContext from the IServiceProvider. This is boiler plate code that we usually just copy and paste and which can distract from the business logic we implement within the plugin.
