@@ -23,10 +23,9 @@
         /// <summary>The argument null exception should be thrown.</summary>
         /// <exception cref="Exception">Argument Null Exception</exception>
         [Test]
-        [ExpectedException(typeof(ArgumentNullException))]
         public void ArgumentNullExceptionShouldBeThrown()
         {
-            throw exceptionThrown;
+            Assert.Throws<ArgumentNullException>(ThrowException);
         }
 
         /// <summary>The because of.</summary>
@@ -52,6 +51,11 @@
 
             testFixture = new SpecificationFixture<DummyPlugin>();
             testFixture.PerformTestSetup();
+        }
+
+        private void ThrowException()
+        {
+            throw exceptionThrown;
         }
     }
 }
