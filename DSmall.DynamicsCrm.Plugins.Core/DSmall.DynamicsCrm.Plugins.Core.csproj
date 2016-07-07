@@ -83,11 +83,11 @@
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="DSmall.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=c0110db01952ea61, processorArchitecture=MSIL">
+    <Reference Include="DSmall.Core">
       <HintPath>..\Packages\DSmall.Core.1.0.7\lib\net40\DSmall.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="DSmall.DynamicsCrm.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=c0110db01952ea61, processorArchitecture=MSIL">
+    <Reference Include="DSmall.DynamicsCrm.Core">
       <HintPath>..\Packages\DSmall.DynamicsCrm.Core.1.0.4\lib\net40\DSmall.DynamicsCrm.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
