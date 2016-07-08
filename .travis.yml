@@ -5,6 +5,6 @@ install:
   - nuget install NUnit.ConsoleRunner -Version 3.4.1 -OutputDirectory testrunner
 script:
   - xbuild /p:Configuration=Release-Net40 DSmall.DynamicsCrm.Plugins.Core.sln
-  - mono ./testrunner/NUnit.ConsoleRunner.3.4.1/tools/nunit3-console.exe ./DSmall.DynamicsCrm.Plugins.Core.UnitTest/bin/Release-Net40/DSmall.DynamicsCrm.Plugins.Core.UnitTest.dll
+  - mono ./testrunner/NUnit.ConsoleRunner.3.4.1/tools/nunit3-console.exe ./DSmall.DynamicsCrm.Plugins.Core.UnitTest/bin/Release-Net40/DSmall.DynamicsCrm.Plugins.Core.UnitTest.dll --work=./TestResult/Net40
   - xbuild /p:Configuration=Release-Net45 DSmall.DynamicsCrm.Plugins.Core.sln
-  - mono ./testrunner/NUnit.ConsoleRunner.3.4.1/tools/nunit3-console.exe ./DSmall.DynamicsCrm.Plugins.Core.UnitTest/bin/Release-Net45/DSmall.DynamicsCrm.Plugins.Core.UnitTest.dll
+  - mono ./testrunner/NUnit.ConsoleRunner.3.4.1/tools/nunit3-console.exe ./DSmall.DynamicsCrm.Plugins.Core.UnitTest/bin/Release-Net45/DSmall.DynamicsCrm.Plugins.Core.UnitTest.dll --work=./TestResult/Net45
