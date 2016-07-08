@@ -160,7 +160,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="app.config" />
     <None Include="DSmall.DynamicsCrm.Plugins.Core.nuspec" />
     <None Include="DSmallKey.snk" />
     <None Include="Nuget\NuGetPush.bat" />
