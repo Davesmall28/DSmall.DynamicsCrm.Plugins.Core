@@ -84,11 +84,11 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="DSmall.Core">
-      <HintPath>..\Packages\DSmall.Core.1.0.7\lib\net40\DSmall.Core.dll</HintPath>
+      <HintPath>..\packages\DSmall.Core.1.0.7\lib\net40\DSmall.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="DSmall.DynamicsCrm.Core">
-      <HintPath>..\Packages\DSmall.DynamicsCrm.Core.1.0.4\lib\net40\DSmall.DynamicsCrm.Core.dll</HintPath>
+      <HintPath>..\packages\DSmall.DynamicsCrm.Core.1.0.4\lib\net40\DSmall.DynamicsCrm.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.Crm.Sdk.Proxy">
