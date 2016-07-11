@@ -1,6 +1,5 @@
 ﻿namespace DSmall.DynamicsCrm.Plugins.Core.Samples
 {
-    using System;
     using Microsoft.Xrm.Sdk;
 
     /// <summary>The parameter plugin.</summary>
@@ -22,8 +21,6 @@
             var xmlBlob = entityWriter.GetObjectAsXml(pluginParameters);
 
             entityWriter.WriteToEntity(xmlBlob);
-
-            throw new Exception("Succeeded");
         }
     }
 }
