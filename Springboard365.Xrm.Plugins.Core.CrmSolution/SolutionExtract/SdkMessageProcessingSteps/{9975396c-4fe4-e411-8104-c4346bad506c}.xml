@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SdkMessageProcessingStep Name="Springboard365.Xrm.Plugins.Core.Samples.ParameterPlugin: QualifyLead of lead" SdkMessageProcessingStepId="{9975396c-4fe4-e411-8104-c4346bad506c}">
+  <PluginTypeName>Springboard365.Xrm.Plugins.Core.Samples.ParameterPlugin, Springboard365.Xrm.Plugins.Core.Samples.Deploy, Version=1.0.0.0, Culture=neutral, PublicKeyToken=9fa79910cc859408</PluginTypeName>
+  <PrimaryEntity>lead</PrimaryEntity>
+  <AsyncAutoDelete>0</AsyncAutoDelete>
+  <InvocationSource>0</InvocationSource>
+  <Mode>1</Mode>
+  <Rank>1</Rank>
+  <SdkMessageId>{644c3365-b36c-431e-b76b-5c3e48adee55}</SdkMessageId>
+  <EventHandlerTypeCode>4602</EventHandlerTypeCode>
+  <Stage>40</Stage>
+  <IsCustomizable>1</IsCustomizable>
+  <IsHidden>0</IsHidden>
+  <SupportedDeployment>0</SupportedDeployment>
+  <IntroducedVersion>1.0</IntroducedVersion>
+  <SdkMessageProcessingStepImages />
+</SdkMessageProcessingStep>

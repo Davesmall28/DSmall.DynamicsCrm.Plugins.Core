@@ -1,0 +1,43 @@
+﻿namespace Springboard365.Xrm.Plugins.Core.IntegrationTest
+{
+    using Microsoft.Xrm.Sdk;
+    using NUnit.Framework;
+    using Springboard365.UnitTest.Core;
+
+    [TestFixture]
+    public class UpdateContactSpecification : SpecificationBase
+    {
+        private UpdateContactSpecificationFixture testFixture;
+
+        protected override void Context()
+        {
+            testFixture = new UpdateContactSpecificationFixture();
+            testFixture.PerformTestSetup();
+        }
+
+        protected override void BecauseOf()
+        {
+            testFixture.CrmWriter.Update(testFixture.RequestId, testFixture.EntityToUpdate);
+
+            testFixture.Result = Retry.Do(() => testFixture.EntitySerializer.Deserialize(testFixture.RequestId, testFixture.MessageName));
+        }
+
+        [Test]
+        public void ShouldReturnInputParameterContainingTargetEntity()
+        {
+            Assert.IsTrue(testFixture.Result.InputParameters.OneOf<Entity>("Target"));
+        }
+
+        [Test]
+        public void ShouldReturnNoPreEntityImages()
+        {
+            Assert.IsTrue(testFixture.Result.PreEntityImages.NoParameters());
+        }
+
+        [Test]
+        public void ShouldReturnPostEntityImageContainingAsynchronousStepPrimaryName()
+        {
+            Assert.IsTrue(testFixture.Result.PostEntityImages.OneOf<Entity>("AsynchronousStepPrimaryName"));
+        }
+    }
+}

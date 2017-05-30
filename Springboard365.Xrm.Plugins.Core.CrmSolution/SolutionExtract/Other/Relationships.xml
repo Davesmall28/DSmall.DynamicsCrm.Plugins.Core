@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EntityRelationships>
+  <EntityRelationship Name="sb365_pluginparameter_AsyncOperations" />
+  <EntityRelationship Name="sb365_pluginparameter_BulkDeleteFailures" />
+  <EntityRelationship Name="sb365_pluginparameter_PrincipalObjectAttributeAccesses" />
+  <EntityRelationship Name="sb365_pluginparameter_ProcessSession" />
+  <EntityRelationship Name="sb365_pluginparameter_UserEntityInstanceDatas" />
+  <EntityRelationship Name="lk_sb365_pluginparameter_createdby" />
+  <EntityRelationship Name="lk_sb365_pluginparameter_modifiedby" />
+  <EntityRelationship Name="organization_sb365_pluginparameter" />
+</EntityRelationships>

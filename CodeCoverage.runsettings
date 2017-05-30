@@ -7,7 +7,7 @@
           <CodeCoverage>
             <ModulePaths>
               <Include>
-                <ModulePath>.*dsmall.dynamicscrm.plugins.core.dll$</ModulePath>
+                <ModulePath>.*springboard365.xrm.plugins.core.dll$</ModulePath>
               </Include>
               <Exclude>
                 <ModulePath>.*CPPUnitTestFramework.*</ModulePath>

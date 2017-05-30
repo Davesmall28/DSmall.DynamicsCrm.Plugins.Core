@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SdkMessageProcessingStep Name="Springboard365.Xrm.Plugins.Core.Samples.ParameterPlugin: Win of opportunity" SdkMessageProcessingStepId="{cee52b07-cfe4-e411-8101-fc15b4263b68}">
+  <PluginTypeName>Springboard365.Xrm.Plugins.Core.Samples.ParameterPlugin, Springboard365.Xrm.Plugins.Core.Samples.Deploy, Version=1.0.0.0, Culture=neutral, PublicKeyToken=9fa79910cc859408</PluginTypeName>
+  <PrimaryEntity>opportunity</PrimaryEntity>
+  <AsyncAutoDelete>0</AsyncAutoDelete>
+  <InvocationSource>0</InvocationSource>
+  <Mode>1</Mode>
+  <Rank>1</Rank>
+  <SdkMessageId>{27bebb1b-ea3e-db11-86a7-000a3a5473e8}</SdkMessageId>
+  <EventHandlerTypeCode>4602</EventHandlerTypeCode>
+  <Stage>40</Stage>
+  <IsCustomizable>1</IsCustomizable>
+  <IsHidden>0</IsHidden>
+  <SupportedDeployment>0</SupportedDeployment>
+  <IntroducedVersion>1.0</IntroducedVersion>
+  <SdkMessageProcessingStepImages />
+</SdkMessageProcessingStep>

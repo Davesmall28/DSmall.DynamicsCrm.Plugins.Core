@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ImportExportXml version="7.0.0001.0128" SolutionPackageVersion="7.0" languagecode="1033" generatedBy="CrmLive" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <SolutionManifest>
+    <UniqueName>Springboard365XrmPluginsCoreSamples</UniqueName>
+    <LocalizedNames>
+      <LocalizedName description="Springboard365.Xrm.Plugins.Core.Samples" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions />
+    <Version>1.0.0.0</Version>
+    <Managed>2</Managed>
+    <Publisher>
+      <UniqueName>Springboard365Ltd</UniqueName>
+      <LocalizedNames>
+        <LocalizedName description="Springboard 365 Ltd" languagecode="1033" />
+      </LocalizedNames>
+      <Descriptions />
+      <EMailAddress xsi:nil="true"></EMailAddress>
+      <SupportingWebsiteUrl xsi:nil="true"></SupportingWebsiteUrl>
+      <CustomizationPrefix>sb365</CustomizationPrefix>
+      <CustomizationOptionValuePrefix>71759</CustomizationOptionValuePrefix>
+      <Addresses>
+        <Address>
+          <AddressNumber>1</AddressNumber>
+          <AddressTypeCode>1</AddressTypeCode>
+          <City xsi:nil="true"></City>
+          <County xsi:nil="true"></County>
+          <Country xsi:nil="true"></Country>
+          <Fax xsi:nil="true"></Fax>
+          <FreightTermsCode xsi:nil="true"></FreightTermsCode>
+          <ImportSequenceNumber xsi:nil="true"></ImportSequenceNumber>
+          <Latitude xsi:nil="true"></Latitude>
+          <Line1 xsi:nil="true"></Line1>
+          <Line2 xsi:nil="true"></Line2>
+          <Line3 xsi:nil="true"></Line3>
+          <Longitude xsi:nil="true"></Longitude>
+          <Name xsi:nil="true"></Name>
+          <PostalCode xsi:nil="true"></PostalCode>
+          <PostOfficeBox xsi:nil="true"></PostOfficeBox>
+          <PrimaryContactName xsi:nil="true"></PrimaryContactName>
+          <ShippingMethodCode>1</ShippingMethodCode>
+          <StateOrProvince xsi:nil="true"></StateOrProvince>
+          <Telephone1 xsi:nil="true"></Telephone1>
+          <Telephone2 xsi:nil="true"></Telephone2>
+          <Telephone3 xsi:nil="true"></Telephone3>
+          <TimeZoneRuleVersionNumber xsi:nil="true"></TimeZoneRuleVersionNumber>
+          <UPSZone xsi:nil="true"></UPSZone>
+          <UTCOffset xsi:nil="true"></UTCOffset>
+          <UTCConversionTimeZoneCode xsi:nil="true"></UTCConversionTimeZoneCode>
+        </Address>
+        <Address>
+          <AddressNumber>2</AddressNumber>
+          <AddressTypeCode>1</AddressTypeCode>
+          <City xsi:nil="true"></City>
+          <County xsi:nil="true"></County>
+          <Country xsi:nil="true"></Country>
+          <Fax xsi:nil="true"></Fax>
+          <FreightTermsCode xsi:nil="true"></FreightTermsCode>
+          <ImportSequenceNumber xsi:nil="true"></ImportSequenceNumber>
+          <Latitude xsi:nil="true"></Latitude>
+          <Line1 xsi:nil="true"></Line1>
+          <Line2 xsi:nil="true"></Line2>
+          <Line3 xsi:nil="true"></Line3>
+          <Longitude xsi:nil="true"></Longitude>
+          <Name xsi:nil="true"></Name>
+          <PostalCode xsi:nil="true"></PostalCode>
+          <PostOfficeBox xsi:nil="true"></PostOfficeBox>
+          <PrimaryContactName xsi:nil="true"></PrimaryContactName>
+          <ShippingMethodCode>1</ShippingMethodCode>
+          <StateOrProvince xsi:nil="true"></StateOrProvince>
+          <Telephone1 xsi:nil="true"></Telephone1>
+          <Telephone2 xsi:nil="true"></Telephone2>
+          <Telephone3 xsi:nil="true"></Telephone3>
+          <TimeZoneRuleVersionNumber xsi:nil="true"></TimeZoneRuleVersionNumber>
+          <UPSZone xsi:nil="true"></UPSZone>
+          <UTCOffset xsi:nil="true"></UTCOffset>
+          <UTCConversionTimeZoneCode xsi:nil="true"></UTCConversionTimeZoneCode>
+        </Address>
+      </Addresses>
+    </Publisher>
+    <RootComponents>
+      <RootComponent type="1" schemaName="sb365_pluginparameter" />
+      <RootComponent type="91" schemaName="Springboard365.Xrm.Plugins.Core.Samples.Deploy, Version=1.0.0.0, Culture=neutral, PublicKeyToken=9fa79910cc859408" />
+      <RootComponent type="92" id="{02e2de4e-4fe4-e411-8104-c4346bad506c}" />
+      <RootComponent type="92" id="{0621bab6-89d9-e411-8100-fc15b4263b68}" />
+      <RootComponent type="92" id="{0d43520d-4fe4-e411-8104-c4346bad506c}" />
+      <RootComponent type="92" id="{10341659-4fe4-e411-8104-c4346bad506c}" />
+      <RootComponent type="92" id="{159d4f1d-4fe4-e411-8104-c4346bad506c}" />
+      <RootComponent type="92" id="{16982474-4fe4-e411-8104-c4346bad506c}" />
+      <RootComponent type="92" id="{4214c9dc-cee4-e411-8106-c4346baccdf0}" />
+      <RootComponent type="92" id="{4dc263dc-4ee4-e411-8104-c4346bad506c}" />
+      <RootComponent type="92" id="{58673c82-4ee4-e411-8104-c4346bad506c}" />
+      <RootComponent type="92" id="{79a02e2c-4fe4-e411-8104-c4346bad506c}" />
+      <RootComponent type="92" id="{806e2c9f-4ee4-e411-8104-c4346bad506c}" />
+      <RootComponent type="92" id="{8e6b3693-4ee4-e411-8104-c4346bad506c}" />
+      <RootComponent type="92" id="{9975396c-4fe4-e411-8104-c4346bad506c}" />
+      <RootComponent type="92" id="{9dd09e8d-4fe4-e411-8104-c4346bad506c}" />
+      <RootComponent type="92" id="{a0e23b16-4fe4-e411-8104-c4346bad506c}" />
+      <RootComponent type="92" id="{a84114ed-4ee4-e411-8104-c4346bad506c}" />
+      <RootComponent type="92" id="{ba9467ff-4ee4-e411-8104-c4346bad506c}" />
+      <RootComponent type="92" id="{c04b585f-4fe4-e411-8104-c4346bad506c}" />
+      <RootComponent type="92" id="{c7676c5b-cfe4-e411-8101-fc15b4263b68}" />
+      <RootComponent type="92" id="{c90636c9-4ee4-e411-8104-c4346bad506c}" />
+      <RootComponent type="92" id="{ce7d1cb1-4ee4-e411-8104-c4346bad506c}" />
+      <RootComponent type="92" id="{cee52b07-cfe4-e411-8101-fc15b4263b68}" />
+      <RootComponent type="92" id="{cf4012f0-cee4-e411-8101-fc15b4263b68}" />
+      <RootComponent type="92" id="{e9d1bc44-4fe4-e411-8104-c4346bad506c}" />
+      <RootComponent type="92" id="{fc7f817d-4fe4-e411-8104-c4346bad506c}" />
+    </RootComponents>
+    <MissingDependencies />
+  </SolutionManifest>
+</ImportExportXml>

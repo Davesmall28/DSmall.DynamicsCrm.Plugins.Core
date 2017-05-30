@@ -1,9 +1,9 @@
 solutionpackager.exe /a:"Extract" /z:"..\%1.zip" /folder:"%1" /p:Both
 
-rename %CrmSolutionName% DSmallPluginCore
+rename %CrmSolutionName% SolutionExtract
 
-rmdir /S /Q ..\..\DSmall.DynamicsCrm.Plugins.Core.CrmSolution\DSmallPluginCore
+rmdir /S /Q ..\..\Springboard365.Xrm.Plugins.Core.CrmSolution\SolutionExtract
 
-move DSmallPluginCore ..\..\DSmall.DynamicsCrm.Plugins.Core.CrmSolution
+move SolutionExtract ..\..\Springboard365.Xrm.Plugins.Core.CrmSolution
 
 pause

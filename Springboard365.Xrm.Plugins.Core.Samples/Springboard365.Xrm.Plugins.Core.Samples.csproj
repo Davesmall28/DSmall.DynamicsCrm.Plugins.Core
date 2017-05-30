@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7933F4D5-811D-467F-AA9E-11D652105658}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Springboard365.Xrm.Plugins.Core.Samples</RootNamespace>
+    <AssemblyName>Springboard365.Xrm.Plugins.Core.Samples</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>..\Springboard365Key.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Crm.Sdk.Proxy, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Springboard365.Xrm.Core.1.0.0\lib\net40\Microsoft.Crm.Sdk.Proxy.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Springboard365.Xrm.Core.1.0.0\lib\net40\Microsoft.IdentityModel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Xrm.Sdk, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Springboard365.Xrm.Core.1.0.0\lib\net40\Microsoft.Xrm.Sdk.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Springboard365.Core, Version=1.1.0.0, Culture=neutral, PublicKeyToken=9fa79910cc859408, processorArchitecture=MSIL">
+      <HintPath>..\packages\Springboard365.Xrm.Core.1.0.0\lib\net40\Springboard365.Core.dll</HintPath>
+      <Private>True</Private>
+      <AssemblyName>Springboard365.Core.dll</AssemblyName>
+      <ILMerge>true</ILMerge>
+    </Reference>
+    <Reference Include="Springboard365.Xrm.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=9fa79910cc859408, processorArchitecture=MSIL">
+      <HintPath>..\packages\Springboard365.Xrm.Core.1.0.0\lib\net40\Springboard365.Xrm.Core.dll</HintPath>
+      <Private>True</Private>
+      <AssemblyName>Springboard365.Xrm.Core.dll</AssemblyName>
+      <ILMerge>true</ILMerge>
+    </Reference>
+    <Reference Include="Springboard365.Xrm.Plugins.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=9fa79910cc859408, processorArchitecture=MSIL">
+      <HintPath>..\packages\Springboard365.Xrm.Plugins.Core.1.0.0-beta1\lib\net40\Springboard365.Xrm.Plugins.Core.dll</HintPath>
+      <Private>True</Private>
+      <AssemblyName>Springboard365.Xrm.Plugins.Core.dll</AssemblyName>
+      <ILMerge>true</ILMerge>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.DirectoryServices.AccountManagement" />
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="EntityWriter.cs" />
+    <Compile Include="ParameterPlugin.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="..\Springboard365Key.snk">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Springboard365.Xrm.Plugins.Core.Model\Springboard365.Xrm.Plugins.Core.Model.csproj">
+      <Project>{73f8743f-5d0e-4d31-9fe6-6377a7b74f61}</Project>
+      <Name>Springboard365.Xrm.Plugins.Core.Model</Name>
+      <AssemblyName>Springboard365.Xrm.Plugins.Core.Model.dll</AssemblyName>
+      <ILMerge>true</ILMerge>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\Packages\Springboard365.Xrm.Plugins.Core.1.0.0-beta1\tools\Springboard365.Xrm.Plugins.Core.targets" Condition="Exists('..\Packages\Springboard365.Xrm.Plugins.Core.1.0.0-beta1\tools\Springboard365.Xrm.Plugins.Core.targets')" />
+  <Target Name="Springboard365AfterBuild" AfterTargets="AfterBuild">
+    <ItemGroup>
+      <AssembliesToMerge Include="@(ReferencePath)" Condition="'%(ReferencePath.ILMerge)'=='true'" />
+    </ItemGroup>
+    <Exec Command="&quot;..\Packages\Springboard365.Xrm.Plugins.Core.1.0.0-beta1\tools\ILMerge.exe&quot; /targetplatform:&quot;v4,C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0&quot; /keyfile:..\Springboard365Key.snk $(AdditionalParameters) /out:&quot;$(OutputFileName)&quot; &quot;$(MainAssembly)&quot; @(AssembliesToMerge->'&quot;$(TargetDir)%(AssemblyName)&quot;', ' ')" />
+    <Message Text="&quot;..\Packages\Springboard365.Xrm.Plugins.Core.1.0.0-beta1\tools\ILMerge.exe&quot; /targetplatform:&quot;v4,C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0&quot; /keyfile:..\Springboard365Key.snk $(AdditionalParameters) /out:&quot;$(OutputFileName)&quot; &quot;$(MainAssembly)&quot; @(AssembliesToMerge->'&quot;$(TargetDir)%(AssemblyName)&quot;', ' ')" Importance="High" />
+  </Target>
+</Project>

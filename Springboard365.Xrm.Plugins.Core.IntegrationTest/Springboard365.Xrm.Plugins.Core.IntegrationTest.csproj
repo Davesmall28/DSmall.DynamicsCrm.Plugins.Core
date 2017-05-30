@@ -1,0 +1,223 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{17194DF7-F114-4066-B5BE-FBC3A8BEC58F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Springboard365.Xrm.Plugins.Core.IntegrationTest</RootNamespace>
+    <AssemblyName>Springboard365.Xrm.Plugins.Core.IntegrationTest</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <IsCodedUITest>False</IsCodedUITest>
+    <TestProjectType>UnitTest</TestProjectType>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AntiXSSLibrary, Version=4.0.0.0, Culture=neutral, PublicKeyToken=d127efab8a9c114f, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.CrmSdk.Extensions.5.0.17\lib\net40\AntiXSSLibrary.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Crm.Sdk.Proxy, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.CrmSdk.CoreAssemblies.5.0.17\lib\net40\Microsoft.Crm.Sdk.Proxy.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.IdentityModel.6.1.7600.16394\lib\net35\Microsoft.IdentityModel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ServiceBus, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\WindowsAzure.ServiceBus.2.1.2.0\lib\net40-full\Microsoft.ServiceBus.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAzure.Configuration, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.WindowsAzure.ConfigurationManager.2.0.0.0\lib\net40\Microsoft.WindowsAzure.Configuration.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Xrm.Client, Version=5.0.9689.2166, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.CrmSdk.Extensions.5.0.17\lib\net40\Microsoft.Xrm.Client.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Xrm.Client.CodeGeneration, Version=5.0.9689.2166, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.CrmSdk.Extensions.5.0.17\lib\net40\Microsoft.Xrm.Client.CodeGeneration.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Xrm.Portal, Version=5.0.9689.2166, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.CrmSdk.Extensions.5.0.17\lib\net40\Microsoft.Xrm.Portal.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Xrm.Portal.Files, Version=5.0.9689.2166, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.CrmSdk.Extensions.5.0.17\lib\net40\Microsoft.Xrm.Portal.Files.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Xrm.Sdk, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.CrmSdk.CoreAssemblies.5.0.17\lib\net40\Microsoft.Xrm.Sdk.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Xrm.Sdk.Deployment, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.CrmSdk.Deployment.5.0.17\lib\net40\Microsoft.Xrm.Sdk.Deployment.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="nunit.framework, Version=3.4.1.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\NUnit.3.4.1\lib\net45\nunit.framework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="Springboard365.UnitTest.Core, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Springboard365.UnitTest.Core.1.1.0\lib\net45\Springboard365.UnitTest.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Services" />
+    <Reference Include="System.Data.Services.Client" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.DirectoryServices.AccountManagement" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Activation" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="PluginTest\AddItemCampaignActivity\AddItemCampaignActivitySpecification.cs" />
+    <Compile Include="PluginTest\AddItemCampaignActivity\AddItemCampaignActivitySpecificationFixture.cs" />
+    <Compile Include="PluginTest\AddItemCampaign\AddItemCampaignSpecification.cs" />
+    <Compile Include="PluginTest\AddItemCampaign\AddItemCampaignSpecificationFixture.cs" />
+    <Compile Include="PluginTest\AddToQueue\AddToQueueSpecification.cs" />
+    <Compile Include="PluginTest\AddToQueue\AddToQueueSpecificationFixture.cs" />
+    <Compile Include="PluginTest\Assign\AssignEntitySpecification.cs" />
+    <Compile Include="PluginTest\Assign\AssignEntitySpecificationFixture.cs" />
+    <Compile Include="PluginTest\Associate\AssociateEntitySpecification.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PluginTest\Associate\AssociateEntitySpecificationFixture.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PluginTest\CancelContract\CancelContractSpecification.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PluginTest\CancelContract\CancelContractSpecificationFixture.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PluginTest\CancelSalesOrder\CancelSalesOrderSpecification.cs" />
+    <Compile Include="PluginTest\CancelSalesOrder\CancelSalesOrderSpecificationFixture.cs" />
+    <Compile Include="PluginTest\CloneContract\CloneContractSpecification.cs" />
+    <Compile Include="PluginTest\CloneContract\CloneContractSpecificationFixture.cs" />
+    <Compile Include="PluginTest\CloseIncident\CloseIncidentSpecification.cs" />
+    <Compile Include="PluginTest\CloseIncident\CloseIncidentSpecificationFixture.cs" />
+    <Compile Include="PluginTest\CloseQuote\CloseQuoteSpecification.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PluginTest\CloseQuote\CloseQuoteSpecificationFixture.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PluginTest\Create\CreateContactSpecificationFixture.cs" />
+    <Compile Include="Extensions\EnumerableExtensions.cs" />
+    <Compile Include="PluginTest\Delete\DeleteContactSpecification.cs" />
+    <Compile Include="PluginTest\Delete\DeleteContactSpecificationFixture.cs" />
+    <Compile Include="PluginTest\Disassociate\DisassociateSpecification.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PluginTest\Disassociate\DisassociateSpecificationFixture.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PluginTest\LockInvoicePricing\LockInvoicePricingSpecification.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PluginTest\LockInvoicePricing\LockInvoicePricingSpecificationFixture.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PluginTest\LockSalesOrderPricing\LockSalesOrderPricingSpecification.cs" />
+    <Compile Include="PluginTest\LockSalesOrderPricing\LockSalesOrderPricingSpecificationFixture.cs" />
+    <Compile Include="PluginTest\LoseOpportunity\LoseOpportunitySpecification.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PluginTest\LoseOpportunity\LoseOpportunitySpecificationFixture.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PluginTest\Merge\MergeEntitySpecificationFixture.cs" />
+    <Compile Include="PluginTest\Merge\MergeEntitySpecification.cs" />
+    <Compile Include="PluginTest\QualifyLead\QualifyLeadSpecification.cs" />
+    <Compile Include="PluginTest\QualifyLead\QualifyLeadSpecificationFixture.cs" />
+    <Compile Include="PluginTest\SetState\SetStateEntitySpecification.cs" />
+    <Compile Include="PluginTest\SetState\SetStateEntitySpecificationFixture.cs" />
+    <Compile Include="PluginTest\UnlockInvoicePricing\UnlockInvoicePricingSpecification.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PluginTest\UnlockInvoicePricing\UnlockInvoicePricingSpecificationFixture.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PluginTest\UnlockSalesOrderPricing\UnlockSalesOrderPricingSpecification.cs" />
+    <Compile Include="PluginTest\UnlockSalesOrderPricing\UnlockSalesOrderPricingSpecificationFixture.cs" />
+    <Compile Include="PluginTest\Update\UpdateContactSpecification.cs" />
+    <Compile Include="PluginTest\Update\UpdateContactSpecificationFixture.cs" />
+    <Compile Include="PluginTest\WinOpportunity\WinOpportunitySpecificationFixture.cs" />
+    <Compile Include="PluginTest\WinOpportunity\WinOpportunitySpecification.cs" />
+    <Compile Include="PluginTest\WinQuote\WinQuoteSpecification.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PluginTest\WinQuote\WinQuoteSpecificationFixture.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TestFramework\Retry.cs" />
+    <Compile Include="Utilities\CrmReader.cs" />
+    <Compile Include="Utilities\CrmWriter.cs" />
+    <Compile Include="TestFramework\SpecificationFixtureBase.cs" />
+    <Compile Include="PluginTest\Create\CreateContactSpecification.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utilities\EntityFactory.cs" />
+    <Compile Include="Utilities\EntitySerializer.cs" />
+    <Compile Include="Utilities\ICrmReader.cs" />
+    <Compile Include="Utilities\ICrmWriter.cs" />
+    <Compile Include="Utilities\IEntityFactory.cs" />
+    <Compile Include="Utilities\IEntitySerializer.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Springboard365.Xrm.Plugins.Core.Model\Springboard365.Xrm.Plugins.Core.Model.csproj">
+      <Project>{73f8743f-5d0e-4d31-9fe6-6377a7b74f61}</Project>
+      <Name>Springboard365.Xrm.Plugins.Core.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

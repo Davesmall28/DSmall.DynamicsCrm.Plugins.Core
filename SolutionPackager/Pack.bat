@@ -1,3 +1,3 @@
-.\Files\SolutionPackager.exe /a:"Pack" /z:"DSmallPluginCore.zip" /folder:"..\DSmall.DynamicsCrm.Plugins.Core.CrmSolution\DSmallPluginCore" /p:Both
+.\Files\SolutionPackager.exe /a:"Pack" /z:"SolutionExtract.zip" /folder:"..\Springboard365.Xrm.Plugins.Core.CrmSolution\SolutionExtract" /p:Both
 
 pause

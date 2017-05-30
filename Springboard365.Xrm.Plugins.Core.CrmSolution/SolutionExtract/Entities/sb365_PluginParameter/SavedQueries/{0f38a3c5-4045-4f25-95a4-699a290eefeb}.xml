@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedquery>
+  <IsCustomizable>1</IsCustomizable>
+  <CanBeDeleted>0</CanBeDeleted>
+  <isquickfindquery>1</isquickfindquery>
+  <isprivate>0</isprivate>
+  <isdefault>1</isdefault>
+  <returnedtypecode>10006</returnedtypecode>
+  <savedqueryid>{0f38a3c5-4045-4f25-95a4-699a290eefeb}</savedqueryid>
+  <layoutxml>
+    <grid name="resultset" object="10006" jump="sb365_name" select="1" icon="1" preview="1">
+      <row name="result" id="sb365_pluginparameterid">
+        <cell name="sb365_name" width="300" />
+        <cell name="createdon" width="125" />
+      </row>
+    </grid>
+  </layoutxml>
+  <querytype>4</querytype>
+  <fetchxml>
+    <fetch version="1.0" mapping="logical">
+      <entity name="sb365_pluginparameter">
+        <attribute name="sb365_pluginparameterid" />
+        <attribute name="sb365_name" />
+        <attribute name="createdon" />
+        <order attribute="sb365_name" descending="false" />
+        <filter type="and">
+          <condition attribute="statecode" operator="eq" value="0" />
+        </filter>
+        <filter type="or" isquickfindfields="1">
+          <condition attribute="sb365_name" operator="like" value="{0}" />
+        </filter>
+      </entity>
+    </fetch>
+  </fetchxml>
+  <IntroducedVersion>1.0.0</IntroducedVersion>
+  <LocalizedNames>
+    <LocalizedName description="Quick Find Active Plugin Parameters" languagecode="1033" />
+  </LocalizedNames>
+</savedquery>
