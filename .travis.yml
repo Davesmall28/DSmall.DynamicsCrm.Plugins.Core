@@ -2,9 +2,22 @@ language: csharp
 solution: Springboard365.Xrm.Plugins.Core.sln
 install:
   - nuget restore Springboard365.Xrm.Plugins.Core.sln
-  - nuget install NUnit.ConsoleRunner -Version 3.4.1 -OutputDirectory testrunner
+  - nuget install NUnit.ConsoleRunner -Version 3.4.1 -ExcludeVersion -OutputDirectory tools
+  - nuget install Springboard365.Tools.DynamicsCrm.SolutionVersioner -PreRelease -ExcludeVersion -OutputDirectory tools
+  - nuget install Springboard365.Tools.DynamicsCrm.ImportCustomizations -PreRelease -ExcludeVersion -OutputDirectory tools
+  - nuget install Springboard365.Tools.DynamicsCrm.ExportCustomizations -PreRelease -ExcludeVersion -OutputDirectory tools
 script:
   - xbuild Springboard365.Xrm.Plugins.Core.sln /p:Configuration=Release-Net40;TargetFrameworkProfile="";TargetFrameworkVersion=4.0
-  - mono ./testrunner/NUnit.ConsoleRunner.3.4.1/tools/nunit3-console.exe ./Springboard365.Xrm.Plugins.Core.Test/bin/Release-Net40/Springboard365.Xrm.Plugins.Core.Test.dll  --work=./TestResult/Net40
+  - mono ./tools/NUnit.ConsoleRunner/tools/nunit3-console.exe ./Springboard365.Xrm.Plugins.Core.Test/bin/Release-Net40/Springboard365.Xrm.Plugins.Core.Test.dll  --work=./TestResult/Net40
   - xbuild Springboard365.Xrm.Plugins.Core.sln /p:Configuration=Release-Net45;TargetFrameworkProfile="";TargetFrameworkVersion=4.5
-  - mono ./testrunner/NUnit.ConsoleRunner.3.4.1/tools/nunit3-console.exe ./Springboard365.Xrm.Plugins.Core.Test/bin/Release-Net45/Springboard365.Xrm.Plugins.Core.Test.dll  --work=./TestResult/Net45
+  - mono ./tools/NUnit.ConsoleRunner/tools/nunit3-console.exe ./Springboard365.Xrm.Plugins.Core.Test/bin/Release-Net45/Springboard365.Xrm.Plugins.Core.Test.dll  --work=./TestResult/Net45
+before_deploy:
+  - echo "hello $dynamics_crm_username $dynamics_crm_password"
+deploy:
+  provider: script
+  skip_cleanup: true
+  script: 
+	- mono ./tools/NUnit.ConsoleRunner/tools/nunit3-console.exe ./Springboard365.Xrm.Plugins.Core.Test/bin/Release-Net45/Springboard365.Xrm.Plugins.Core.Test.dll  --work=./TestResult/Net45
+	- mono ./tools/Springboard365.Tools.DynamicsCrm.ImportCustomizations/tools/Springboard365.Tools.DynamicsCrm.ImportCustomizations.exe /?
+  on:
+    branch: master
