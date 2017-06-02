@@ -2,27 +2,25 @@
 {
     using System;
     using NUnit.Framework;
-    using Springboard365.UnitTest.Core;
     using Springboard365.Xrm.UnitTest.Core;
 
     [TestFixture]
-    public class WhenExecutingStandardPluginWithInvalidParameters : SpecificationBase
+    public class WhenExecutingStandardPluginWithInvalidParameters : Specification<DummyPlugin>
     {
-        private SpecificationFixture<DummyPlugin> testFixture;
         private bool isExceptionThrown;
         private Exception exceptionThrown;
 
         protected override void Context()
         {
-            testFixture = new SpecificationFixture<DummyPlugin>();
-            testFixture.PerformTestSetup();
+            TestFixture = new PluginSpecificationFixture();
+            TestFixture.PerformTestSetup();
         }
 
         protected override void BecauseOf()
         {
             try
             {
-                testFixture.UnderTest.Execute(null);
+                TestFixture.UnderTest.Execute(null);
             }
             catch (Exception exception)
             {

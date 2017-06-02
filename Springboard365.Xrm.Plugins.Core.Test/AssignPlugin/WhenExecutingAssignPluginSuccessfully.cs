@@ -1,51 +1,49 @@
 ﻿namespace Springboard365.Xrm.Plugins.Core.Test
 {
     using NUnit.Framework;
-    using Springboard365.UnitTest.Core;
+    using Springboard365.Xrm.UnitTest.Core;
 
-    public class WhenExecutingAssignPluginSuccessfully : SpecificationBase
+    public class WhenExecutingAssignPluginSuccessfully : Specification<DummyAssignPlugin>
     {
-        private AssignPluginSpecificationFixture testFixture;
-
         protected override void Context()
         {
-            testFixture = new AssignPluginSpecificationFixture();
-            testFixture.PerformTestSetup();
+            TestFixture = new AssignPluginSpecificationFixture();
+            TestFixture.PerformTestSetup();
         }
 
         protected override void BecauseOf()
         {
-            testFixture.UnderTest.Execute(testFixture.ServiceProvider.Object);
+            TestFixture.UnderTest.Execute(TestFixture.ServiceProvider.Object);
         }
 
         [Test]
         public void OrganizationServiceShouldNotBeNull()
         {
-            Assert.IsNotNull(testFixture.UnderTest.OrganizationService);
+            Assert.IsNotNull(TestFixture.UnderTest.OrganizationService);
         }
 
         [Test]
         public void PluginExecutionContextShouldNotBeNull()
         {
-            Assert.IsNotNull(testFixture.UnderTest.PluginExecutionContext);
+            Assert.IsNotNull(TestFixture.UnderTest.PluginExecutionContext);
         }
 
         [Test]
         public void TracingServiceShouldNotBeNull()
         {
-            Assert.IsNotNull(testFixture.UnderTest.TracingService);
+            Assert.IsNotNull(TestFixture.UnderTest.TracingService);
         }
 
         [Test]
         public void TargetEntityReferenceShouldNotBeNull()
         {
-            Assert.IsNotNull(testFixture.UnderTest.Target);
+            Assert.IsNotNull(TestFixture.UnderTest.Target);
         }
 
         [Test]
         public void AssigneeShouldNotBeNull()
         {
-            Assert.IsNotNull(testFixture.UnderTest.Assignee);
+            Assert.IsNotNull(TestFixture.UnderTest.Assignee);
         }
     }
 }

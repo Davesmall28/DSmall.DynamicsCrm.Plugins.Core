@@ -8,17 +8,12 @@
     {
         public override void PerformTestSetup()
         {
-            ServiceProvider = ServiceProviderInitializer.Setup().WithInputParameters(GetDummyEntityCollection());
-        }
-
-        private static ParameterCollection GetDummyEntityCollection()
-        {
-            return new ParameterCollection
+            ServiceProvider = ServiceProviderInitializer.Setup().WithInputParameters(() => new ParameterCollection
             {
                 { InputParameterType.CampaignActivityId, Guid.NewGuid() },
                 { InputParameterType.ItemId, Guid.NewGuid() },
                 { InputParameterType.EntityName, "Contact" }
-            };
+            });
         }
     }
 }

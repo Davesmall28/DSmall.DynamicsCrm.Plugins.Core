@@ -1,4 +1,4 @@
-SET packageVersion=1.0.0-beta1
+SET packageVersion=1.0.0-beta2
 
 NuGet.exe pack ../Springboard365.Xrm.Plugins.Core.csproj -Build -symbols -Version %packageVersion%
 

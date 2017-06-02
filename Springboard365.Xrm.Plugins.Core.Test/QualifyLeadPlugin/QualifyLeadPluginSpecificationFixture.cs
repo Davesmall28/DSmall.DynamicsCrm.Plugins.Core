@@ -8,12 +8,7 @@
     {
         public override void PerformTestSetup()
         {
-            ServiceProvider = ServiceProviderInitializer.Setup().WithInputParameters(GetDummyInputParameters());
-        }
-
-        private static ParameterCollection GetDummyInputParameters()
-        {
-            return new ParameterCollection
+            ServiceProvider = ServiceProviderInitializer.Setup().WithInputParameters(() => new ParameterCollection
             {
                 { InputParameterType.LeadId, new EntityReference("lead", Guid.NewGuid()) },
                 { InputParameterType.CreateAccount, true },
@@ -23,7 +18,7 @@
                 { InputParameterType.SourceCampaignId, new EntityReference("campaign", Guid.NewGuid()) },
                 { InputParameterType.Status, new OptionSetValue(1) },
                 { InputParameterType.OpportunityCurrencyId, new EntityReference("currency", Guid.NewGuid()) },
-            };
+            });
         }
     }
 }

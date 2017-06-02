@@ -1,87 +1,85 @@
 ﻿namespace Springboard365.Xrm.Plugins.Core.Test
 {
     using NUnit.Framework;
-    using Springboard365.UnitTest.Core;
+    using Springboard365.Xrm.UnitTest.Core;
 
-    public class WhenExecutingQualifyLeadPluginSuccessfully : SpecificationBase
+    public class WhenExecutingQualifyLeadPluginSuccessfully : Specification<DummyQualifyLeadPlugin>
     {
-        private QualifyLeadPluginSpecificationFixture testFixture;
-
         protected override void Context()
         {
-            testFixture = new QualifyLeadPluginSpecificationFixture();
-            testFixture.PerformTestSetup();
+            TestFixture = new QualifyLeadPluginSpecificationFixture();
+            TestFixture.PerformTestSetup();
         }
 
         protected override void BecauseOf()
         {
-            testFixture.UnderTest.Execute(testFixture.ServiceProvider.Object);
+            TestFixture.UnderTest.Execute(TestFixture.ServiceProvider.Object);
         }
 
         [Test]
         public void OrganizationServiceShouldNotBeNull()
         {
-            Assert.IsNotNull(testFixture.UnderTest.OrganizationService);
+            Assert.IsNotNull(TestFixture.UnderTest.OrganizationService);
         }
 
         [Test]
         public void PluginExecutionContextShouldNotBeNull()
         {
-            Assert.IsNotNull(testFixture.UnderTest.PluginExecutionContext);
+            Assert.IsNotNull(TestFixture.UnderTest.PluginExecutionContext);
         }
 
         [Test]
         public void TracingServiceShouldNotBeNull()
         {
-            Assert.IsNotNull(testFixture.UnderTest.TracingService);
+            Assert.IsNotNull(TestFixture.UnderTest.TracingService);
         }
 
         [Test]
         public void LeadIdShouldNotBeNull()
         {
-            Assert.IsNotNull(testFixture.UnderTest.LeadId);
+            Assert.IsNotNull(TestFixture.UnderTest.LeadId);
         }
 
         [Test]
         public void CreateAccountShouldNotBeNull()
         {
-            Assert.IsNotNull(testFixture.UnderTest.CreateAccount);
+            Assert.IsNotNull(TestFixture.UnderTest.CreateAccount);
         }
 
         [Test]
         public void CreateContactShouldNotBeNull()
         {
-            Assert.IsNotNull(testFixture.UnderTest.CreateContact);
+            Assert.IsNotNull(TestFixture.UnderTest.CreateContact);
         }
 
         [Test]
         public void CreateOpportunityShouldNotBeNull()
         {
-            Assert.IsNotNull(testFixture.UnderTest.CreateOpportunity);
+            Assert.IsNotNull(TestFixture.UnderTest.CreateOpportunity);
         }
 
         [Test]
         public void OpportunityCustomerIdShouldNotBeNull()
         {
-            Assert.IsNotNull(testFixture.UnderTest.OpportunityCustomerId);
+            Assert.IsNotNull(TestFixture.UnderTest.OpportunityCustomerId);
         }
 
         [Test]
         public void SourceCampaignIdShouldNotBeNull()
         {
-            Assert.IsNotNull(testFixture.UnderTest.SourceCampaignId);
+            Assert.IsNotNull(TestFixture.UnderTest.SourceCampaignId);
         }
 
         [Test]
         public void StatusShouldNotBeNull()
         {
-            Assert.IsNotNull(testFixture.UnderTest.Status);
+            Assert.IsNotNull(TestFixture.UnderTest.Status);
         }
 
         [Test]
         public void OpportunityCurrencyIdShouldNotBeNull()
         {
-            Assert.IsNotNull(testFixture.UnderTest.OpportunityCurrencyId);
+            Assert.IsNotNull(TestFixture.UnderTest.OpportunityCurrencyId);
         }
     }
 }

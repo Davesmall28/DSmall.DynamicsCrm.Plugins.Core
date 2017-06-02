@@ -16,8 +16,6 @@ before_deploy:
 deploy:
   provider: script
   skip_cleanup: true
-  script: 
-	- mono ./tools/NUnit.ConsoleRunner/tools/nunit3-console.exe ./Springboard365.Xrm.Plugins.Core.Test/bin/Release-Net45/Springboard365.Xrm.Plugins.Core.Test.dll  --work=./TestResult/Net45
-	- mono ./tools/Springboard365.Tools.DynamicsCrm.ImportCustomizations/tools/Springboard365.Tools.DynamicsCrm.ImportCustomizations.exe /?
+  script: mono ./tools/Springboard365.Tools.DynamicsCrm.ImportCustomizations/tools/Springboard365.Tools.DynamicsCrm.ImportCustomizations.exe /?
   on:
     branch: master

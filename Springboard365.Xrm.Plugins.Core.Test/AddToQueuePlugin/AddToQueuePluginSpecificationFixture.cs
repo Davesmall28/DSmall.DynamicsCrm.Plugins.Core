@@ -8,17 +8,12 @@
     {
         public override void PerformTestSetup()
         {
-            ServiceProvider = ServiceProviderInitializer.Setup().WithInputParameters(GetDummyInputParameters());
-        }
-
-        private static ParameterCollection GetDummyInputParameters()
-        {
-            return new ParameterCollection
+            ServiceProvider = ServiceProviderInitializer.Setup().WithInputParameters(() => new ParameterCollection
             {
                 { InputParameterType.Target, new EntityReference("letter", Guid.NewGuid()) },
                 { InputParameterType.DestinationQueueId, Guid.NewGuid() },
                 { InputParameterType.SourceQueueId, Guid.NewGuid() }
-            };
+            });
         }
     }
 }

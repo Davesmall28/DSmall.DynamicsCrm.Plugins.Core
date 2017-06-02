@@ -3,11 +3,12 @@
     using NUnit.Framework;
     using Springboard365.Xrm.UnitTest.Core;
 
-    public class WhenExecutingAddToQueuePluginSuccessfully : Specification<DummyAddToQueuePlugin>
+    [TestFixture]
+    public class WhenExecutingUpdatePluginWithValidParameters : Specification<DummyUpdatePlugin>
     {
         protected override void Context()
         {
-            TestFixture = new AddToQueuePluginSpecificationFixture();
+            TestFixture = new UpdatePluginSpecificationFixture();
             TestFixture.PerformTestSetup();
         }
 
@@ -35,21 +36,9 @@
         }
 
         [Test]
-        public void TargetEntityReferenceShouldNotBeNull()
+        public void TargetEntityShouldNotBeNull()
         {
-            Assert.IsNotNull(TestFixture.UnderTest.Target);
-        }
-
-        [Test]
-        public void DestinationQueueIdShouldNotBeNull()
-        {
-            Assert.IsNotNull(TestFixture.UnderTest.DestinationQueueId);
-        }
-
-        [Test]
-        public void SourceQueueIdShouldNotBeNull()
-        {
-            Assert.IsNotNull(TestFixture.UnderTest.SourceQueueId);
+            Assert.IsNotNull(TestFixture.UnderTest.TargetEntity);
         }
     }
 }

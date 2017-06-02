@@ -1,58 +1,56 @@
 ﻿namespace Springboard365.Xrm.Plugins.Core.Test
 {
     using NUnit.Framework;
-    using Springboard365.UnitTest.Core;
+    using Springboard365.Xrm.UnitTest.Core;
 
     [TestFixture]
-    public class WhenExecutingAddItemCampaignActivityPluginSuccessfully : SpecificationBase
+    public class WhenExecutingAddItemCampaignActivityPluginSuccessfully : Specification<DummyAddItemCampaignActivityPlugin>
     {
-        private AddItemCampaignActivityPluginSpecificationFixture testFixture;
-
         protected override void Context()
         {
-            testFixture = new AddItemCampaignActivityPluginSpecificationFixture();
-            testFixture.PerformTestSetup();
+            TestFixture = new AddItemCampaignActivityPluginSpecificationFixture();
+            TestFixture.PerformTestSetup();
         }
 
         protected override void BecauseOf()
         {
-            testFixture.UnderTest.Execute(testFixture.ServiceProvider.Object);
+            TestFixture.UnderTest.Execute(TestFixture.ServiceProvider.Object);
         }
 
         [Test]
         public void OrganizationServiceShouldNotBeNull()
         {
-            Assert.IsNotNull(testFixture.UnderTest.OrganizationService);
+            Assert.IsNotNull(TestFixture.UnderTest.OrganizationService);
         }
 
         [Test]
         public void PluginExecutionContextShouldNotBeNull()
         {
-            Assert.IsNotNull(testFixture.UnderTest.PluginExecutionContext);
+            Assert.IsNotNull(TestFixture.UnderTest.PluginExecutionContext);
         }
 
         [Test]
         public void TracingServiceShouldNotBeNull()
         {
-            Assert.IsNotNull(testFixture.UnderTest.TracingService);
+            Assert.IsNotNull(TestFixture.UnderTest.TracingService);
         }
 
         [Test]
         public void CampaignActivityIdShouldNotBeNull()
         {
-            Assert.IsNotNull(testFixture.UnderTest.CampaignActivityId);
+            Assert.IsNotNull(TestFixture.UnderTest.CampaignActivityId);
         }
 
         [Test]
         public void ItemIdShouldNotBeNull()
         {
-            Assert.IsNotNull(testFixture.UnderTest.ItemId);
+            Assert.IsNotNull(TestFixture.UnderTest.ItemId);
         }
 
         [Test]
         public void EntityNameShouldNotBeNull()
         {
-            Assert.IsNotNull(testFixture.UnderTest.EntityName);
+            Assert.IsNotNull(TestFixture.UnderTest.EntityName);
         }
     }
 }

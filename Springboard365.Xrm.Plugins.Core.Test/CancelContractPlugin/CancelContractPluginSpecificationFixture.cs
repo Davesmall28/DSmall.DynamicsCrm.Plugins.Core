@@ -8,17 +8,12 @@
     {
         public override void PerformTestSetup()
         {
-            ServiceProvider = ServiceProviderInitializer.Setup().WithInputParameters(GetDummyInputParameters());
-        }
-
-        private static ParameterCollection GetDummyInputParameters()
-        {
-            return new ParameterCollection
+            ServiceProvider = ServiceProviderInitializer.Setup().WithInputParameters(() => new ParameterCollection
             {
                 { InputParameterType.ContractId, Guid.NewGuid() },
                 { InputParameterType.CancelDate, DateTime.Now },
                 { InputParameterType.Status, new OptionSetValue(1) }
-            };
+            });
         }
     }
 }

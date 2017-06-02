@@ -103,12 +103,12 @@
       <HintPath>..\packages\NUnit.3.4.1\lib\net40\nunit.framework.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Springboard365.UnitTest.Core, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Springboard365.UnitTest.Core.1.1.0\lib\net40\Springboard365.UnitTest.Core.dll</HintPath>
+    <Reference Include="Springboard365.UnitTest.Core, Version=1.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Springboard365.UnitTest.Core.1.2.0\lib\net40\Springboard365.UnitTest.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Springboard365.Xrm.UnitTest.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Springboard365.Xrm.UnitTest.Core.1.0.0\lib\net40\Springboard365.Xrm.UnitTest.Core.dll</HintPath>
+    <Reference Include="Springboard365.Xrm.UnitTest.Core, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Springboard365.Xrm.UnitTest.Core.1.1.0\lib\net40\Springboard365.Xrm.UnitTest.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -162,6 +162,7 @@
     <Compile Include="CloseQuotePlugin\CloseQuotePluginSpecificationFixture.cs" />
     <Compile Include="CloseQuotePlugin\DummyCloseQuotePlugin.cs" />
     <Compile Include="CloseQuotePlugin\WhenExecutingCloseQuotePluginSuccessfully.cs" />
+    <Compile Include="CreatePlugin\CreatePluginSpecificationFixture.cs" />
     <Compile Include="CreatePlugin\DummyCreatePlugin.cs" />
     <Compile Include="CreatePlugin\WhenExecutingCreatePluginWithValidParameters.cs" />
     <Compile Include="DeletePlugin\DeletePluginSpecificationFixture.cs" />
@@ -172,6 +173,7 @@
     <Compile Include="DisassociatePlugin\WhenExecutingCloseQuotePluginSuccessfully.cs" />
     <Compile Include="EntityPlugin\Contact.cs" />
     <Compile Include="EntityPlugin\DummyEntityPlugin.cs" />
+    <Compile Include="EntityPlugin\EntityPluginSpecificationFixture.cs" />
     <Compile Include="Extensions\PluginConfigurationExtensionWithNoSettingSpecification.cs" />
     <Compile Include="Extensions\PluginConfigurationExtensionXmlDocumentSpecifications.cs" />
     <Compile Include="Extensions\InputParameterExtensionExceptionSpecifications.cs" />
@@ -196,6 +198,7 @@
     <Compile Include="MergePlugin\DummyMergePlugin.cs" />
     <Compile Include="SetStatePlugin\DummySetStatePlugin.cs" />
     <Compile Include="SetStatePlugin\WhenExecutingTheSetStatePluginSuccessfully.cs" />
+    <Compile Include="StandardPlugin\PluginSpecificationFixture.cs" />
     <Compile Include="StandardPlugin\WhenExecutingStandardPluginWithInvalidParameters.cs" />
     <Compile Include="StandardPlugin\DummyPlugin.cs" />
     <Compile Include="EntityPlugin\WhenExecutingEntityPluginWithValidParameters.cs" />
@@ -208,7 +211,8 @@
     <Compile Include="UnlockSalesOrderPricingPlugin\UnlockSalesOrderPricingPluginSpecificationFixture.cs" />
     <Compile Include="UnlockSalesOrderPricingPlugin\WhenExecutingUnlockSalesOrderPricingPluginSuccessfully.cs" />
     <Compile Include="UpdatePlugin\DummyUpdatePlugin.cs" />
-    <Compile Include="UpdatePlugin\WhenExecutingCreatePluginWithValidParameters.cs" />
+    <Compile Include="UpdatePlugin\UpdatePluginSpecificationFixture.cs" />
+    <Compile Include="UpdatePlugin\WhenExecutingUpdatePluginWithValidParameters.cs" />
     <Compile Include="WinOpportunityPlugin\DummyWinOpportunityPlugin.cs" />
     <Compile Include="WinOpportunityPlugin\WinOpportunityPluginSpecificationFixture.cs" />
     <Compile Include="WinOpportunityPlugin\WhenExecutingWinOpportunityPluginSuccessfully.cs" />

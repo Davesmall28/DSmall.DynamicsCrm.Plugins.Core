@@ -1,51 +1,49 @@
 ﻿namespace Springboard365.Xrm.Plugins.Core.Test
 {
     using NUnit.Framework;
-    using Springboard365.UnitTest.Core;
+    using Springboard365.Xrm.UnitTest.Core;
 
-    public class WhenExecutingCloneContractPluginSuccessfully : SpecificationBase
+    public class WhenExecutingCloneContractPluginSuccessfully : Specification<DummyCloneContractPlugin>
     {
-        private CloneContractPluginSpecificationFixture testFixture;
-
         protected override void Context()
         {
-            testFixture = new CloneContractPluginSpecificationFixture();
-            testFixture.PerformTestSetup();
+            TestFixture = new CloneContractPluginSpecificationFixture();
+            TestFixture.PerformTestSetup();
         }
 
         protected override void BecauseOf()
         {
-            testFixture.UnderTest.Execute(testFixture.ServiceProvider.Object);
+            TestFixture.UnderTest.Execute(TestFixture.ServiceProvider.Object);
         }
 
         [Test]
         public void OrganizationServiceShouldNotBeNull()
         {
-            Assert.IsNotNull(testFixture.UnderTest.OrganizationService);
+            Assert.IsNotNull(TestFixture.UnderTest.OrganizationService);
         }
 
         [Test]
         public void PluginExecutionContextShouldNotBeNull()
         {
-            Assert.IsNotNull(testFixture.UnderTest.PluginExecutionContext);
+            Assert.IsNotNull(TestFixture.UnderTest.PluginExecutionContext);
         }
 
         [Test]
         public void TracingServiceShouldNotBeNull()
         {
-            Assert.IsNotNull(testFixture.UnderTest.TracingService);
+            Assert.IsNotNull(TestFixture.UnderTest.TracingService);
         }
 
         [Test]
         public void ContractIdShouldNotBeNull()
         {
-            Assert.IsNotNull(testFixture.UnderTest.ContractId);
+            Assert.IsNotNull(TestFixture.UnderTest.ContractId);
         }
 
         [Test]
         public void IncludeCanceledLinesShouldNotBeNull()
         {
-            Assert.IsNotNull(testFixture.UnderTest.IncludeCanceledLines);
+            Assert.IsNotNull(TestFixture.UnderTest.IncludeCanceledLines);
         }
     }
 }
