@@ -12,8 +12,8 @@ script:
   - xbuild Springboard365.Xrm.Plugins.Core.sln /p:Configuration=Release-Net45;TargetFrameworkProfile="";TargetFrameworkVersion=4.5
   - mono ./tools/NUnit.ConsoleRunner/tools/nunit3-console.exe ./Springboard365.Xrm.Plugins.Core.Test/bin/Release-Net45/Springboard365.Xrm.Plugins.Core.Test.dll  --work=./TestResult/Net45
   - echo -e "<?xml version=\"1.0\" encoding=\"utf-8\"?><configuration><connectionStrings><add name=\"CrmConnection\" connectionString=\"Url=$dynamics_crm_url; Username=$dynamics_crm_username; Password=$dynamics_crm_password; DeviceID=$dynamics_crm_device_id; DevicePassword=$dynamics_crm_device_password\"/></connectionStrings></configuration>" > ./Springboard365.Xrm.Plugins.Core.IntegrationTest/App.Config
-  - nuget restore Springboard365.Xrm.Plugins.Core.All.sln
-  - xbuild Springboard365.Xrm.Plugins.Core.All.sln /p:Configuration=Release;TargetFrameworkProfile="";TargetFrameworkVersion=4.5
+  - nuget restore ./Springboard365.Xrm.Plugins.Core.IntegrationTest/Springboard365.Xrm.Plugins.Core.IntegrationTest.sln
+  - xbuild ./Springboard365.Xrm.Plugins.Core.IntegrationTest/Springboard365.Xrm.Plugins.Core.IntegrationTest.sln /p:Configuration=Release;TargetFrameworkProfile="";TargetFrameworkVersion=4.5
   - mono ./tools/NUnit.ConsoleRunner/tools/nunit3-console.exe ./Springboard365.Xrm.Plugins.Core.IntegrationTest/bin/Release/Springboard365.Xrm.Plugins.Core.IntegrationTest.dll  --work=./TestResult/Integration/Net40
   - echo "Information(Context.Environment.Runtime.CakeVersion.ToString());" > build.cake
   - ./build.sh || exit 1
