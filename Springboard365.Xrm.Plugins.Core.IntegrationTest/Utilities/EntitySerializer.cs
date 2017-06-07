@@ -30,7 +30,7 @@
             }
         }
 
-        private PluginParameters GetObject(string xmlBlob)
+        private static PluginParameters GetObject(string xmlBlob)
         {
             var stringReader = new StringReader(xmlBlob);
             var serializer = new XmlSerializer(typeof(PluginParameters));
