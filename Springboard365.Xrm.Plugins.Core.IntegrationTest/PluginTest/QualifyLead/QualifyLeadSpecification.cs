@@ -25,7 +25,7 @@ namespace Springboard365.Xrm.Plugins.Core.IntegrationTest
         [Test]
         public void ShouldReturnInputParameterContainingEightParameters()
         {
-            Assert.IsTrue(testFixture.Result.InputParameters.Count == 8);
+            Assert.AreEqual(8, testFixture.Result.InputParameters.Count);
         }
 
         [Test]
