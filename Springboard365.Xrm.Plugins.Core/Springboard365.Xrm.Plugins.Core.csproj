@@ -83,7 +83,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.Crm.Sdk.Proxy">
-      <HintPath>..\Packages\Springboard365.Xrm.Core.1.0.0\lib\net40\Microsoft.Crm.Sdk.Proxy.dll</HintPath>
+      <HintPath>..\packages\Springboard365.Xrm.Core.1.0.0\lib\net40\Microsoft.Crm.Sdk.Proxy.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.IdentityModel">
