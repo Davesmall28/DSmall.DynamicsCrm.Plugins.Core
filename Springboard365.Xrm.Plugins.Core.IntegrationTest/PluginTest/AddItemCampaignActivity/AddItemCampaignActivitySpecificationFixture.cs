@@ -6,10 +6,13 @@ namespace Springboard365.Xrm.Plugins.Core.IntegrationTest
     {
         public AddItemCampaignActivityRequest AddItemCampaignActivityRequest { get; private set; }
 
+        public AddItemCampaignActivitySpecificationFixture()
+            : base("AddItem")
+        {
+        }
+
         public void PerformTestSetup()
         {
-            MessageName = "AddItem";
-
             var listEntity = EntityFactory.CreateMarketingList();
 
             var campaignEntity = EntityFactory.CreateCampaign();

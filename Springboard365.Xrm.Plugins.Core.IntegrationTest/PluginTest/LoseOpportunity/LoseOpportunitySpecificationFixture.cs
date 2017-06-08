@@ -8,10 +8,13 @@ namespace Springboard365.Xrm.Plugins.Core.IntegrationTest
     {
         public LoseOpportunityRequest LoseOpportunityRequest { get; private set; }
 
+        public LoseOpportunitySpecificationFixture()
+            : base("Lose")
+        {
+        }
+
         public void PerformTestSetup()
         {
-            MessageName = "Lose";
-
             var opportunityEntity = EntityFactory.CreateOpportunity();
 
             var opportunityClose = new Entity("opportunityclose");

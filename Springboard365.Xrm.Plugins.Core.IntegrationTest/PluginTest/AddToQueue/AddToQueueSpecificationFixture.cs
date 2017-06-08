@@ -7,10 +7,13 @@
     {
         public AddToQueueRequest AddToQueueRequest { get; private set; }
 
+        public AddToQueueSpecificationFixture()
+            : base("AddToQueue")
+        {
+        }
+
         public void PerformTestSetup()
         {
-            MessageName = "AddToQueue";
-
             var targetEntity = EntityFactory.CreateLetter();
 
             AddToQueueRequest = new AddToQueueRequest

@@ -7,10 +7,13 @@ namespace Springboard365.Xrm.Plugins.Core.IntegrationTest
     {
         public CancelSalesOrderRequest CancelSalesOrderRequest { get; private set; }
 
+        public CancelSalesOrderSpecificationFixture()
+            : base("Cancel")
+        {
+        }
+
         public void PerformTestSetup()
         {
-            MessageName = "Cancel";
-
             var orderEntity = EntityFactory.CreateSalesOrder();
 
             var orderCloseEntity = new Entity("orderclose");

@@ -7,10 +7,13 @@ namespace Springboard365.Xrm.Plugins.Core.IntegrationTest
     {
         public AssociateRequest AssociateRequest { get; private set; }
 
+        public AssociateEntitySpecificationFixture()
+            : base("Associate")
+        {
+        }
+
         public void PerformTestSetup()
         {
-            MessageName = "Associate";
-
             var contactEntity = EntityFactory.CreateContact();
             var letterEntity = EntityFactory.CreateLetter();
 

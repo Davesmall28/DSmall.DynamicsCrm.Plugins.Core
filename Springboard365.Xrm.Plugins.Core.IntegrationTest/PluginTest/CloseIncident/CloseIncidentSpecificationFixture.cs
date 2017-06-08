@@ -8,10 +8,13 @@ namespace Springboard365.Xrm.Plugins.Core.IntegrationTest
     {
         public CloseIncidentRequest CloseIncidentRequest { get; private set; }
 
+        public CloseIncidentSpecificationFixture()
+            : base("Close")
+        {
+        }
+
         public void PerformTestSetup()
         {
-            MessageName = "Close";
-
             var caseEntity = EntityFactory.CreateCase();
 
             var caseResolutionEntity = new Entity("incidentresolution")

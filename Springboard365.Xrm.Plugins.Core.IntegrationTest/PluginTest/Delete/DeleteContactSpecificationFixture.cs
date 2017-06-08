@@ -6,10 +6,13 @@
     {
         public EntityReference EntityReferenceToDelete { get; private set; }
 
+        public DeleteContactSpecificationFixture()
+            : base("Delete")
+        {
+        }
+
         public void PerformTestSetup()
         {
-            MessageName = "Delete";
-
             var entityToCreate = new Entity("contact");
             entityToCreate.Attributes.Add("firstname", "DummyFirstName");
             entityToCreate.Attributes.Add("lastname", "DeleteRequest");

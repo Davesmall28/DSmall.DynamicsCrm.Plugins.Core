@@ -6,10 +6,13 @@ namespace Springboard365.Xrm.Plugins.Core.IntegrationTest
     {
         public CloneContractRequest CloneContractRequest { get; private set; }
 
+        public CloneContractSpecificationFixture()
+            : base("Clone")
+        {
+        }
+
         public void PerformTestSetup()
         {
-            MessageName = "Clone";
-
             var contractEntity = EntityFactory.CreateContract();
 
             CloneContractRequest = new CloneContractRequest

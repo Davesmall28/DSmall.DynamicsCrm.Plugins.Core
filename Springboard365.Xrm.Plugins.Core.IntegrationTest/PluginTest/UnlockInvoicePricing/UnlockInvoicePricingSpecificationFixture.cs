@@ -6,10 +6,13 @@ namespace Springboard365.Xrm.Plugins.Core.IntegrationTest
     {
         public UnlockInvoicePricingRequest UnlockInvoicePricingRequest { get; private set; }
 
+        public UnlockInvoicePricingSpecificationFixture()
+            : base("UnlockInvoicePricing")
+        {
+        }
+
         public void PerformTestSetup()
         {
-            MessageName = "UnlockInvoicePricing";
-
             var invoiceEntity = EntityFactory.CreateInvoice();
 
             var lockInvoicePricingRequest = new LockInvoicePricingRequest

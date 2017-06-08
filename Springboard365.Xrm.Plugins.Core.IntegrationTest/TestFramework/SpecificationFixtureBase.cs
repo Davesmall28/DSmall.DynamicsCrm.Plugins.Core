@@ -15,7 +15,7 @@
         private const string CrmDeviceIdSettingName = "CrmDeviceId";
         private const string CrmDevicePasswordSettingName = "CrmDevicePassword";
 
-        protected SpecificationFixtureBase()
+        private SpecificationFixtureBase()
         {
             OrganizationService = new OrganizationServiceProxy(GetUri(), null, GetClientCredentials(), GetDeviceCredentials());
             CrmReader = new CrmReader(OrganizationService);
@@ -39,7 +39,7 @@
 
         public Guid RequestId { get; private set; }
 
-        public string MessageName { get; protected set; }
+        public string MessageName { get; private set; }
 
         protected IOrganizationService OrganizationService { get; }
 

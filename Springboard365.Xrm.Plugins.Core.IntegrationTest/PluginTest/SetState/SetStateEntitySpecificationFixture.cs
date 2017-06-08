@@ -8,10 +8,13 @@
     {
         public SetStateRequest SetStateRequest { get; private set; }
 
+        public SetStateEntitySpecificationFixture()
+            : base("SetStateDynamicEntity")
+        {
+        }
+
         public void PerformTestSetup()
         {
-            MessageName = "SetStateDynamicEntity";
-
             var targetEntity = new Entity("contact")
             {
                 Id = Guid.NewGuid()

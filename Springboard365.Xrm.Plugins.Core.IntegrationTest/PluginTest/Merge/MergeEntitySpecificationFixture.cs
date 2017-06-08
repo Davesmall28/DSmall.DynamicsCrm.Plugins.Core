@@ -8,10 +8,13 @@
     {
         public MergeRequest MergeRequest { get; private set; }
 
+        public MergeEntitySpecificationFixture()
+            : base("Merge")
+        {
+        }
+
         public void PerformTestSetup()
         {
-            MessageName = "Merge";
-
             var targetEntity = new Entity("contact")
             {
                 Id = Guid.NewGuid()
