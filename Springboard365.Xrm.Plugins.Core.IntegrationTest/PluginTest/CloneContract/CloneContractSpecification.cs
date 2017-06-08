@@ -26,7 +26,7 @@ namespace Springboard365.Xrm.Plugins.Core.IntegrationTest
         [Test]
         public void ShouldReturnInputParametersContainingTwoParameters()
         {
-            Assert.IsTrue(testFixture.Result.InputParameters.Count == 2);
+            Assert.AreEqual(2, testFixture.Result.InputParameters.Count);
         }
 
         [Test]

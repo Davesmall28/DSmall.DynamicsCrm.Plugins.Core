@@ -6,8 +6,6 @@ namespace Springboard365.Xrm.Plugins.Core.IntegrationTest
     {
         public LockSalesOrderPricingRequest LockSalesOrderPricingRequest { get; set; }
 
-        public string MessageName { get; private set; }
-
         public void PerformTestSetup()
         {
             MessageName = "LockSalesOrderPricing";

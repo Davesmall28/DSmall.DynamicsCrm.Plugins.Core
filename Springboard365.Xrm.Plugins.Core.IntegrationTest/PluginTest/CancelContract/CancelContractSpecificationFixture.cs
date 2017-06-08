@@ -8,8 +8,6 @@ namespace Springboard365.Xrm.Plugins.Core.IntegrationTest
     {
         public CancelContractRequest CancelContractRequest { get; private set; }
 
-        public string MessageName { get; private set; }
-
         public void PerformTestSetup()
         {
             MessageName = "Cancel";

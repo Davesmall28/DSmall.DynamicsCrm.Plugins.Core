@@ -8,8 +8,6 @@
     {
         public SetStateRequest SetStateRequest { get; private set; }
 
-        public string MessageName { get; private set; }
-
         public void PerformTestSetup()
         {
             MessageName = "SetStateDynamicEntity";

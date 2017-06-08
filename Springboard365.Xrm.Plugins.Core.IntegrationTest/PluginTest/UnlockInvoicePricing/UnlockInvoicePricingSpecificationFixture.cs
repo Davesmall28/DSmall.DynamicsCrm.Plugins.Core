@@ -6,8 +6,6 @@ namespace Springboard365.Xrm.Plugins.Core.IntegrationTest
     {
         public UnlockInvoicePricingRequest UnlockInvoicePricingRequest { get; private set; }
 
-        public string MessageName { get; private set; }
-
         public void PerformTestSetup()
         {
             MessageName = "UnlockInvoicePricing";

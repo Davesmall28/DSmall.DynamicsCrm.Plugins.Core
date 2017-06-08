@@ -7,8 +7,6 @@ namespace Springboard365.Xrm.Plugins.Core.IntegrationTest
     {
         public AssociateRequest AssociateRequest { get; private set; }
 
-        public string MessageName { get; private set; }
-
         public void PerformTestSetup()
         {
             MessageName = "Associate";

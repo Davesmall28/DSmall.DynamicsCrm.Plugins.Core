@@ -23,9 +23,9 @@ namespace Springboard365.Xrm.Plugins.Core.IntegrationTest
         }
 
         [Test]
-        public void ShouldReturnInputParameterContainingEightParameters()
+        public void ShouldReturnInputParameterContainingNineParameters()
         {
-            Assert.AreEqual(8, testFixture.Result.InputParameters.Count);
+            Assert.AreEqual(9, testFixture.Result.InputParameters.Count);
         }
 
         [Test]
@@ -74,6 +74,13 @@ namespace Springboard365.Xrm.Plugins.Core.IntegrationTest
         public void ShouldReturnInputParameterContainingStatus()
         {
             Assert.IsTrue(testFixture.Result.InputParameters.OneOf<OptionSetValue>("Status"));
+        }
+
+        [Test]
+        [Ignore("New in Dynamics 365.")]
+        public void ShouldReturnInputParameterContainingProcessInstanceId()
+        {
+            Assert.IsTrue(testFixture.Result.InputParameters.OneOf<EntityReference>("ProcessInstanceId"));
         }
 
         [Test]

@@ -6,8 +6,6 @@ namespace Springboard365.Xrm.Plugins.Core.IntegrationTest
     {
         public CloneContractRequest CloneContractRequest { get; private set; }
 
-        public string MessageName { get; private set; }
-
         public void PerformTestSetup()
         {
             MessageName = "Clone";

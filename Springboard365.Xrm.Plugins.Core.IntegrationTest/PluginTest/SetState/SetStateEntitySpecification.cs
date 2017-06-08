@@ -25,7 +25,7 @@
         [Test]
         public void ShouldReturnInputParameterContainingThreeParameters()
         {
-            Assert.IsTrue(testFixture.Result.InputParameters.Count == 3);
+            Assert.AreEqual(3, testFixture.Result.InputParameters.Count);
         }
 
         [Test]

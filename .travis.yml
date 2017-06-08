@@ -9,10 +9,10 @@ script:
   - mono ./tools/NUnit.ConsoleRunner/tools/nunit3-console.exe ./Springboard365.Xrm.Plugins.Core.Test/bin/Release-Net40/Springboard365.Xrm.Plugins.Core.Test.dll  --work=./TestResult/Net40
   - xbuild Springboard365.Xrm.Plugins.Core.sln /p:Configuration=Release-Net45;TargetFrameworkProfile="";TargetFrameworkVersion=4.5
   - mono ./tools/NUnit.ConsoleRunner/tools/nunit3-console.exe ./Springboard365.Xrm.Plugins.Core.Test/bin/Release-Net45/Springboard365.Xrm.Plugins.Core.Test.dll  --work=./TestResult/Net45
-  - echo -e "<?xml version=\"1.0\" encoding=\"utf-8\"?><configuration><connectionStrings><add name=\"CrmConnection\" connectionString=\"Url=$dynamics_crm_url; Username=$dynamics_crm_username; Password=$dynamics_crm_password;\"/></connectionStrings><runtime><assemblyBinding xmlns=\"urn:schemas-microsoft-com:asm.v1\"><dependentAssembly><assemblyIdentity name=\"Microsoft.Xrm.Sdk\" publicKeyToken=\"31bf3856ad364e35\" culture=\"neutral\" /><bindingRedirect oldVersion=\"0.0.0.0-8.0.0.0\" newVersion=\"8.0.0.0\" /></dependentAssembly><dependentAssembly><assemblyIdentity name=\"Microsoft.Xrm.Sdk.Deployment\" publicKeyToken=\"31bf3856ad364e35\" culture=\"neutral\" /><bindingRedirect oldVersion=\"0.0.0.0-8.0.0.0\" newVersion=\"8.0.0.0\" /></dependentAssembly></assemblyBinding></runtime></configuration>" > ./Springboard365.Xrm.Plugins.Core.IntegrationTest/App.config
+  - echo -e "<?xml version=\"1.0\" encoding=\"utf-8\"?><configuration><appSettings><add key=\"CrmUrl\" value=\"$dynamics_crm_url\"/><add key=\"CrmUserName\" value=\"$dynamics_crm_username\"/><add key=\"CrmPassword\" value=\"$dynamics_crm_password\"/></appSettings></configuration>" > ./Springboard365.Xrm.Plugins.Core.IntegrationTest/App.config
   - nuget restore Springboard365.Xrm.Plugins.Core.IntegrationTest.sln
   - xbuild Springboard365.Xrm.Plugins.Core.IntegrationTest.sln /p:Configuration=Release;TargetFrameworkProfile="";TargetFrameworkVersion=4.5
-  - mono ./tools/NUnit.ConsoleRunner/tools/nunit3-console.exe ./Springboard365.Xrm.Plugins.Core.IntegrationTest/bin/Release/Springboard365.Xrm.Plugins.Core.IntegrationTest.dll  --work=./TestResult/Integration/Net40
+  - mono ./tools/NUnit.ConsoleRunner/tools/nunit3-console.exe ./Springboard365.Xrm.Plugins.Core.IntegrationTest/bin/Release/Springboard365.Xrm.Plugins.Core.IntegrationTest.dll  --work=./TestResult/Integration/Net45
   - echo "Information(Context.Environment.Runtime.CakeVersion.ToString());" > build.cake
   - ./build.sh || exit 1
   - ls -D -R
