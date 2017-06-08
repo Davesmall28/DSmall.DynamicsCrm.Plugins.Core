@@ -5,21 +5,19 @@
     using System.ServiceModel.Description;
     using Microsoft.Xrm.Sdk;
     using Microsoft.Xrm.Sdk.Client;
-    using Springboard365.Xrm.Plugins.Core.Model;
+    using Model;
 
     public abstract class SpecificationFixtureBase
     {
         private const string CrmUrlSettingName = "CrmUrl"; 
         private const string CrmUserNameSettingName = "CrmUserName";
         private const string CrmPasswordSettingName = "CrmPassword";
+        private const string CrmDeviceIdSettingName = "CrmDeviceId";
+        private const string CrmDevicePasswordSettingName = "CrmDevicePassword";
 
         protected SpecificationFixtureBase()
         {
-            var uri = new Uri(ConfigurationManager.AppSettings.Get(CrmUrlSettingName));
-            var clientCredentials = new ClientCredentials();
-            clientCredentials.UserName.UserName = ConfigurationManager.AppSettings.Get(CrmUserNameSettingName);
-            clientCredentials.UserName.Password = ConfigurationManager.AppSettings.Get(CrmPasswordSettingName);
-            OrganizationService = new OrganizationServiceProxy(uri, null, clientCredentials, null);
+            OrganizationService = new OrganizationServiceProxy(GetUri(), null, GetClientCredentials(), GetDeviceCredentials());
             CrmReader = new CrmReader(OrganizationService);
             CrmWriter = new CrmWriter(OrganizationService);
             EntityFactory = new EntityFactory(OrganizationService, new CrmReader(OrganizationService));
@@ -33,20 +31,51 @@
             MessageName = messageName;
         }
 
-        public IOrganizationService OrganizationService { get; }
-
-        public ICrmReader CrmReader { get; private set; }
+        public PluginParameters Result { get; set; }
 
         public ICrmWriter CrmWriter { get; private set; }
 
-        public IEntityFactory EntityFactory { get; private set; }
-
         public IEntitySerializer EntitySerializer { get; private set; }
-
-        public PluginParameters Result { get; set; }
 
         public Guid RequestId { get; private set; }
 
         public string MessageName { get; protected set; }
+
+        protected IOrganizationService OrganizationService { get; }
+
+        protected ICrmReader CrmReader { get; private set; }
+
+        protected IEntityFactory EntityFactory { get; private set; }
+
+        private static Uri GetUri()
+        {
+            return new Uri(ConfigurationManager.AppSettings.Get(CrmUrlSettingName));
+        }
+
+        private static ClientCredentials GetClientCredentials()
+        {
+            return Create(
+                ConfigurationManager.AppSettings.Get(CrmUserNameSettingName),
+                ConfigurationManager.AppSettings.Get(CrmPasswordSettingName));
+        }
+
+        private static ClientCredentials GetDeviceCredentials()
+        {
+            return Create(
+                ConfigurationManager.AppSettings.Get(CrmDeviceIdSettingName),
+                ConfigurationManager.AppSettings.Get(CrmDevicePasswordSettingName));
+        }
+
+        private static ClientCredentials Create(string userName, string password)
+        {
+            return new ClientCredentials
+            {
+                UserName =
+                {
+                    UserName = userName,
+                    Password = password
+                }
+            };
+        }
     }
 }
