@@ -32,6 +32,11 @@
                     new ClientCredentials(ConfigurationManager.AppSettings.Get(ClientIdSettingName), ConfigurationManager.AppSettings.Get(ClientSecretSettingName)),
                     new UserCredentials(ConfigurationManager.AppSettings.Get(CrmUserNameSettingName), ConfigurationManager.AppSettings.Get(CrmPasswordSettingName))).Result;
 
+                if (token == null)
+                {
+                    throw new Exception("Token is empty");
+                }
+
                 OrganizationService = new OrganizationWebProxyClient(GetUri("/web"), false)
                 {
                     HeaderToken = token.AccessToken,
