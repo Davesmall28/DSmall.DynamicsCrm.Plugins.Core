@@ -5,6 +5,7 @@
     using System.IO;
     using System.Reflection;
     using System.Threading;
+    using log4net;
     using Microsoft.Xrm.Sdk;
     using Microsoft.Xrm.Sdk.Client;
     using Microsoft.Xrm.Sdk.WebServiceClient;
@@ -23,6 +24,8 @@
         private const string TenantSettingName = "Tenant";
         private const string PlatformSettingName = "Platform";
 
+        private readonly ILog logger = LogManager.GetLogger(typeof(SpecificationFixtureBase));
+
         private SpecificationFixtureBase()
         {
             if (ConfigurationManager.AppSettings.Get(PlatformSettingName).ToLowerInvariant().Equals("web"))
@@ -40,7 +43,10 @@
                     throw new Exception("Token is empty");
                 }
 
-                var assembly = Assembly.LoadFrom(Path.Combine(Thread.GetDomain().BaseDirectory, "Microsoft.Crm.Sdk.Proxy.dll"));
+                var baseDirectory = Thread.GetDomain().BaseDirectory;
+                var assemblyFilePath = Path.Combine(baseDirectory, "Microsoft.Crm.Sdk.Proxy.dll");
+                var assembly = Assembly.LoadFrom(assemblyFilePath);
+                logger.InfoFormat("Assembly File Path: {0}", assemblyFilePath);
                 OrganizationService = new OrganizationWebProxyClient(GetUri("/web"), assembly)
                 {
                     HeaderToken = token.AccessToken,
