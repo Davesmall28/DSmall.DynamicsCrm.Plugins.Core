@@ -2,6 +2,9 @@
 {
     using System;
     using System.Configuration;
+    using System.IO;
+    using System.Reflection;
+    using System.Threading;
     using Microsoft.Xrm.Sdk;
     using Microsoft.Xrm.Sdk.Client;
     using Microsoft.Xrm.Sdk.WebServiceClient;
@@ -37,7 +40,8 @@
                     throw new Exception("Token is empty");
                 }
 
-                OrganizationService = new OrganizationWebProxyClient(GetUri("/web"), false)
+                var assembly = Assembly.LoadFrom(Path.Combine(Thread.GetDomain().BaseDirectory, "Microsoft.Crm.Sdk.Proxy.dll"));
+                OrganizationService = new OrganizationWebProxyClient(GetUri("/web"), assembly)
                 {
                     HeaderToken = token.AccessToken,
                     SdkClientVersion = "8.2"
