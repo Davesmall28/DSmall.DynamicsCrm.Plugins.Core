@@ -22,7 +22,7 @@
             using (var crmServiceContext = new OrganizationServiceContext(organizationService))
             {
                 var pluginParameters = from p in crmServiceContext.CreateQuery("sb365_pluginparameter")
-                                       where ((string)p["sb365_pluginexecutionrequestid"]).Contains(requestId.ToString())
+                                       where ((string)p["sb365_pluginexecutionrequestid"]).Equals(requestId.ToString())
                                           && ((string)p["sb365_messagename"]).Equals(messageName)
                                        select p["sb365_pluginparameters"].ToString();
 

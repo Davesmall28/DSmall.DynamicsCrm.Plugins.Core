@@ -14,7 +14,7 @@
         public void PerformTestSetup()
         {
             EntityToCreate = new Entity("contact");
-            EntityToCreate.Attributes.Add("firstname", "DummFirstName");
+            EntityToCreate.Attributes.Add("firstname", "DummyFirstName");
         }
     }
 }

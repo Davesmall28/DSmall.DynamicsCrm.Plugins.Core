@@ -2,10 +2,11 @@
 {
     using System;
     using System.Configuration;
-    using System.ServiceModel.Description;
     using Microsoft.Xrm.Sdk;
     using Microsoft.Xrm.Sdk.Client;
+    using Microsoft.Xrm.Sdk.WebServiceClient;
     using Model;
+    using Springboard365.Xrm.Authentication;
 
     public abstract class SpecificationFixtureBase
     {
@@ -14,10 +15,34 @@
         private const string CrmPasswordSettingName = "CrmPassword";
         private const string CrmDeviceIdSettingName = "CrmDeviceId";
         private const string CrmDevicePasswordSettingName = "CrmDevicePassword";
+        private const string ClientIdSettingName = "ClientId";
+        private const string ClientSecretSettingName = "ClientSecret";
+        private const string TenantSettingName = "Tenant";
+        private const string PlatformSettingName = "Platform";
 
         private SpecificationFixtureBase()
         {
-            OrganizationService = new OrganizationServiceProxy(GetUri(), null, GetClientCredentials(), GetDeviceCredentials());
+            if (ConfigurationManager.AppSettings.Get(PlatformSettingName).ToLowerInvariant().Equals("web"))
+            { 
+
+                var authenticationService = new AuthenticationService();
+                var token = authenticationService.AcquireTokenAsync(
+                    ConfigurationManager.AppSettings.Get(CrmUrlSettingName),
+                    ConfigurationManager.AppSettings.Get(TenantSettingName),
+                    new ClientCredentials(ConfigurationManager.AppSettings.Get(ClientIdSettingName), ConfigurationManager.AppSettings.Get(ClientSecretSettingName)),
+                    new UserCredentials(ConfigurationManager.AppSettings.Get(CrmUserNameSettingName), ConfigurationManager.AppSettings.Get(CrmPasswordSettingName))).Result;
+
+                OrganizationService = new OrganizationWebProxyClient(GetUri("/web"), false)
+                {
+                    HeaderToken = token.AccessToken,
+                    SdkClientVersion = "8.2"
+                };
+            }
+            else
+            {
+                OrganizationService = new OrganizationServiceProxy(GetUri(), null, GetClientCredentials(), GetDeviceCredentials());
+            }
+
             CrmReader = new CrmReader(OrganizationService);
             CrmWriter = new CrmWriter(OrganizationService);
             EntityFactory = new EntityFactory(OrganizationService, new CrmReader(OrganizationService));
@@ -47,28 +72,28 @@
 
         protected IEntityFactory EntityFactory { get; private set; }
 
-        private static Uri GetUri()
+        private static Uri GetUri(string appendText = null)
         {
-            return new Uri(ConfigurationManager.AppSettings.Get(CrmUrlSettingName));
+            return new Uri(ConfigurationManager.AppSettings.Get(CrmUrlSettingName) + "/XRMServices/2011/Organization.svc" + appendText);
         }
 
-        private static ClientCredentials GetClientCredentials()
+        private static System.ServiceModel.Description.ClientCredentials GetClientCredentials()
         {
             return Create(
                 ConfigurationManager.AppSettings.Get(CrmUserNameSettingName),
                 ConfigurationManager.AppSettings.Get(CrmPasswordSettingName));
         }
 
-        private static ClientCredentials GetDeviceCredentials()
+        private static System.ServiceModel.Description.ClientCredentials GetDeviceCredentials()
         {
             return Create(
                 ConfigurationManager.AppSettings.Get(CrmDeviceIdSettingName),
                 ConfigurationManager.AppSettings.Get(CrmDevicePasswordSettingName));
         }
 
-        private static ClientCredentials Create(string userName, string password)
+        private static System.ServiceModel.Description.ClientCredentials Create(string userName, string password)
         {
-            return new ClientCredentials
+            return new System.ServiceModel.Description.ClientCredentials
             {
                 UserName =
                 {
