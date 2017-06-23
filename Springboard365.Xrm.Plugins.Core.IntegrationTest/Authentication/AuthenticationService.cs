@@ -3,16 +3,16 @@
     using System.Collections.Generic;
     using System.Net.Http;
     using System.Threading.Tasks;
+    using log4net;
     using Newtonsoft.Json;
 
     public class AuthenticationService : IAuthenticationService
     {
-        private string url;
-        private List<KeyValuePair<string, string>> requestParams;
+        private readonly ILog logger = LogManager.GetLogger(typeof(AuthenticationService));
 
         public async Task<Token> AcquireTokenAsync(string resource, string tenant, ClientCredentials clientCredentials, UserCredentials userCredentials)
         {
-            requestParams = new List<KeyValuePair<string, string>>
+            var requestParams = new List<KeyValuePair<string, string>>
                 {
                     new KeyValuePair<string, string>("client_id", clientCredentials.ClientId),
                     new KeyValuePair<string, string>("client_secret", clientCredentials.ClientSecret),
@@ -22,7 +22,10 @@
                     new KeyValuePair<string, string>("password", userCredentials.Password)
                 };
 
-            url = string.Format("https://login.windows.net/{0}/oauth2/token", tenant);
+            var url = string.Format("https://login.windows.net/{0}/oauth2/token", tenant);
+
+            LogRequestParams(requestParams);
+            logger.DebugFormat("Oauth Token Url: {0}", url);
 
             using (var httpClient = new HttpClient())
             {
@@ -32,14 +35,19 @@
                 {
                     using (var response = await httpClient.PostAsync(url, httpContent))
                     {
-                        if (!response.IsSuccessStatusCode)
-                        {
-                            return null;
-                        }
+                        logger.DebugFormat("Response Status Code: {0}", response.StatusCode);
 
-                        return JsonConvert.DeserializeObject<Token>(await response.Content.ReadAsStringAsync());
+                        return response.IsSuccessStatusCode ? JsonConvert.DeserializeObject<Token>(await response.Content.ReadAsStringAsync()) : null;
                     }
                 }
+            }
+        }
+
+        private void LogRequestParams(IEnumerable<KeyValuePair<string, string>> requestParameters)
+        {
+            foreach (var requestParameter in requestParameters)
+            {
+                logger.DebugFormat("{0}: {1}", requestParameter.Key, requestParameter.Value);
             }
         }
     }
