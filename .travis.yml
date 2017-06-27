@@ -9,3 +9,4 @@ script:
   - nuget restore Springboard365.Xrm.Plugins.Core.IntegrationTest.sln
   - xbuild Springboard365.Xrm.Plugins.Core.IntegrationTest.sln /p:Configuration=Release;TargetFrameworkProfile="";TargetFrameworkVersion=4.5
   - mono ./tools/NUnit.ConsoleRunner/tools/nunit3-console.exe ./Springboard365.Xrm.Plugins.Core.IntegrationTest/bin/Release/Springboard365.Xrm.Plugins.Core.IntegrationTest.dll  --work=./TestResult/Integration/Net45
+  - echo "Finished"
