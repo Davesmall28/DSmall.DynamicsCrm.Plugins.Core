@@ -123,6 +123,7 @@
     <Compile Include="PluginTemplates\Advanced\LockSalesOrderPricingPlugin.cs" />
     <Compile Include="PluginTemplates\Advanced\LoseOpportunityPlugin.cs" />
     <Compile Include="PluginTemplates\Advanced\QualifyLeadPlugin.cs" />
+    <Compile Include="PluginTemplates\Basic\RetrievePlugin.cs" />
     <Compile Include="PluginTemplates\Basic\SetStatePlugin.cs" />
     <Compile Include="PluginTemplates\Advanced\UnlockInvoicePricingPlugin.cs" />
     <Compile Include="PluginTemplates\Advanced\UnlockSalesOrderPricingPlugin.cs" />
