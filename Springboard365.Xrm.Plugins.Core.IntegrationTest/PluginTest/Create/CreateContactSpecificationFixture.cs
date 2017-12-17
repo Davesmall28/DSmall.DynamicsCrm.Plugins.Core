@@ -6,14 +6,15 @@
     {
         public Entity EntityToCreate { get; private set; }
 
-        public string MessageName { get; private set; }
+        public CreateContactSpecificationFixture()
+            : base("Create")
+        {
+        }
 
         public void PerformTestSetup()
         {
-            MessageName = "Create";
-
             EntityToCreate = new Entity("contact");
-            EntityToCreate.Attributes.Add("firstname", "DummFirstName");
+            EntityToCreate.Attributes.Add("firstname", "DummyFirstName");
         }
     }
 }

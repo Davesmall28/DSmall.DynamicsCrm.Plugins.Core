@@ -8,16 +8,14 @@
     {
         public WinOpportunityRequest WinOpportunityRequest { get; private set; }
 
-        public Guid OpportunityId { get; private set; }
-
-        public string MessageName { get; private set; }
+        public WinOpportunitySpecificationFixture()
+            : base("Win")
+        {
+        }
 
         public void PerformTestSetup()
         {
-            MessageName = "Win";
-            
             var opportunityEntity = EntityFactory.CreateOpportunity();
-            OpportunityId = opportunityEntity.Id;
 
             var opportunityClose = new Entity("opportunityclose");
             opportunityClose["opportunityid"] = opportunityEntity.ToEntityReference();

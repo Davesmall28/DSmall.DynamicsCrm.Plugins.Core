@@ -1,6 +1,7 @@
-﻿namespace Springboard365.Xrm.Plugins.Core
+﻿namespace Springboard365.Xrm.Plugins.Core.Extensions
 {
     using System.Xml;
+    using Springboard365.Xrm.Plugins.Core.Utilities;
 
     public static class PluginConfigurationExtensions
     {

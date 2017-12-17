@@ -2,6 +2,8 @@
 {
     using System;
     using Microsoft.Xrm.Sdk;
+    using Springboard365.Xrm.Plugins.Core.Constants;
+    using Springboard365.Xrm.Plugins.Core.Test.Entities;
     using Springboard365.Xrm.UnitTest.Core;
 
     public class AddItemCampaignPluginSpecificationFixture : SpecificationFixture<DummyAddItemCampaignPlugin>
@@ -12,7 +14,7 @@
             {
                 { InputParameterType.CampaignId, Guid.NewGuid() },
                 { InputParameterType.EntityId, Guid.NewGuid() },
-                { InputParameterType.EntityName, "Contact" },
+                { InputParameterType.EntityName, Contact.EntityLogicalName },
             });
         }
     }

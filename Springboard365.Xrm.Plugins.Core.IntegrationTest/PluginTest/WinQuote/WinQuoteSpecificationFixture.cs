@@ -7,12 +7,13 @@ namespace Springboard365.Xrm.Plugins.Core.IntegrationTest
     {
         public WinQuoteRequest WinQuoteRequest { get; private set; }
 
-        public string MessageName { get; private set; }
+        public WinQuoteSpecificationFixture()
+            : base("Win")
+        {
+        }
 
         public void PerformTestSetup()
         {
-            MessageName = "Win";
-
             var quoteEntity = EntityFactory.CreateQuote();
 
             var quoteClose = new Entity("quoteclose");

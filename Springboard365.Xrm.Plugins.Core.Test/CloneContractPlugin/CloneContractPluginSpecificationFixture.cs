@@ -2,6 +2,7 @@
 {
     using System;
     using Microsoft.Xrm.Sdk;
+    using Springboard365.Xrm.Plugins.Core.Constants;
     using Springboard365.Xrm.UnitTest.Core;
 
     public class CloneContractPluginSpecificationFixture : SpecificationFixture<DummyCloneContractPlugin>

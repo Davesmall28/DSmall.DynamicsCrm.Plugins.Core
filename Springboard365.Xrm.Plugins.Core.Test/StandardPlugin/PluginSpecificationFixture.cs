@@ -4,5 +4,9 @@
 
     public class PluginSpecificationFixture : SpecificationFixture<DummyPlugin>
     {
+        public override void PerformTestSetup()
+        {
+            ServiceProvider = ServiceProviderInitializer.Setup();
+        }
     }
 }

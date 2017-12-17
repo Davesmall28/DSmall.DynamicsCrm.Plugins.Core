@@ -13,7 +13,7 @@
 
         public Guid InvoiceId { get; private set; }
 
-        public override void Execute(
+        protected override void Execute(
             IOrganizationService organizationService,
             IPluginExecutionContext pluginExecutionContext,
             ITracingService tracingService,

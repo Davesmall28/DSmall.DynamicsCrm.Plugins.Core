@@ -112,16 +112,9 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
-    <Reference Include="System.DirectoryServices" />
-    <Reference Include="System.DirectoryServices.AccountManagement" />
-    <Reference Include="System.IdentityModel" />
     <Reference Include="System.Runtime.Serialization" />
-    <Reference Include="System.Security" />
-    <Reference Include="System.ServiceModel" />
     <Reference Include="System.ServiceModel.Web" />
-    <Reference Include="System.Web" />
     <Reference Include="System.Xml" />
-    <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <Choose>
     <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
@@ -171,7 +164,16 @@
     <Compile Include="DisassociatePlugin\DisassociatePluginSpecificationFixture.cs" />
     <Compile Include="DisassociatePlugin\DummyDisassociatePlugin.cs" />
     <Compile Include="DisassociatePlugin\WhenExecutingCloseQuotePluginSuccessfully.cs" />
-    <Compile Include="EntityPlugin\Contact.cs" />
+    <Compile Include="Entities\Campaign.cs" />
+    <Compile Include="Entities\Contact.cs" />
+    <Compile Include="Entities\Currency.cs" />
+    <Compile Include="Entities\IncidentResolution.cs" />
+    <Compile Include="Entities\Lead.cs" />
+    <Compile Include="Entities\Letter.cs" />
+    <Compile Include="Entities\OpportunityClose.cs" />
+    <Compile Include="Entities\Order.cs" />
+    <Compile Include="Entities\QuoteClose.cs" />
+    <Compile Include="Entities\SystemUser.cs" />
     <Compile Include="EntityPlugin\DummyEntityPlugin.cs" />
     <Compile Include="EntityPlugin\EntityPluginSpecificationFixture.cs" />
     <Compile Include="Extensions\PluginConfigurationExtensionWithNoSettingSpecification.cs" />

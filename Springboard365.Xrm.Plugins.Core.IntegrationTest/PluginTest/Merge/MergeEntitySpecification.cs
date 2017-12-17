@@ -26,7 +26,7 @@
         [Test]
         public void ShouldReturnInputParameterContainingFourParameters()
         {
-            Assert.IsTrue(testFixture.Result.InputParameters.Count == 4);
+            Assert.AreEqual(4, testFixture.Result.InputParameters.Count);
         }
 
         [Test]

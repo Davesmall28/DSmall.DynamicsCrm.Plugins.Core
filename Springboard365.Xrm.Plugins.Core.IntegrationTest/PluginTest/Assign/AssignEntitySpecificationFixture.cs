@@ -8,12 +8,13 @@
     {
         public AssignRequest AssignRequest { get; private set; }
 
-        public string MessageName { get; private set; }
+        public AssignEntitySpecificationFixture()
+            : base("Assign")
+        {
+        }
 
         public void PerformTestSetup()
         {
-            MessageName = "Assign";
-
             var targetEntity = new Entity("contact")
             {
                 Id = Guid.NewGuid()

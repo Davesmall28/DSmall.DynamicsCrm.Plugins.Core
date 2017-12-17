@@ -3,6 +3,7 @@
     using NUnit.Framework;
     using UnitTest.Core;
 
+    [TestFixture]
     public class WhenExecutingAssociatePluginSuccessfully : Specification<DummyAssociatePlugin>
     {
         protected override void Context()

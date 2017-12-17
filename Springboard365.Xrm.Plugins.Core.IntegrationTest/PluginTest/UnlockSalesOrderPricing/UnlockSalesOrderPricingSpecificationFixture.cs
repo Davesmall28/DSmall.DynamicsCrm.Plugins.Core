@@ -6,12 +6,13 @@ namespace Springboard365.Xrm.Plugins.Core.IntegrationTest
     {
         public UnlockSalesOrderPricingRequest UnlockSalesOrderPricingRequest { get; private set; }
 
-        public string MessageName { get; private set; }
+        public UnlockSalesOrderPricingSpecificationFixture()
+            : base("UnlockSalesOrderPricing")
+        {
+        }
 
         public void PerformTestSetup()
         {
-            MessageName = "UnlockSalesOrderPricing";
-
             var salesOrderEntity = EntityFactory.CreateSalesOrder();
 
             var lockSalesOrderPricingRequest = new LockSalesOrderPricingRequest

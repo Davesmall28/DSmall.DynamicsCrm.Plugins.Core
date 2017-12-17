@@ -7,12 +7,13 @@ namespace Springboard365.Xrm.Plugins.Core.IntegrationTest
     {
         public DisassociateRequest DisassociateRequest { get; private set; }
 
-        public string MessageName { get; private set; }
+        public DisassociateSpecificationFixture()
+            : base("Disassociate")
+        {
+        }
 
         public void PerformTestSetup()
         {
-            MessageName = "Disassociate";
-
             var contactEntity = EntityFactory.CreateContact();
             var letterEntity = EntityFactory.CreateLetter();
 

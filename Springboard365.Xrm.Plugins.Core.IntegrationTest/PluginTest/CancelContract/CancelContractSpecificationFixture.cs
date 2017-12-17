@@ -8,12 +8,13 @@ namespace Springboard365.Xrm.Plugins.Core.IntegrationTest
     {
         public CancelContractRequest CancelContractRequest { get; private set; }
 
-        public string MessageName { get; private set; }
+        public CancelContractSpecificationFixture()
+            : base("Cancel")
+        {
+        }
 
         public void PerformTestSetup()
         {
-            MessageName = "Cancel";
-
             var contractEntity = EntityFactory.CreateContract();
             
             CancelContractRequest = new CancelContractRequest

@@ -6,12 +6,13 @@
     {
         public Entity EntityToUpdate { get; private set; }
 
-        public string MessageName { get; private set; }
+        public UpdateContactSpecificationFixture()
+            : base("Update")
+        {
+        }
 
         public void PerformTestSetup()
         {
-            MessageName = "Update";
-
             EntityToUpdate = new Entity("contact");
             EntityToUpdate.Attributes.Add("firstname", "DummyFirstName");
 

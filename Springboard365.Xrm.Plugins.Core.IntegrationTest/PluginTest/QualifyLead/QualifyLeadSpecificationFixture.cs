@@ -7,12 +7,13 @@ namespace Springboard365.Xrm.Plugins.Core.IntegrationTest
     {
         public QualifyLeadRequest QualifyLeadRequest { get; private set; }
 
-        public string MessageName { get; private set; }
+        public QualifyLeadSpecificationFixture()
+            : base("QualifyLead")
+        {
+        }
 
         public void PerformTestSetup()
         {
-            MessageName = "QualifyLead";
-
             var accountEntity = EntityFactory.CreateAccount();
             var campaignEntity = EntityFactory.CreateCampaign();
             var leadEntity = EntityFactory.CreateLead();

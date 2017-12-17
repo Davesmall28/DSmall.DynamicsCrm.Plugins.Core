@@ -7,12 +7,13 @@ namespace Springboard365.Xrm.Plugins.Core.IntegrationTest
     {
         public CloseQuoteRequest CloseQuoteRequest { get; private set; }
 
-        public string MessageName { get; private set; }
+        public CloseQuoteSpecificationFixture()
+            : base("Close")
+        {
+        }
 
         public void PerformTestSetup()
         {
-            MessageName = "Close";
-
             var quoteEntity = EntityFactory.CreateQuote();
 
             var quoteClose = new Entity("quoteclose");

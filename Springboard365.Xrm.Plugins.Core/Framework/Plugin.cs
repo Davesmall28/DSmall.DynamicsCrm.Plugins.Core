@@ -1,4 +1,4 @@
-﻿namespace Springboard365.Xrm.Plugins.Core
+﻿namespace Springboard365.Xrm.Plugins.Core.Framework
 {
     using System;
     using Microsoft.Xrm.Sdk;
@@ -17,9 +17,9 @@
             EntityValidator = entityValidator;
         }
 
-        public IEntityValidator EntityValidator { get; private set; }
+        protected IEntityValidator EntityValidator { get; private set; }
 
-        public abstract void Execute(IOrganizationService organizationService, IPluginExecutionContext pluginExecutionContext, ITracingService tracingService);
+        protected abstract void Execute(IOrganizationService organizationService, IPluginExecutionContext pluginExecutionContext, ITracingService tracingService);
 
         public void Execute(IServiceProvider serviceProvider)
         {
