@@ -1,4 +1,4 @@
-﻿namespace Springboard365.Xrm.Plugins.Core
+﻿namespace Springboard365.Xrm.Plugins.Core.Utilities
 {
     using System.ComponentModel;
     using System.Xml;
@@ -21,7 +21,7 @@
 
         private static string GetSettingValue(XmlNode doc, string key)
         {
-            var node = doc.SelectSingleNode(string.Format("settings/setting[@name='{0}']", key));
+            var node = doc.SelectSingleNode($"settings/setting[@name='{key}']");
 
             if (node == null)
             {
@@ -29,7 +29,7 @@
             }
 
             var selectSingleNode = node.SelectSingleNode("value");
-            return selectSingleNode != null ? selectSingleNode.InnerText : string.Empty;
+            return selectSingleNode?.InnerText ?? string.Empty;
         }
     }
 }

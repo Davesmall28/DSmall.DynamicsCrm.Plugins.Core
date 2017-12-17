@@ -3,6 +3,7 @@
     using System;
     using NUnit.Framework;
     using Springboard365.UnitTest.Core;
+    using Springboard365.Xrm.Plugins.Core.Extensions;
 
     [TestFixture]
     public class PluginConfigurationExtensionWithNoSettingSpecification : SpecificationBase

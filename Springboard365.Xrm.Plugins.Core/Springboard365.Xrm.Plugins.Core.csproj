@@ -82,14 +82,6 @@
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.Crm.Sdk.Proxy">
-      <HintPath>..\Packages\Springboard365.Xrm.Core.1.0.0\lib\net40\Microsoft.Crm.Sdk.Proxy.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Microsoft.IdentityModel">
-      <HintPath>..\packages\Springboard365.Xrm.Core.1.0.0\lib\net40\Microsoft.IdentityModel.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="Microsoft.Xrm.Sdk">
       <HintPath>..\packages\Springboard365.Xrm.Core.1.0.0\lib\net40\Microsoft.Xrm.Sdk.dll</HintPath>
       <Private>True</Private>
@@ -104,23 +96,16 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.DirectoryServices" />
-    <Reference Include="System.DirectoryServices.AccountManagement" />
-    <Reference Include="System.IdentityModel" />
     <Reference Include="System.Runtime.Serialization" />
-    <Reference Include="System.Security" />
-    <Reference Include="System.ServiceModel" />
     <Reference Include="System.ServiceModel.Web" />
-    <Reference Include="System.Web" />
     <Reference Include="System.Xml" />
-    <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Extensions\InputParameterExtensions.cs" />
     <Compile Include="Extensions\PluginConfigurationExtensions.cs" />
-    <Compile Include="PluginFramework\EntityPlugin.cs" />
+    <Compile Include="Framework\EntityPlugin.cs" />
     <Compile Include="PluginTemplates\Basic\MergePlugin.cs" />
-    <Compile Include="PluginFramework\Plugin.cs" />
+    <Compile Include="Framework\Plugin.cs" />
     <Compile Include="PluginTemplates\Advanced\AddItemCampaignActivityPlugin.cs" />
     <Compile Include="PluginTemplates\Advanced\AddItemCampaignPlugin.cs" />
     <Compile Include="PluginTemplates\Advanced\AddToQueuePlugin.cs" />
@@ -138,6 +123,7 @@
     <Compile Include="PluginTemplates\Advanced\LockSalesOrderPricingPlugin.cs" />
     <Compile Include="PluginTemplates\Advanced\LoseOpportunityPlugin.cs" />
     <Compile Include="PluginTemplates\Advanced\QualifyLeadPlugin.cs" />
+    <Compile Include="PluginTemplates\Basic\RetrievePlugin.cs" />
     <Compile Include="PluginTemplates\Basic\SetStatePlugin.cs" />
     <Compile Include="PluginTemplates\Advanced\UnlockInvoicePricingPlugin.cs" />
     <Compile Include="PluginTemplates\Advanced\UnlockSalesOrderPricingPlugin.cs" />

@@ -20,7 +20,7 @@
 
             if (string.IsNullOrWhiteSpace(UnderTest))
             {
-                UnderTest = string.Format("<settings><setting name='ContactId'><value>{0}</value></setting></settings>", ExpectedId);
+                UnderTest = $"<settings><setting name='ContactId'><value>{ExpectedId}</value></setting></settings>";
             }
 
             UnderTestXml = new XmlDocument();

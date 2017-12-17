@@ -3,6 +3,7 @@
     using NUnit.Framework;
     using Springboard365.Xrm.UnitTest.Core;
 
+    [TestFixture]
     public class WhenExecutingDeletePluginSuccessfully : Specification<DummyDeletePlugin>
     {
         protected override void Context()

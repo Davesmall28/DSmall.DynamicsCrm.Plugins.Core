@@ -3,6 +3,7 @@
     using NUnit.Framework;
     using Springboard365.Xrm.UnitTest.Core;
 
+    [TestFixture]
     public class WhenExecutingDisassociatePluginSuccessfully : Specification<DummyDisassociatePlugin>
     {
         protected override void Context()

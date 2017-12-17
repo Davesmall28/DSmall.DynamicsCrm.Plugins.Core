@@ -1,4 +1,4 @@
-﻿namespace Springboard365.Xrm.Plugins.Core
+﻿namespace Springboard365.Xrm.Plugins.Core.Constants
 {
     public class InputParameterType
     {
@@ -69,5 +69,11 @@
         public const string DestinationQueueId = "DestinationQueueId";
 
         public const string SourceQueueId = "SourceQueueId";
+
+        public const string ColumnSet = "ColumnSet";
+
+        public const string ReturnNotifications = "ReturnNotifications";
+
+        public const string RelatedEntitiesQuery = "RelatedEntitiesQuery";
     }
 }
