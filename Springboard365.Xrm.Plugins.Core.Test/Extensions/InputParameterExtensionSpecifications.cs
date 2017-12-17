@@ -4,6 +4,9 @@
     using Microsoft.Xrm.Sdk;
     using NUnit.Framework;
     using Springboard365.UnitTest.Core;
+    using Springboard365.Xrm.Plugins.Core.Constants;
+    using Springboard365.Xrm.Plugins.Core.Extensions;
+    using Springboard365.Xrm.Plugins.Core.Test.Entities;
 
     [TestFixture]
     public class InputParameterExtensionSpecifications : SpecificationBase
@@ -14,7 +17,7 @@
 
         protected override void Context()
         {
-            expected = new EntityReference("contact", Guid.NewGuid());
+            expected = new EntityReference(Contact.EntityLogicalName, Guid.NewGuid());
             underTest = new ParameterCollection
             {
                 { InputParameterType.Target, expected }

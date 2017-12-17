@@ -2,17 +2,18 @@
 {
     using Microsoft.Xrm.Sdk;
     using Springboard365.Xrm.Core;
+    using Springboard365.Xrm.Plugins.Core.Framework;
 
     public abstract class CreatePlugin : Plugin
     {
-        public override void Execute(IOrganizationService organizationService, IPluginExecutionContext pluginExecutionContext, ITracingService tracingService)
+        protected override void Execute(IOrganizationService organizationService, IPluginExecutionContext pluginExecutionContext, ITracingService tracingService)
         {
             var target = EntityValidator.GetValidCrmTargetEntity<Entity>(pluginExecutionContext, EntityImageType.Target);
 
             Execute(organizationService, pluginExecutionContext, tracingService, target);
         }
 
-        public abstract void Execute(
+        protected abstract void Execute(
             IOrganizationService organizationService, 
             IPluginExecutionContext pluginExecutionContext, 
             ITracingService tracingService,

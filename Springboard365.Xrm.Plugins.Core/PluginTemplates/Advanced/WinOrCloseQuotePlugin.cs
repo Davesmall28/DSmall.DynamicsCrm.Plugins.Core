@@ -2,13 +2,16 @@
 {
     using Microsoft.Xrm.Sdk;
     using Springboard365.Xrm.Core;
+    using Springboard365.Xrm.Plugins.Core.Constants;
+    using Springboard365.Xrm.Plugins.Core.Extensions;
+    using Springboard365.Xrm.Plugins.Core.Framework;
 
     public abstract class WinOrCloseQuotePlugin : Plugin
     {
         private const string QuoteLogicalName = "quote";
         private IStateRetriever stateRetriever;
 
-        public override void Execute(
+        protected override void Execute(
             IOrganizationService organizationService,
             IPluginExecutionContext pluginExecutionContext,
             ITracingService tracingService)
@@ -22,7 +25,7 @@
             Execute(organizationService, pluginExecutionContext, tracingService, quoteClose, state, status);
         }
 
-        public abstract void Execute(
+        protected abstract void Execute(
             IOrganizationService organizationService,
             IPluginExecutionContext pluginExecutionContext,
             ITracingService tracingService,

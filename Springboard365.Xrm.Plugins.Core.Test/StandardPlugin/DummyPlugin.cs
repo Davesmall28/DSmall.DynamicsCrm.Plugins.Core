@@ -1,6 +1,7 @@
 ﻿namespace Springboard365.Xrm.Plugins.Core.Test
 {
     using Microsoft.Xrm.Sdk;
+    using Springboard365.Xrm.Plugins.Core.Framework;
 
     public class DummyPlugin : Plugin
     {
@@ -10,7 +11,7 @@
 
         public ITracingService TracingService { get; private set; }
 
-        public override void Execute(
+        protected override void Execute(
             IOrganizationService organizationService,
             IPluginExecutionContext pluginExecutionContext,
             ITracingService tracingService)

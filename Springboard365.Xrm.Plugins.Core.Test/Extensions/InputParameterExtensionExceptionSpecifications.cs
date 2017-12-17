@@ -3,6 +3,8 @@
     using Microsoft.Xrm.Sdk;
     using NUnit.Framework;
     using Springboard365.UnitTest.Core;
+    using Springboard365.Xrm.Plugins.Core.Constants;
+    using Springboard365.Xrm.Plugins.Core.Extensions;
 
     [TestFixture]
     public class InputParameterExtensionExceptionSpecifications : SpecificationBase

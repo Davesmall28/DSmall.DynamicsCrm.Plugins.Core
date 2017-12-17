@@ -103,9 +103,9 @@
   <ItemGroup>
     <Compile Include="Extensions\InputParameterExtensions.cs" />
     <Compile Include="Extensions\PluginConfigurationExtensions.cs" />
-    <Compile Include="PluginFramework\EntityPlugin.cs" />
+    <Compile Include="Framework\EntityPlugin.cs" />
     <Compile Include="PluginTemplates\Basic\MergePlugin.cs" />
-    <Compile Include="PluginFramework\Plugin.cs" />
+    <Compile Include="Framework\Plugin.cs" />
     <Compile Include="PluginTemplates\Advanced\AddItemCampaignActivityPlugin.cs" />
     <Compile Include="PluginTemplates\Advanced\AddItemCampaignPlugin.cs" />
     <Compile Include="PluginTemplates\Advanced\AddToQueuePlugin.cs" />

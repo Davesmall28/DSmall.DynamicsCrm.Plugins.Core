@@ -1,4 +1,4 @@
-﻿namespace Springboard365.Xrm.Plugins.Core
+﻿namespace Springboard365.Xrm.Plugins.Core.Constants
 {
     public class InputParameterType
     {

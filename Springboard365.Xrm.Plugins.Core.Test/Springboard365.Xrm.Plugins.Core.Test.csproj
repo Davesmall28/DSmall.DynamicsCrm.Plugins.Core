@@ -164,7 +164,16 @@
     <Compile Include="DisassociatePlugin\DisassociatePluginSpecificationFixture.cs" />
     <Compile Include="DisassociatePlugin\DummyDisassociatePlugin.cs" />
     <Compile Include="DisassociatePlugin\WhenExecutingCloseQuotePluginSuccessfully.cs" />
-    <Compile Include="EntityPlugin\Contact.cs" />
+    <Compile Include="Entities\Campaign.cs" />
+    <Compile Include="Entities\Contact.cs" />
+    <Compile Include="Entities\Currency.cs" />
+    <Compile Include="Entities\IncidentResolution.cs" />
+    <Compile Include="Entities\Lead.cs" />
+    <Compile Include="Entities\Letter.cs" />
+    <Compile Include="Entities\OpportunityClose.cs" />
+    <Compile Include="Entities\Order.cs" />
+    <Compile Include="Entities\QuoteClose.cs" />
+    <Compile Include="Entities\SystemUser.cs" />
     <Compile Include="EntityPlugin\DummyEntityPlugin.cs" />
     <Compile Include="EntityPlugin\EntityPluginSpecificationFixture.cs" />
     <Compile Include="Extensions\PluginConfigurationExtensionWithNoSettingSpecification.cs" />
