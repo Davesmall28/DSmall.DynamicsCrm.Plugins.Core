@@ -1,7 +1,8 @@
-﻿namespace Springboard365.Xrm.Plugins.Core.Framework
+﻿namespace Springboard365.Xrm.Plugins.Core
 {
     using Microsoft.Xrm.Sdk;
     using Springboard365.Xrm.Core;
+    using Springboard365.Xrm.Plugins.Core.Framework;
 
     public abstract class EntityPlugin : Plugin
     {

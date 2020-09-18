@@ -2,7 +2,7 @@
 {
     using System;
     using NUnit.Framework;
-    using Springboard365.Xrm.UnitTest.Core;
+    using Springboard365.UnitTest.Xrm.Core;
 
     [TestFixture]
     public class WhenExecutingStandardPluginWithInvalidParameters : Specification<DummyPlugin>

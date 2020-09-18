@@ -1,7 +1,7 @@
 ﻿namespace Springboard365.Xrm.Plugins.Core.Test
 {
     using NUnit.Framework;
-    using Springboard365.Xrm.UnitTest.Core;
+    using Springboard365.UnitTest.Xrm.Core;
 
     [TestFixture]
     public class WhenExecutingLoseOpportunityPluginSuccessfully : Specification<DummyLoseOpportunityPlugin>

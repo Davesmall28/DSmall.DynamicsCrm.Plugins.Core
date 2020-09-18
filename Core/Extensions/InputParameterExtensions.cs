@@ -1,7 +1,7 @@
 ﻿namespace Springboard365.Xrm.Plugins.Core.Extensions
 {
     using Microsoft.Xrm.Sdk;
-
+    
     public static class InputParameterExtensions
     {
         public static TParameterType GetParameter<TParameterType>(this DataCollection<string, object> inputParameter, string parameterName)
@@ -11,7 +11,7 @@
                 return (TParameterType)inputParameter[parameterName];
             }
 
-            return default(TParameterType);
+            return default;
         }
     }
 }

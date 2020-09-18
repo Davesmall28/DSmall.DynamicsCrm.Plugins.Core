@@ -1,7 +1,7 @@
 ﻿namespace Springboard365.Xrm.Plugins.Core.Test
 {
     using Microsoft.Xrm.Sdk;
-    using Springboard365.Xrm.Plugins.Core.Framework;
+    using Springboard365.Xrm.Plugins.Core;
 
     public class DummyEntityPlugin : EntityPlugin
     {

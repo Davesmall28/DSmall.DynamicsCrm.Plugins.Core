@@ -75,5 +75,11 @@
         public const string ReturnNotifications = "ReturnNotifications";
 
         public const string RelatedEntitiesQuery = "RelatedEntitiesQuery";
+
+        public const string Query = "Query";
+
+        public const string AppModuleId = "AppModuleId";
+
+        public const string IsAppModuleContext = "IsAppModuleContext";
     }
 }

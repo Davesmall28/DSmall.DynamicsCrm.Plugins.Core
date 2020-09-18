@@ -1,7 +1,7 @@
 ﻿namespace Springboard365.Xrm.Plugins.Core.Samples
 {
     using Microsoft.Xrm.Sdk;
-    using Springboard365.Xrm.Plugins.Core;
+    using Springboard365.Xrm.Plugins.Core.Framework;
 
     public class ParameterPlugin : Plugin
     {
