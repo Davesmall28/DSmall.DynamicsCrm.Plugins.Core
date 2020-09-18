@@ -190,6 +190,9 @@ DeployFiles/*.zip
 SolutionPackager/*.zip
 Springboard365.Xrm.Plugins.Core.IntegrationTest/Springboard365.Xrm.Plugins.Core.IntegrationTest/App.config
 
+# Include CrmSolution Plugin Field
+!CrmSolution/SolutionExtract/PluginAssemblies/**/*.dll
+
 # Include Build tools
 !Core/Nuget/Tools/*.exe
 !Core/Nuget/Tools/*.dll
