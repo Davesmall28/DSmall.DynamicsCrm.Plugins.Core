@@ -188,7 +188,9 @@ DeployFiles/*.zip
 
 # Solution Packager zip files
 SolutionPackager/*.zip
-Springboard365.Xrm.Plugins.Core.IntegrationTest/Springboard365.Xrm.Plugins.Core.IntegrationTest/App.config
+
+# Exclude App.config for Integration Tests
+IntegrationTest/App.config
 
 # Include CrmSolution Plugin Field
 !CrmSolution/SolutionExtract/PluginAssemblies/**/*.dll

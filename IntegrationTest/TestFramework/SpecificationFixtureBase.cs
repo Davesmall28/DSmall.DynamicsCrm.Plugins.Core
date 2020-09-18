@@ -1,8 +1,10 @@
 ﻿namespace Springboard365.Xrm.Plugins.Core.IntegrationTest
 {
     using System;
-    using Microsoft.Xrm.Client.Services;
+    using System.Configuration;
+    using System.Net;
     using Microsoft.Xrm.Sdk;
+    using Microsoft.Xrm.Tooling.Connector;
     using Springboard365.Xrm.Plugins.Core.Model;
 
     public class SpecificationFixtureBase
@@ -11,7 +13,9 @@
 
         public SpecificationFixtureBase()
         {
-            OrganizationService = new OrganizationService(ConnectionStringSettingName);
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
+            var connectionString = ConfigurationManager.ConnectionStrings[ConnectionStringSettingName].ConnectionString;
+            OrganizationService = new CrmServiceClient(connectionString);
             CrmReader = new CrmReader(OrganizationService);
             CrmWriter = new CrmWriter(OrganizationService);
             EntityFactory = new EntityFactory(OrganizationService, new CrmReader(OrganizationService));
