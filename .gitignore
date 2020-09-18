@@ -189,3 +189,7 @@ DeployFiles/*.zip
 # Solution Packager zip files
 SolutionPackager/*.zip
 Springboard365.Xrm.Plugins.Core.IntegrationTest/Springboard365.Xrm.Plugins.Core.IntegrationTest/App.config
+
+# Include Build tools
+!Core/Nuget/Tools/*.exe
+!Core/Nuget/Tools/*.dll
