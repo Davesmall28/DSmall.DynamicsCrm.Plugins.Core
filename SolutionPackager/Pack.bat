@@ -1,3 +1,3 @@
-.\Files\SolutionPackager.exe /a:"Pack" /z:"SolutionExtract.zip" /folder:"..\Springboard365.Xrm.Plugins.Core.CrmSolution\SolutionExtract" /p:Both
+SolutionPackager.exe /a:Pack /z:SolutionExtract_unmanaged.zip /folder:"..\CrmSolution\SolutionExtract" /p:unmanaged
 
 pause
