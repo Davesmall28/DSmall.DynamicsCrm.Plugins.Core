@@ -1,7 +1,7 @@
 ﻿namespace Springboard365.Xrm.Plugins.Core.Test
 {
     using NUnit.Framework;
-    using UnitTest.Core;
+    using Springboard365.UnitTest.Xrm.Core;
 
     [TestFixture]
     public class WhenExecutingAddItemCampaignPluginSuccessfully : Specification<DummyAddItemCampaignPlugin>
