@@ -196,3 +196,6 @@ Springboard365.Xrm.Plugins.Core.IntegrationTest/Springboard365.Xrm.Plugins.Core.
 # Include Build tools
 !Core/Nuget/Tools/*.exe
 !Core/Nuget/Tools/*.dll
+
+# Hidden VS Folder
+.vs
