@@ -5,7 +5,7 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Springboard365.Xrm.Plugins.Core.Samples", "Springboard365.Xrm.Plugins.Core.Samples.csproj", "{7933F4D5-811D-467F-AA9E-11D652105658}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Springboard365.Xrm.Plugins.Core.Model", "..\Springboard365.Xrm.Plugins.Core.Model\Springboard365.Xrm.Plugins.Core.Model.csproj", "{73F8743F-5D0E-4D31-9FE6-6377A7B74F61}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Springboard365.Xrm.Plugins.Core.Model", "..\Model\Springboard365.Xrm.Plugins.Core.Model.csproj", "{73F8743F-5D0E-4D31-9FE6-6377A7B74F61}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

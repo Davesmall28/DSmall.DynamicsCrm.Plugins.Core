@@ -5,7 +5,7 @@
 
     public class ParameterPlugin : Plugin
     {
-        public override void Execute(
+        protected override void Execute(
             IOrganizationService organizationService,
             IPluginExecutionContext pluginExecutionContext,
             ITracingService tracingService)
