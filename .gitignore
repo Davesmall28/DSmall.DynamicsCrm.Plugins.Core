@@ -198,6 +198,11 @@ IntegrationTest/App.config
 # Include Build tools
 !Core/Nuget/Tools/*.exe
 !Core/Nuget/Tools/*.dll
+!Core/Nuget/*.bat
+!Core/Nuget/*.png
+!Core/Nuget/Tools/*.ps1
+!Core/Nuget/Tools/*.psm1
+!Core/Nuget/Tools/*.targets
 
 # Hidden VS Folder
 .vs

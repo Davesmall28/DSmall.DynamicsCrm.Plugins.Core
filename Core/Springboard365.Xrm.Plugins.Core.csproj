@@ -44,12 +44,17 @@
     <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>..\Springboard365Key.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.Crm.Sdk.Proxy, Version=9.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CrmSdk.CoreAssemblies.9.0.2.27\lib\net462\Microsoft.Crm.Sdk.Proxy.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="Microsoft.Xrm.Sdk, Version=9.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CrmSdk.CoreAssemblies.9.0.2.27\lib\net462\Microsoft.Xrm.Sdk.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="Springboard365.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=9fa79910cc859408, processorArchitecture=MSIL">
       <HintPath>..\packages\Springboard365.Core.2.0.0\lib\net462\Springboard365.Core.dll</HintPath>
@@ -114,18 +119,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Nuget\MyGetPush.bat" />
-    <None Include="Nuget\Tools\Springboard365Extensions.psm1" />
-    <None Include="packages.config" />
-    <None Include="Springboard365.Xrm.Plugins.Core.nuspec" />
     <None Include="Nuget\NuGetPush.bat" />
     <None Include="Nuget\Tools\ILMerge.exe" />
-    <None Include="Nuget\Tools\Springboard365.Xrm.Plugins.Core.targets" />
     <None Include="Nuget\Tools\init.ps1" />
     <None Include="Nuget\Tools\install.ps1" />
+    <None Include="Nuget\packageImage.png" />
+    <None Include="Nuget\Tools\Springboard365.Xrm.Plugins.Core.targets" />
+    <None Include="Nuget\Tools\Springboard365Extensions.psm1" />
+    <None Include="Nuget\Tools\System.Compiler.dll" />
     <None Include="Nuget\Tools\uninstall.ps1" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Nuget\Tools\System.Compiler.dll" />
+    <None Include="packages.config" />
+    <None Include="Springboard365.Xrm.Plugins.Core.nuspec" />
+    <None Include="..\Springboard365Key.snk" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
