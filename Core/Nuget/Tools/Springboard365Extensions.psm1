@@ -147,7 +147,7 @@ function Resolve-Springboard365() {
     $import = $msbuild.Xml.AddImport($relativePath)
     $import.Condition = "Exists('$relativePath')"
     
-    $targetFramework = """v4," + $env:ProgramFiles + "\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0"""
+    $targetFramework = """v4," + $env:ProgramFiles + "\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.2"""
 
     $target = $msbuild.Xml.AddTarget("Springboard365AfterBuild")
     $target.AfterTargets = "AfterBuild"
