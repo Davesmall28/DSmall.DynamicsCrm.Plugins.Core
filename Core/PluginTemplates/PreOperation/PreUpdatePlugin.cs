@@ -4,7 +4,7 @@
     using Springboard365.Xrm.Core;
     using Springboard365.Xrm.Plugins.Core.Framework;
 
-    public abstract class PreCreatePlugin : Plugin
+    public abstract class PreUpdatePlugin : Plugin
     {
         protected override void Execute(
             IOrganizationService organizationService,

@@ -108,7 +108,7 @@
     <Compile Include="PluginTemplates\Advanced\WinOrCloseQuotePlugin.cs" />
     <Compile Include="PluginTemplates\Advanced\WinOrLoseOpportunityPlugin.cs" />
     <Compile Include="PluginTemplates\Advanced\WinQuotePlugin.cs" />
-    <Compile Include="PluginTemplates\PreOperation\PreCreatePlugin.cs" />
+    <Compile Include="PluginTemplates\PreOperation\PreUpdatePlugin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Constants\InputParameterType.cs" />
     <Compile Include="Utilities\IPluginConfiguration.cs">
